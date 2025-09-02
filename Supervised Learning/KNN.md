@@ -17,7 +17,7 @@ $$d(x, x') = \sqrt{ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ 2 }$$
 **Minkowski (Generalisasi dari L1 & L2)**
 $$d(x, x') = \left[ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ p \right] ^ { \frac{1}{p} }$$
 
-Diberikan fitur latih $X \in \R^{n \times d}$, vektor label $Y \in \Z ^ n$ dan data uji $x \in \R ^ {m \times d}$ berikut cara menerapkan KNN:
+Diberikan fitur latih $X \in \mathbb{R}^{n \times d}$, vektor label $Y \in \mathbb{Z} ^ n$ dan data uji $x \in \mathbb{R} ^ {m \times d}$ berikut cara menerapkan KNN:
 1. Tentukan nilai $k$.
 2. Tentukan metrik jarak yang akan digunakan.
 3. Untuk setiap data uji $x$ pada $X$, hitung jarak antara $x$ dan seluruh data latih $X$.
