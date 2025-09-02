@@ -101,7 +101,7 @@ k = 5
 knn = KNeighborsClassifier(
     n_neighbors=k,      # Jumlah tetangga
     weights='uniform',  # Pembobotan jarak
-    metric='minkowski'  # Metrik jarak
+    metric='minkowski', # Metrik jarak
     p=2,                # Nilai pangkat (untuk metrik minkowski)
 )
 knn.fit(X_train, y_train)
