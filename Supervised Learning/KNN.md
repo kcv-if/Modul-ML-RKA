@@ -57,7 +57,7 @@ Diberikan fitur latih $X \in \mathbb{R}^{n \times d}$, vektor label $Y \in \math
 - Sensitif terhadap nilai $k$
 	- Jika nilai $k$ terlalu kecil, maka KNN akan mengalami overfitting.
 	- Jika nilai $k$ terlalu besar, maka KNN akan mengalami underfitting.
-   	Disarankan memilih nilai k ganjil (odd number) untuk meminimalisir kemungkinan terjadi ties (jumlah voting sama besar) saat klasifikasi.
+   	<br>Disarankan memilih nilai **k** ganjil (odd number) untuk meminimalisir kemungkinan terjadi *ties* (jumlah voting sama besar) saat klasifikasi.
 
 ## Implementasi
 
