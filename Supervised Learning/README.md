@@ -2,6 +2,11 @@
 
 ## Daftar Isi
 
+- [Pengenalan](#pengenalan)
+- [Klasifikasi](#klasifikasi)
+- [Regresi](#regresi)
+- [Referensi](#referensi)
+
 ## Pengenalan
 
 Supervised learning adalah paradigma dalam pembelajaran mesin yang menggunakan data berlabel untuk melatih algoritma matematis. Tujuannya adalah agar algoritma mempelajari hubungan antara input (fitur) dengan output (target) sehingga dapat secara akurat memprediksi output untuk data input yang belum terlihat.

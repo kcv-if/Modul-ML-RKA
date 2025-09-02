@@ -1,5 +1,14 @@
 # K-Nearest Neighbors (KNN)
 
+## Daftar Isi
+
+- [Daftar Isi](#daftar-isi)
+- [Definisi](#definisi)
+- [Kelebihan](#kelebihan)
+- [Kekurangan](#kekurangan)
+- [Implementasi](#implementasi)
+- [Referensi](#referensi)
+
 ## Definisi
 
 KNN (K-Nearest Neighbors) merupakan sebuah algoritma supervised learning yang memberikan prediksi dengan melihat kelas mayoritas (terbanyak) yang mengelilingi data yang ingin kita prediksi.
