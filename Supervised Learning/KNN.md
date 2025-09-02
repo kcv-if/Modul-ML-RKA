@@ -18,12 +18,15 @@ KNN (K-Nearest Neighbors) merupakan sebuah algoritma supervised learning yang me
 KNN mengambil sebanyak $k$ (hyperparameter) tetangga terdekat, kemudian menentukan label kelas untuk data baru dengan melakukan voting mayoritas. Untuk menhitung jarak antara dua titik, misal $x$ dengan $x'$, terdapat berbagai metrik seperti berikut.
 
 **Manhattan (L1 Distance)**
+
 $$d(x, x') = \sum_{i = 1}^n \left| x_i - x_i' \right|$$
 
 **Euclidean (L2 Distance)**
+
 $$d(x, x') = \sqrt{ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ 2 }$$
 
 **Minkowski (Generalisasi dari L1 & L2)**
+
 $$d(x, x') = \left[ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ p \right] ^ { \frac{1}{p} }$$
 
 Diberikan fitur latih $X \in \mathbb{R}^{n \times d}$, vektor label $Y \in \mathbb{Z} ^ n$ dan data uji $x \in \mathbb{R} ^ {m \times d}$ berikut cara menerapkan KNN:
