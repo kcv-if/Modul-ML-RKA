@@ -79,6 +79,50 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
 ## Implementasi
 
+Berikut adalah contoh implementasi dari salah satu varian Naive Bayes, yakni Gaussian Naive Bayes, menggunakan `scikit-learn`.
+
+```python
+from sklearn.naive_bayes import GaussianNB
+
+# Matriks fitur
+X_train = [
+   [1.2, 0.7],
+   [2.3, 1.9],
+   [1.8, 2.2],
+   [3.0, 3.1],
+   [2.9, 0.2],
+   [0.5, 1.7],
+   [3.2, 2.8],
+   [1.1, 0.9],
+   # ...
+]
+
+# Vektor label
+y_train = [
+   0, 
+   1, 
+   1, 
+   1, 
+   0, 
+   0, 
+   1, 
+   0, 
+   # ...
+]
+
+# Data uji
+X_test = [
+   [1.5, 1.0],
+   [2.8, 2.5],
+   [0.7, 1.2],
+   # ...
+]
+
+model = GaussianNB()
+model.fit(X_train, y_train)
+pred = model.predict(X_test)
+print(pred)
+```
 
 ## Referensi
 
