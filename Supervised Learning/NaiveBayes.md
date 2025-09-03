@@ -59,28 +59,28 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
 5. Laplace Smoothing
 
-Masalah utama pada Naive Bayes adalah ketika suatu **fitur tidak pernah muncul** dalam data latih untuk kelas tertentu.  
-
-Contoh: kata **"Lunch"** tidak pernah muncul pada pesan **Spam**.  
-Jika dihitung langsung:
-
-$P(Lunch \mid Spam) = \frac{0}{7} = 0$
-
-Hasil ini bermasalah karena:
-- Jika ada **satu fitur dengan probabilitas nol**, maka seluruh hasil perkalian posterior akan menjadi **nol**.
-- Akibatnya, pesan langsung dianggap **tidak mungkin** Spam, hanya karena satu kata tidak muncul di data latih.
-
-Untuk mengatasi hal ini digunakan **Laplace Smoothing** (atau *add-one smoothing*):
-- Tambahkan **+1** pada setiap hitungan kata.  
-- Tambahkan jumlah total kata unik pada penyebut.  
-
-Sehingga perhitungan berubah:
-
-$P(Lunch \mid Spam) = \frac{0 + 1}{7 + 4} = \frac{1}{11}$
-
-Dengan cara ini:
-- Probabilitas tidak pernah benar-benar **0**, hanya menjadi **sangat kecil**.  
-- Model jadi lebih **robust** terhadap kata-kata baru atau jarang muncul. 
+   Masalah utama pada Naive Bayes adalah ketika suatu **fitur tidak pernah muncul** dalam data latih untuk kelas tertentu.  
+   
+   Contoh: kata **"Lunch"** tidak pernah muncul pada pesan **Spam**.  
+   Jika dihitung langsung:
+   
+   $P(Lunch \mid Spam) = \frac{0}{7} = 0$
+   
+   Hasil ini bermasalah karena:
+   - Jika ada **satu fitur dengan probabilitas nol**, maka seluruh hasil perkalian posterior akan menjadi **nol**.
+   - Akibatnya, pesan langsung dianggap **tidak mungkin** Spam, hanya karena satu kata tidak muncul di data latih.
+   
+   Untuk mengatasi hal ini digunakan **Laplace Smoothing** (atau *add-one smoothing*):
+   - Tambahkan **+1** pada setiap hitungan kata.  
+   - Tambahkan jumlah total kata unik pada penyebut.  
+   
+   Sehingga perhitungan berubah:
+   
+   $P(Lunch \mid Spam) = \frac{0 + 1}{7 + 4} = \frac{1}{11}$
+   
+   Dengan cara ini:
+   - Probabilitas tidak pernah benar-benar **0**, hanya menjadi **sangat kecil**.  
+   - Model jadi lebih **robust** terhadap kata-kata baru atau jarang muncul. 
 
    <img width="851" height="488" alt="image" src="https://github.com/user-attachments/assets/a455bfb5-0b0f-4326-8be3-851c9587b0a1" />
    <img width="844" height="500" alt="image" src="https://github.com/user-attachments/assets/3a9b6a79-2714-471e-8b92-96ac72a45119" />
