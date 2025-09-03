@@ -14,7 +14,7 @@
 **Naive Bayes** adalah algoritma klasifikasi **supervised learning** yang didasarkan pada **teorema Bayes**, dengan asumsi **independensi kondisional** antar fitur (bersifat "naïf").  
 Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika sudah diketahui kelas targetnya. Hal ini membuat perhitungan lebih sederhana dan efisien.
 
-<img src="https://machinelearningknowledge.ai/wp-content/uploads/2018/08/Value-of-K.gif">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Naive_Bayes_Classifier.gif">
 
 ## Cara Kerja
 1. **Hitung prior**  
