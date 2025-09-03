@@ -19,9 +19,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 ## Cara Kerja
 1. **Hitung prior**  
    Estimasi probabilitas awal dari setiap kelas berdasarkan frekuensi di data latih.  
-   `
+   
    $P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}$
-   `
+   
    Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
    
    $P(N) = \frac{8}{8+4} = 0.67$
@@ -62,9 +62,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    
    Contoh: kata **"Lunch"** tidak pernah muncul pada pesan **Spam**.  
    Jika dihitung langsung:
-   `
+   
    $P(Lunch \mid Spam) = \frac{0}{7} = 0$
-   `
+   
    Hasil ini bermasalah karena:
    - Jika ada **satu fitur dengan probabilitas nol**, maka seluruh hasil perkalian posterior akan menjadi **nol**.
    - Akibatnya, pesan langsung dianggap **tidak mungkin** Spam, hanya karena satu kata tidak muncul di data latih.
@@ -74,9 +74,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    - Tambahkan jumlah total kata unik pada penyebut.  
    
    Sehingga perhitungan berubah:
-   ``
+   
    $P(Lunch \mid Spam) = \frac{0 + 1}{7 + 4} = \frac{1}{11}$
-   ``
+   
    Dengan cara ini:
    - Probabilitas tidak pernah benar-benar **0**, hanya menjadi **sangat kecil**.  
    - Model jadi lebih **robust** terhadap kata-kata baru atau jarang muncul. 
@@ -145,6 +145,8 @@ pred = model.predict(X_test)
 print(pred)
 ```
 
+
+To understand more , you guys can watch the youtube videos in the reference
 ## Referensi
 
 - https://scikit-learn.org/stable/modules/naive_bayes.html
