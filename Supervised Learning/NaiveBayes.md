@@ -20,7 +20,13 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 1. **Hitung prior**  
    Estimasi probabilitas awal dari setiap kelas berdasarkan frekuensi di data latih.  
    \[
-   P(C_k) = \frac{\text{jumlah sampel kelas }C_k}{\text{total sampel}}
+   P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}
+   \]
+
+Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
+
+   \[
+   P(N) = \frac{8}{8+4} = 0.67
    \]
 
    <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
