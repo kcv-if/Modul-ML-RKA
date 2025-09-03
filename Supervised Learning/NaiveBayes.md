@@ -24,10 +24,7 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
 Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
 
-   \[
-   P(N) = \frac{8}{8+4} = 0.67
-   \]
-
+   $P(N) = \frac{8}{8+4}$
    <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
 
 
