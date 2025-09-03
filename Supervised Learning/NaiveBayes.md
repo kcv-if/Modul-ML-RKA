@@ -19,9 +19,8 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 ## Cara Kerja
 1. **Hitung prior**  
    Estimasi probabilitas awal dari setiap kelas berdasarkan frekuensi di data latih.  
-   \[
-   P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}
-   \]
+
+   $P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}$
 
 Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
 
