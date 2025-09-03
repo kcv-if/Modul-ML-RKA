@@ -22,11 +22,15 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
    $P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}$
 
-Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
+   Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
 
    $P(N) = \frac{8}{8+4} = 0.67$
+
    <br>
-   <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
+   <p>
+      <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
+   </p>
+   
 
 
 3. **Hitung likelihood per fitur**  
@@ -39,21 +43,15 @@ Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
 4. **Hitung posterior**  
    Kombinasikan prior dan likelihood untuk mendapatkan probabilitas akhir (posterior):
 
-   $$
-   P(C_k \mid x) \propto P(C_k) \times \prod_i P(x_i \mid C_k)
-   $$
+   $P(C_k \mid x) \propto P(C_k) \times \prod_i P(x_i \mid C_k)$
    
    Pilih kelas dengan nilai posterior terbesar.  
    
    Contoh perhitungan untuk pesan `"Dear Friend"`:
    
-   $$
-   P(N) \times P(Dear \mid N) \times P(Friend \mid N) = 0.09
-   $$
+   $P(N) \times P(Dear \mid N) \times P(Friend \mid N) = 0.09$
    
-   $$
-   P(S) \times P(Dear \mid S) \times P(Friend \mid S) = 0.01
-   $$
+   $P(S) \times P(Dear \mid S) \times P(Friend \mid S) = 0.01$
 
    Karena **0.09 > 0.01**, maka pesan diklasifikasikan sebagai **Normal Message (N)**.
 
