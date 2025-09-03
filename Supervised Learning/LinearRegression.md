@@ -13,50 +13,44 @@
 ## Definisi
 **Linear Regression** adalah algoritma regresi **Supervised Learning** yang digunakan untuk memprediksi nilai output berdasarkan hubungan linear dengan input. Model ini mengasumsikan bahwa ada hubungan lurus antara input dan output, di mana output akan berubah secara proporsional terhadap perubahan input.
 
-<<<<<<< HEAD
+**Linear Regression** adalah model statistik untuk memetakan hubungan linier antara fitur $\mathbf{X}$ dan target kontinu $y$. Bentuk umumnya:
+
+$$
+\hat{y} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p
+$$
+
+dengan $\beta$ adalah koefisien yang dipelajari dari data. Parameter biasanya diestimasi menggunakan **Ordinary Least Squares (OLS)**, yaitu meminimalkan jumlah kuadrat selisih antara nilai aktual dan prediksi:
+
+$$
+\min_{\beta} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+$$
+
+**Simple Linear Regression** memakai satu fitur (garis lurus pada 2D), sedangkan **Multiple Linear Regression** memakai banyak fitur.
+
+> Intuisi: kita mencari garis/hiperbidang terbaik yang paling “mendekati” data dalam arti kuadrat error total sekecil mungkin.
+
 ## Cara Kerja
 
 1. **Siapkan data**
-
-   * Bentuk **matriks desain** $X \in \mathbb{R}^{n \times p}$ (n = jumlah sampel, p = jumlah fitur).
-   * Tambahkan kolom 1 untuk **intercept** jika memakai konstanta ($\beta_0$).
+   - Bentuk **matriks desain** $X \in \mathbb{R}^{n \times p}$ (n = jumlah sampel, p = jumlah fitur).
+   - Tambahkan kolom 1 untuk **intercept** jika memakai konstanta ($\beta_0$).
 
 2. **Formulasi fungsi loss (OLS)**
-
-   * Tujuan: meminimalkan **Sum of Squared Errors (SSE)**
-
-     $$
-     \mathcal{L}(\beta) = \|y - X\beta\|_2^2
-     $$
+   - Tujuan: meminimalkan **Sum of Squared Errors (SSE)**, yaitu $\mathcal{L}(\beta)=\lVert y - X\beta \rVert_2^2$.
 
 3. **Estimasi parameter**
-
-   * **Solusi tertutup (Normal Equation)** jika $X^\top X$ dapat diinvers:
-
-     $$
-     \hat{\beta} = (X^\top X)^{-1} X^\top y
-     $$
-   * Praktik umum (seperti di `scikit-learn`): gunakan dekomposisi numerik (QR/SVD) yang lebih stabil daripada menghitung invers secara eksplisit.
-   * Untuk **Ridge** (regularisasi L2):
-
-     $$
-     \hat{\beta}_{\text{ridge}} = (X^\top X + \alpha I)^{-1} X^\top y
-     $$
-   * Alternatif skala-besar: **(Stochastic) Gradient Descent** sampai konvergen.
+   - **Solusi tertutup (Normal Equation)** jika $X^\top X$ dapat diinvers: $\hat{\beta}=(X^\top X)^{-1}X^\top y$.
+   - Praktik umum (seperti di `scikit-learn`): gunakan dekomposisi numerik (QR/SVD) yang lebih stabil daripada menghitung invers secara eksplisit.
+   - Untuk **Ridge** (regularisasi L2): $\hat{\beta}_{\text{ridge}}=(X^\top X+\alpha I)^{-1}X^\top y$.
+   - Alternatif skala-besar: **(Stochastic) Gradient Descent** sampai konvergen.
 
 4. **Prediksi**
-
-   * Setelah $\hat{\beta}$ didapat, prediksi:
-
-     $$
-     \hat{y} = X_{\text{baru}} \hat{\beta}
-     $$
+   - Setelah $\hat{\beta}$ didapat, prediksi: $\hat{y}=X_{\text{baru}}\hat{\beta}$.
 
 5. **Evaluasi & Diagnostik**
-
-   * Ukur performa (MAE/MSE/RMSE/$R^2$).
-   * Cek **residual**: sebaran acak (tidak berpola), varians relatif konstan (homoskedastis).
-   * Jika ada pola non-linear, pertimbangkan rekayasa fitur atau model non-linear.
+   - Ukur performa (MAE/MSE/RMSE).
+   - Cek **residual**: sebaran acak (tidak berpola), varians relatif konstan (homoskedastis).
+   - Jika ada pola non-linear, pertimbangkan rekayasa fitur atau model non-linear.
 
 > Pseudocode singkat
 
@@ -66,9 +60,6 @@ X ← add_intercept(X)              # opsional jika pakai konstanta
 ŷ ← X_new · β
 evaluate(ŷ, y_true)               # RMSE, R², dst.
 ```
-=======
-**Linear Regression** adalah algoritma regresi **Supervised Learning** yang digunakan untuk memprediksi nilai output berdasarkan hubungan linear dengan input. Model ini mengasumsikan bahwa ada hubungan lurus antara input dan output, di mana output akan berubah secara proporsional terhadap perubahan input.
->>>>>>> 444da27e1b627fe33a37f54090ccf3fd125c0778
 
 ## Kelebihan
 * **Sederhana & cepat**: training sangat cepat, cocok untuk baseline.
