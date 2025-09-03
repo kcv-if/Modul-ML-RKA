@@ -13,6 +13,7 @@
 ## Definisi
 **Linear Regression** adalah algoritma regresi **Supervised Learning** yang digunakan untuk memprediksi nilai output berdasarkan hubungan linear dengan input. Model ini mengasumsikan bahwa ada hubungan lurus antara input dan output, di mana output akan berubah secara proporsional terhadap perubahan input.
 
+<<<<<<< HEAD
 ## Cara Kerja
 
 1. **Siapkan data**
@@ -65,6 +66,9 @@ X ← add_intercept(X)              # opsional jika pakai konstanta
 ŷ ← X_new · β
 evaluate(ŷ, y_true)               # RMSE, R², dst.
 ```
+=======
+**Linear Regression** adalah algoritma regresi **Supervised Learning** yang digunakan untuk memprediksi nilai output berdasarkan hubungan linear dengan input. Model ini mengasumsikan bahwa ada hubungan lurus antara input dan output, di mana output akan berubah secara proporsional terhadap perubahan input.
+>>>>>>> 444da27e1b627fe33a37f54090ccf3fd125c0778
 
 ## Kelebihan
 * **Sederhana & cepat**: training sangat cepat, cocok untuk baseline.
