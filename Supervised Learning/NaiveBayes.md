@@ -19,13 +19,13 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 ## Cara Kerja
 1. **Hitung prior**  
    Estimasi probabilitas awal dari setiap kelas berdasarkan frekuensi di data latih.  
-   ``
+   `
    $P(C_k) = \frac{\text{jumlah sampel kelas } C_k}{\text{total sampel}}$
-   ``
+   `
    Contoh: jika terdapat 12 pesan, dengan 8 normal (N) dan 4 spam (S):
-   ``
+   
    $P(N) = \frac{8}{8+4} = 0.67$
-   ``
+   
    <br>
    <p>
       <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
@@ -42,16 +42,16 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
 4. **Hitung posterior**  
    Kombinasikan prior dan likelihood untuk mendapatkan probabilitas akhir (posterior):
-   ``
+   
    $P(C_k \mid x) \propto P(C_k) \times \prod_i P(x_i \mid C_k)$
-   ``
+   
    Pilih kelas dengan nilai posterior terbesar.  
    
    Contoh perhitungan untuk pesan `"Dear Friend"`:
-   ``
+   
    $P(N) \times P(Dear \mid N) \times P(Friend \mid N) = 0.09$
    $P(S) \times P(Dear \mid S) \times P(Friend \mid S) = 0.01$
-   ``
+   
    Karena **0.09 > 0.01**, maka pesan diklasifikasikan sebagai **Normal Message (N)**.
 
    <img width="730" height="372" alt="image" src="https://github.com/user-attachments/assets/0c59f10d-b849-44ba-907d-dd21a1e4e81e" />
@@ -62,9 +62,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    
    Contoh: kata **"Lunch"** tidak pernah muncul pada pesan **Spam**.  
    Jika dihitung langsung:
-   ``
+   `
    $P(Lunch \mid Spam) = \frac{0}{7} = 0$
-   ``
+   `
    Hasil ini bermasalah karena:
    - Jika ada **satu fitur dengan probabilitas nol**, maka seluruh hasil perkalian posterior akan menjadi **nol**.
    - Akibatnya, pesan langsung dianggap **tidak mungkin** Spam, hanya karena satu kata tidak muncul di data latih.
