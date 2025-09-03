@@ -11,6 +11,7 @@
 
 ## Definisi
 
+**Linear Regression** adalah algoritma regresi **Supervised Learning** yang digunakan untuk memprediksi nilai output berdasarkan hubungan linear dengan input. Model ini mengasumsikan bahwa ada hubungan lurus antara input dan output, di mana output akan berubah secara proporsional terhadap perubahan input.
 
 ## Kelebihan
 
