@@ -23,19 +23,30 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    P(C_k) = \frac{\text{jumlah sampel kelas }C_k}{\text{total sampel}}
    \]
 
-2. **Hitung likelihood per fitur**  
+   <img width="1082" height="520" alt="image" src="https://github.com/user-attachments/assets/a4f4f6b8-447d-4dc8-a86c-e76b083dcb63" />
+
+
+3. **Hitung likelihood per fitur**  
    - **Data kontinu** → gunakan distribusi Gaussian.  
    - **Data diskrit** → gunakan model Multinomial.  
-   - **Data biner** → gunakan model Bernoulli.  
+   - **Data biner** → gunakan model Bernoulli.
 
-3. **Hitung posterior**  
+   <img width="1100" height="331" alt="image" src="https://github.com/user-attachments/assets/1f1da253-da9c-48a5-a024-1fc1bac7a8fd" />
+
+4. **Hitung posterior**  
    \[
    P(C_k \mid x) \propto P(C_k) \times \prod_i P(x_i \mid C_k)
    \]  
    Pilih kelas dengan nilai posterior terbesar.
 
-4. **Laplace smoothing**  
+   <img width="730" height="372" alt="image" src="https://github.com/user-attachments/assets/0c59f10d-b849-44ba-907d-dd21a1e4e81e" />
+
+
+6. **Laplace smoothing**  
    Menghindari probabilitas nol jika suatu fitur tidak muncul pada data training.
+   <img width="851" height="488" alt="image" src="https://github.com/user-attachments/assets/a455bfb5-0b0f-4326-8be3-851c9587b0a1" />
+   <img width="844" height="500" alt="image" src="https://github.com/user-attachments/assets/3a9b6a79-2714-471e-8b92-96ac72a45119" />
+
 
 ## Kelebihan
 
