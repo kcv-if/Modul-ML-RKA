@@ -4,6 +4,7 @@
 
 - [Daftar Isi](#daftar-isi)
 - [Definisi](#definisi)
+- [Cara Kerja](#cara-kerja)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
 - [Implementasi](#implementasi)
