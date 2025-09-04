@@ -17,17 +17,22 @@ Klasifikasi merupakan subset dari supervised learning, yang mana tugasnya adalah
 
 Beberapa algoritma klasifikasi meliputi:
 - [K-Nearest Neighbors](KNN.md)
+- [Naive Bayes](NaiveBayes.md)
+- [Logistic Regression]()
 - [Decision Tree]()
 - [Support Vector Machine]()
-- [Logistic Regression]()
+- [Artificial Neural Network]()
 
 ## Regresi
 
 Regresi merupakan subset dari supervised learning, yang mana tugasnya adalah memprediksi nilai kontinu berdasarkan input yang diberikan.
 
 Beberapa algoritma regresi meliputi:
-- [Naive Bayes]()
-- [Linear Regression]()
+- [Linear Regression](LinearRegression.md)
+- [Polynomial Regression]()
+- [Ridge & Lasso Regression]()
+- [Decision Tree]()
+- [Support Vector Machine]()
 
 ## Referensi
 
