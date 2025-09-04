@@ -4,6 +4,7 @@
 
 - [Daftar Isi](#daftar-isi)
 - [Definisi](#definisi)
+- [Cara Kerja](#cara-kerja)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
 - [Implementasi](#implementasi)
@@ -28,6 +29,8 @@ $$d(x, x') = \sqrt{ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ 2 }$$
 **Minkowski (Generalisasi dari L1 & L2)**
 
 $$d(x, x') = \left[ \sum_{i = 1} ^ n ( x_i - x_i' ) ^ p \right] ^ { \frac{1}{p} }$$
+
+## Cara Kerja
 
 Diberikan fitur latih $X \in \mathbb{R}^{n \times d}$, vektor label $Y \in \mathbb{Z} ^ n$ dan data uji $x \in \mathbb{R} ^ {m \times d}$ berikut cara menerapkan KNN:
 1. Tentukan nilai $k$.
