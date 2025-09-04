@@ -97,6 +97,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
 ## Kekurangan
 
+- **Asumsi independensi fitur**: Naive Bayes mengasumsikan bahwa fitur bersifat independen meskipun fitur bisa saja saling berkolerasi.
+- **Sensitif terhadap class imbalance**: Karena Naive Bayes menggunakan probabilitas, label mayoritas dapat mendominasi prediksi dan membuat model bias.
+- **Sensitif terhadap outlier**: Karena perhitungan probabilitas (terutama pada Gaussian Naive Bayes) sangat dipengaruhi oleh nilai ekstrem.
 
 ## Implementasi
 
