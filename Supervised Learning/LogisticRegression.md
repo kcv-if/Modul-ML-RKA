@@ -16,6 +16,8 @@
 
 ## Kelebihan
 
+## Kekurangan
+
 ## Implementasi
 
 ## Referensi
