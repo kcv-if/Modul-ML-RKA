@@ -19,43 +19,54 @@
 di mana fungsi logistik atau sigmoid dapat dirumuskan menjadi sebagai berikut.
 
 $$
-\hat y = \frac{ 1 }{ 1 + \exp \left[ - \left( \beta_0 + \sum ^ n _ { i = 1 } \beta_i x_i \right) \right] }
+\sigma ( x ) = \frac{ 1 }{ 1 + \exp ^ { -x } }
+$$
+
+Lalu model juga menggunakan fungsi Linear Regression.
+
+$$
+z = \beta_0 + \sum ^ n _ { i = 1 } \beta_i x_i
+$$
+
+Sehingga rumus probabilitas dari model Logistic Regression dapat dirumuskan sebagai berikut.
+
+$$
+P ( Y = y | X ) = \sigma ( z ) = \frac{ 1 }{ 1 + \exp [ \beta_0 + \sum ^ n _ { i = 1 } \beta_i x_i ] }
 $$
 
 di mana $x$ adalah masukan dengan panjang $n$ dan $\beta$ merupakan parameter yang dipelajari.
 
 ## Cara Kerja
 
-<!-- 1. **Siapkan data**
+1. **Siapkan data**
     - Bentuk **matriks desain** $X \in \mathbb{R}^{n \times p}$ (n = jumlah sampel, p = jumlah fitur).
     - Tambahkan kolom 1 untuk **intercept** jika memakai konstanta ($\beta_0$).
 
 2. **Hitung loss**
     
-    Minimalisir **Negative Log-Likelihood (Cross Entropy Loss)**, yaitu:
+    Minimalisir **Log Loss / Cross Entropy Loss**, yaitu:
     
     $$
-    \begin{align*}
-    - \log \left[ L( \beta ) \right ] &=  - \sum ^ n _ { i = 1 } \left [ y_i \log \hat y_i + ( 1 - y_i ) \log ( 1 - \hat y_i ) \right ] \\
-    &= - \sum ^ n _ { i = 1 } \left [ y_i \log \hat y_i + \log ( 1 - \hat y_i ) - y_i \log ( 1 - \hat y_i ) \right ] \\
-    &= - \sum ^ n _ { i = 1 } \left [ \log ( 1 - \hat y_i ) + y_i \log \frac{ \hat y_i }{ 1 - \hat y_i } \right ] \\
-    \end{align*}
+    J ( \beta ) =  - \frac{ 1 }{ n } \sum ^ n _ { i = 1 } \left [ y_i \log \sigma ( z_i ) + ( 1 - y_i ) \log ( 1 - \sigma ( z_i ) ) \right ]
     $$ 
 
 3. **Optimasi parameter**
 
     Perbarui parameter dengan gradien dari loss.
-    $$ 
+    $$
     \begin{align*}
-    \frac{ \partial \log \left[ L ( \beta ) \right ] }{ \partial \beta } &= - \sum ^ n _ { i = 1 } \left [\frac{ 1 }{ ( 1 - \hat y_i ) \ln (10) } +  \right ] \\ 
-    &= \text{magic here} \\
-    &= \sum ^ n _ { i = 1 } ( y_i - \hat y_i ) x_{ij}  
+    \frac{ \partial J }{ \partial \beta_j } &=  \sum ^ n _ { i = 1 } ( y_i - \sigma ( z_i ) ) x_{ ij } \\
+    \beta_j &= \beta_j - \alpha \cdot \frac{ \partial J }{ \partial \beta_j }
     \end{align*}
     $$
 
 4. **Prediksi**
 
-5. **Evaluasi & Diagnostik** -->
+    Dapatkan kelas berdasarkan probabilitas prediksi model.
+
+    $$
+    \hat y = \argmax_i P ( Y = i | X )
+    $$
 
 ## Kelebihan
 - **Performa baik pada data linear**: Logistic Regression bekerja secara optimal apabila data relatif dapat dipisahkan secara linear. 
