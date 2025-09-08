@@ -22,4 +22,4 @@
 
 ## Referensi
 
-- [Scikit-Learn](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+- [Scikit-Learn - Logistic Regression](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)

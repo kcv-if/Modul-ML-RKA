@@ -101,5 +101,4 @@ print(y_pred)
 ```
 
 ## Referensi
-
-
+- [Scikit-Learn - Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)

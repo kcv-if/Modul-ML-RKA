@@ -115,4 +115,4 @@ print(pred)
 
 ## Referensi
 
-- [Scikit-Learn](https://scikit-learn.org/stable/modules/neighbors.html#classification)
+- [Scikit-Learn - KNN](https://scikit-learn.org/stable/modules/neighbors.html#classification)

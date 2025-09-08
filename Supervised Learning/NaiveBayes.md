@@ -152,6 +152,5 @@ print(pred)
 
 To understand more , you guys can watch the youtube videos in the reference
 ## Referensi
-
-- https://scikit-learn.org/stable/modules/naive_bayes.html
-- https://youtu.be/O2L2Uv9pdDA?si=d0QOVtqqAe_toA0h
+- [Scikit-Learn - Naive Bayes](https://scikit-learn.org/stable/modules/naive_bayes.html)
+- [Youtube - Naive Bayes, Clearly Explained!!!](https://scikit-learn.org/stable/modules/naive_bayes.html)
