@@ -69,6 +69,26 @@ di mana $x$ adalah masukan dengan panjang $n$ dan $\beta$ merupakan parameter ya
 
 ## Implementasi
 
+```python
+from sklearn.linear_model import LogisticRegression
+
+# Data train (jam belajar vs lulus/gagal)
+X_train = [[1], [2], [3], [4], [5], [6]]
+y_train = [0, 0, 0, 0, 1, 1]  # 0 = gagal, 1 = lulus
+
+# Data uji / test
+X_test = [[3.5], [5.5]]
+
+# Inisialisasi & melatih model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Prediksi nilai target untuk data uji
+y_pred = model.predict(X_test)
+print(y_pred)
+```
+
+
 ## Referensi
 
 - [Scikit-Learn - Logistic Regression](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
