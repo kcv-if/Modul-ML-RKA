@@ -18,7 +18,7 @@ Klasifikasi merupakan subset dari supervised learning, yang mana tugasnya adalah
 Beberapa algoritma klasifikasi meliputi:
 - [K-Nearest Neighbors](KNN.md)
 - [Naive Bayes](NaiveBayes.md)
-- [Logistic Regression]()
+- [Logistic Regression](LogisticRegression.md)
 - [Decision Tree]()
 - [Support Vector Machine]()
 - [Artificial Neural Network]()
