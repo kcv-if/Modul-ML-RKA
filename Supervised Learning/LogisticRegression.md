@@ -58,8 +58,14 @@ di mana $x$ adalah masukan dengan panjang $n$ dan $\beta$ merupakan parameter ya
 5. **Evaluasi & Diagnostik** -->
 
 ## Kelebihan
+- **Performa baik pada data linear**: Logistic Regression bekerja secara optimal apabila data relatif dapat dipisahkan secara linear. 
+- **Lebih tahan terhadap overfitting pada data dengan dimensi rendah**: Logistic Regression relatif stabil, meskipun pada dataset berdimensi tinggi bisa tetap overfit. Untuk mengatasi hal tersebut dapat menggunakan teknik Regularisasi (L1/L2).
+- **Interpretasi jelas**: Logistic Regression memberikan informasi tidak hanya seberapa besar pengaruh variabel (ukuran koefisien), tetapi juga arah hubungan (positif/negatif).
+- **Efisien dan mudah digunakan**: Logistic Regression mudah diimplementasikan, diinterpretasikan, dan sangat efisien untuk dilatih.
 
 ## Kekurangan
+- **Asumsi linearitas**: Logistic Regression mengasumsikan hubungan linier antara variabel independen dan variabel dependen, padahal data pada dunia nyata sering kali non-linear dan tidak rapi.
+- **Kurang cocok untuk data berdimensi tinggi**: Jika jumlah fitur lebih banyak daripada jumlah observasi, model cenderung untuk overfit.
 
 ## Implementasi
 
