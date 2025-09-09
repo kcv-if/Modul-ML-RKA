@@ -46,27 +46,21 @@ di mana $x$ adalah masukan dengan panjang $n$ dan $\beta$ merupakan parameter ya
     
     Minimalisir **Log Loss / Cross Entropy Loss**, yaitu:
     
-    $$
-    J ( \beta ) =  - \frac{ 1 }{ n } \sum ^ n _ { i = 1 } \left [ y_i \log \sigma ( z_i ) + ( 1 - y_i ) \log ( 1 - \sigma ( z_i ) ) \right ]
-    $$ 
+    $$J ( \beta ) =  - \frac{ 1 }{ n } \sum ^ n _ { i = 1 } \left [ y_i \log \sigma ( z_i ) + ( 1 - y_i ) \log ( 1 - \sigma ( z_i ) ) \right ]$$
 
-3. **Optimasi parameter**
+4. **Optimasi parameter**
 
     Perbarui parameter dengan gradien dari loss.
-    $$
-    \begin{align*}
-    \frac{ \partial J }{ \partial \beta_j } &=  \sum ^ n _ { i = 1 } ( y_i - \sigma ( z_i ) ) x_{ ij } \\
-    \beta_j &= \beta_j - \alpha \cdot \frac{ \partial J }{ \partial \beta_j }
-    \end{align*}
-    $$
+   
+    $$\frac{ \partial J }{ \partial \beta_j } = \sum ^ n_{ i = 1 } ( y_i - \sigma ( z_i ) ) x_{ ij }$$
+   
+    $$\beta_j = \beta_j - \alpha \cdot \frac{ \partial J }{ \partial \beta_j }$$
 
-4. **Prediksi**
+6. **Prediksi**
 
     Dapatkan kelas berdasarkan probabilitas prediksi model.
 
-    $$
-    \hat y = \argmax_i P ( Y = i | X )
-    $$
+    $$\hat y = \text{argmax}_i P ( Y = i | X )$$
 
 ## Kelebihan
 - **Performa baik pada data linear**: Logistic Regression bekerja secara optimal apabila data relatif dapat dipisahkan secara linear. 
