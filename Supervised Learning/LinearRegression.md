@@ -64,7 +64,7 @@ $$
 
 ### 2) Multiple Linear Regression
 
-Ketika fitur **lebih dari satu**, garis pada 2D “melebar” menjadi **bidang/hiperbidang**:
+Ketika fiturnya **lebih dari satu**, maka garis pada 2D melebar menjadi **bidang/hiperbidang**:
 
 $$
 \hat{y} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p
@@ -79,7 +79,7 @@ $$
 * **Simple Linear Regression**: hanya **satu** fitur (garis di bidang 2D).
 * **Multiple Linear Regression**: **banyak** fitur (garis/hiperbidang di dimensi lebih tinggi).
 
-> **Kesimpulan** kita mencari garis/hiperbidang yang paling “mendekati” data sehingga total **kuadrat selisih** (error) terkecil.
+> **Kesimpulan:** kita mencari garis/hiperbidang yang paling “mendekati” data sehingga total **kuadrat selisih** (error) terkecil.
 
 ## Cara Kerja
 
