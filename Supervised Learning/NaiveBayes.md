@@ -34,14 +34,50 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    
 
 
-3. **Hitung likelihood per fitur**  
-   - **Data kontinu** → gunakan distribusi Gaussian.  
-   - **Data diskrit** → gunakan model Multinomial.  
+2. **Hitung likelihood per fitur**  
+   - **Data kontinu** → gunakan distribusi Gaussian.
+     #### Contoh sederhana:
+      Misal klasifikasi **Sehat (N)** vs **Sakit (S)** dari **suhu tubuh** (°C).
+      **Data latih**
+      - N: 36.4, 36.7, 36.5 → rata-rata $\mu_N \approx 36.53$, simpangan baku $\sigma_N \approx 0.125$  
+      - S: 38.0, 37.8, 38.2 → $\mu_S \approx 38.00$, $\sigma_S \approx 0.163$
+      
+      **Rumus likelihood Gaussian**  
+      $p(x\mid C)=\dfrac{1}{\sqrt{2\pi}\,\sigma_C}\exp\!\left(-\dfrac{(x-\mu_C)^2}{2\sigma_C^2}\right)$
+      
+      **Contoh hitung**
+      - Untuk $x = 37.0$:  
+        $p(37.0\mid N)\approx \mathbf{0.0029}$,  
+        $p(37.0\mid S)\approx \mathbf{1.76\times 10^{-8}}$
+      - Untuk $x = 38.1$:  
+        $p(38.1\mid N)\approx \mathbf{1.75\times 10^{-34}}$,  
+        $p(38.1\mid S)\approx \mathbf{2.03}$
+
+   - **Data diskrit** → gunakan model Multinomial.
+     <img width="1393" height="697" alt="image" src="https://github.com/user-attachments/assets/ba58fb95-64d9-4bdb-9b96-18d3ef1ce848" />
+
    - **Data biner** → gunakan model Bernoulli.
+     #### Contoh sederhana:
+      Fitur hanya **ada (1)** atau **tidak (0)**.  
+      **Fitur:** `has_link`, `has_dear`, `has_lunch`
+      
+      **Frekuensi hadir (1) di data latih** — per kelas ada 5 dokumen:  
+      - Spam: link=4/5, dear=3/5, lunch=0/5  
+      - Normal: link=1/5, dear=1/5, lunch=3/5
+      
+      **Smoothing Bernoulli ($\alpha=1$):**  
+      $P(f{=}1\mid C)=\dfrac{n_1+1}{n_C+2}$, dan $P(f{=}0\mid C)=1-P(f{=}1\mid C)$
+      
+      **Prob. hadir setelah smoothing**
+      - Spam: $P(\text{link}=1)=\mathbf{0.714}$, $P(\text{dear}=1)=\mathbf{0.571}$, $P(\text{lunch}=1)=\mathbf{0.143}$  
+      - Normal: $P(\text{link}=1)=\mathbf{0.286}$, $P(\text{dear}=1)=\mathbf{0.286}$, $P(\text{lunch}=1)=\mathbf{0.571}$
+      
+      **Contoh hitung likelihood vektor fitur**  
+      Untuk fitur (`link`=1, `dear`=1, `lunch`=0):  
+      - $p(\mathbf{x}\mid \text{Spam})=0.714\times 0.571\times (1-0.143)=\mathbf{0.3499}$  
+      - $p(\mathbf{x}\mid \text{Normal})=0.286\times 0.286\times (1-0.571)=\mathbf{0.0350}$
 
-   <img width="1100" height="331" alt="image" src="https://github.com/user-attachments/assets/1f1da253-da9c-48a5-a024-1fc1bac7a8fd" />
-
-4. **Hitung posterior**  
+3. **Hitung posterior**  
    Kombinasikan prior dan likelihood untuk mendapatkan probabilitas akhir (posterior):
    
    $P(C_k \mid x) \propto P(C_k) \times \prod_i P(x_i \mid C_k)$
@@ -57,7 +93,7 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
 
    <img width="730" height="372" alt="image" src="https://github.com/user-attachments/assets/0c59f10d-b849-44ba-907d-dd21a1e4e81e" />
 
-5. Laplace Smoothing
+4. Laplace Smoothing
 
    Masalah utama pada Naive Bayes adalah ketika suatu **fitur tidak pernah muncul** dalam data latih untuk kelas tertentu.  
    
@@ -80,10 +116,9 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
    
    Dengan cara ini:
    - Probabilitas tidak pernah benar-benar **0**, hanya menjadi **sangat kecil**.  
-   - Model jadi lebih **robust** terhadap kata-kata baru atau jarang muncul. 
-
-   <img width="851" height="488" alt="image" src="https://github.com/user-attachments/assets/a455bfb5-0b0f-4326-8be3-851c9587b0a1" />
-   <img width="844" height="500" alt="image" src="https://github.com/user-attachments/assets/3a9b6a79-2714-471e-8b92-96ac72a45119" />
+   - Model jadi lebih **robust** terhadap kata-kata baru atau jarang muncul.
+     <img width="851" height="488" alt="image" src="https://github.com/user-attachments/assets/a455bfb5-0b0f-4326-8be3-851c9587b0a1" />
+     <img width="844" height="500" alt="image" src="https://github.com/user-attachments/assets/3a9b6a79-2714-471e-8b92-96ac72a45119" />
 
 
 ## Kelebihan
