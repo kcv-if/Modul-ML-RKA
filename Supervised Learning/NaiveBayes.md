@@ -189,3 +189,4 @@ To understand more , you guys can watch the youtube videos in the reference
 ## Referensi
 - [Scikit-Learn - Naive Bayes](https://scikit-learn.org/stable/modules/naive_bayes.html)
 - [Youtube - Naive Bayes, Clearly Explained!!!](https://www.youtube.com/watch?v=O2L2Uv9pdDA)
+- [Youtube - Gaussian Naive Bayes, Clearly Explained!!!](https://www.youtube.com/watch?v=H3EjCKtlVog)
