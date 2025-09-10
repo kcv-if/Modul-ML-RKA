@@ -43,7 +43,7 @@ Dengan kata lain, satu fitur dianggap tidak memengaruhi fitur lainnya, jika suda
       - S: 38.0, 37.8, 38.2 → $\mu_S \approx 38.00$, $\sigma_S \approx 0.163$
       
       **Rumus likelihood Gaussian**  
-      $p(x\mid C)=\dfrac{1}{\sqrt{2\pi}\,\sigma_C}\exp\!\left(-\dfrac{(x-\mu_C)^2}{2\sigma_C^2}\right)$
+      $p(x\mid C)=\dfrac{1}{\sqrt{2\pi}\ \sigma_C}\ \exp\left(-\dfrac{(x-\mu_C)^2}{2\sigma_C^2}\right)$
       
       **Contoh hitung**
       - Untuk $x = 37.0$:  
