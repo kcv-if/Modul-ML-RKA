@@ -28,7 +28,7 @@
 6) Bias kelas , kelas mayoritas dapat mendominasi pembelahan (split), menyebabkan bias.
 
 ## Implementasi
-```
+```python
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
