@@ -20,12 +20,10 @@
 ## Kelebihan
 
 ## Kekurangan
-1) Overfitting , pohon mudah sekali menyesuaikan noise sehingga tidak generalisasi.
-2) Instabilitas, perubahan kecil pada data bisa menghasilkan pohon yang sangat berbeda.
-3) Prediksi potongan (piecewise-constant) , output tidak halus, buruk untuk ekstrapolasi.
-4) Pembelajaran serakah (greedy) , heuristik lokal, tidak menjamin solusi optimal global.
-5) Konsep sulit , XOR, parity, multiplexer sulit diekspresikan oleh pohon sederhana.
-6) Bias kelas , kelas mayoritas dapat mendominasi pembelahan (split), menyebabkan bias.
+1) Overfitting , Decision Tree bisa tumbuh terlalu dalam dan rumit, menyesuaikan setiap detail termasuk noise (data yang tidak mewakili pola sebenarnya).misal jika ada 1 data outlier, pohon bisa membuat cabang khusus hanya untuk data itu = memicu overfitting
+2) Perubahan kecil pada data (menambah/menghapus 1 sampel) bisa menghasilkan struktur pohon yang sangat berbeda.
+3) Pembelajaran serakah (greedy) ,Pohon dibentuk dengan memilih split terbaik di tiap langkah secara lokal (greedy) sehingga tidak menjamin struktur pohon terbaik secara keseluruhan (global optimal).
+4) Bias kelas , kelas mayoritas dapat mendominasi pembelahan (split), menyebabkan bias.
 
 ## Implementasi
 ```python
