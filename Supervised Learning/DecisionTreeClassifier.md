@@ -3,34 +3,96 @@
 ## Daftar Isi
 
 - [Daftar Isi](#daftar-isi)
-- [Pendahuluan](#pendahuluan)
 - [Definisi](#definisi)
 - [Cara Kerja](#cara-kerja)
+- [Metode Pemisahan](#metode-pemisahan)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
 - [Implementasi](#implementasi)
 - [Referensi](#referensi)
-
-## Pendahuluan
 
 ## Definisi
 Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dalam machine learning untuk membantu pengambilan keputusan. Model ini memetakan berbagai pilihan dan hasil yang mungkin berdasarkan fitur-fitur dalam data.
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/788afd65-ea70-4f8a-88d2-3e2e2b8ebdb0" />
 
-#### Struktur dasar Decission Tree
+#### Struktur dasar Decision Tree
 - Root Node: Titik awal yang mewakili seluruh dataset.
 - Branches: Jalur yang menghubungkan antar node, menunjukkan alur keputusan.
 - Internal Nodes: Titik di mana keputusan dibuat berdasarkan fitur tertentu.
 - Leaf Nodes: Titik akhir yang menunjukkan hasil atau prediksi akhir.
 
-#### Tipe" Decission Tree
+#### Tipe" Decision Tree
 - **Classification Tree:**  
   Digunakan untuk memprediksi hasil kategorikal seperti spam atau bukan spam. Tipe ini membagi data berdasarkan fitur-fitur tertentu untuk mengklasifikasikan data ke dalam kategori yang telah ditentukan sebelumnya.
 - **Regression Tree:**  
   Digunakan untuk memprediksi hasil kontinu seperti harga rumah. Tipe ini memberikan prediksi berupa nilai numerik berdasarkan fitur-fitur input.
 
 ## Cara Kerja
+1) **Mulai dari Root Node**  
+  Proses dimulai dengan seluruh data berada di node akar (root). Sebelum pembentukan pohon dimulai, pengguna menentukan [Metode Pemisahan](#metode-pemisahan) seperti Gini Impurity atau Entropy saat menginisialisasi model.
+2) **Evaluasi Fitur untuk Split.**  
+  Setiap fitur diuji untuk melihat seberapa baik ia dapat memisahkan data. Ini dilakukan dengan menghitung nilai impurity (ketidakmurnian) sebelum dan sesudah pemisahan.
+3) **Pilih Split Terbaik.**  
+  Fitur dan nilai threshold yang menghasilkan penurunan impurity terbesar akan dipilih sebagai split.
+4) **Buat cabang dan Ulangi.**  
+  Proses ini diulang secara rekursif untuk setiap cabang hingga mencapai kondisi berhenti (misalnya: kedalaman maksimum, jumlah sampel minimum, atau impurity nol).
+5) **Prediksi di Leaf Node.**  
+
+## Metode Pemisahan
+Berikut adalah metode split yang umum digunakan dalam Decision Tree, khususnya untuk **Klasifikasi**:
+
+1) **Gini Impurity.**  
+   Gini Impurity mengukur seberapa besar kemungkinan sebuah sampel akan salah diklasifikasikan jika dipilih secara acak dari suatu node.  
+   - Nilai **0** → node sangat murni (semua data dalam satu kelas).  
+   - Semakin mendekati **0.5** → node semakin tidak murni (data tersebar di beberapa kelas).  
+
+   **Rumus Gini:**
+
+   $$Gini = 1 - \sum_{i=1}^{K} p_i^2$$
+
+   di mana \( p_i \) adalah proporsi sampel dari kelas ke-\( i \) dalam node tersebut.  
+
+   **Contoh:**  
+   Jika sebuah node memiliki 70% data kelas A dan 30% kelas B:  
+
+   $$Gini = 1 - (0.7^2 + 0.3^2) = 1 - (0.49 + 0.09) = 0.42$$
+   
+2) **Entropy and Information Gain.**  
+   Entropy mengukur tingkat ketidakpastian dalam distribusi kelas. Semakin tinggi entropy, semakin acak data tersebut. Tujuan split adalah **mengurangi entropy**, sehingga node lebih homogen.  
+   - **Entropy = 0** → node murni (semua data satu kelas).  
+   - **Entropy maksimum (misalnya 1 untuk dua kelas seimbang)** → distribusi data benar-benar acak.  
+
+   **Rumus Entropy:**
+
+   $$Entropy = - \sum_{i=1}^{K} p_i \log_2(p_i)$$
+
+   dengan \( p_i \) adalah proporsi sampel dari kelas ke-\( i \).  
+
+   **Rumus Information Gain (IG):**
+
+   $$IG = Entropy_{\text{parent}} - \sum_{j=1}^{n} \frac{N_j}{N} \cdot Entropy_j$$
+
+   dengan:  
+   - $$Entropy_{\text{parent}}$$ = entropy sebelum split,  
+   - $$Entropy_j$$ = entropy cabang ke-\( j \),  
+   - $$N_j$$ = jumlah sampel di cabang ke-\( j \),  
+   - $$N$$ = total sampel.  
+
+   **Contoh:**  
+   Jika sebuah node berisi 50% kelas A dan 50% kelas B:  
+
+   $$Entropy = - (0.5 \log_2 0.5 + 0.5 \log_2 0.5) = 1$$  
+
+   Jika setelah split, setiap cabang hanya berisi satu kelas → entropy cabang = 0, sehingga:  
+
+   $$IG = 1 - 0 = 1$$
+
+#### Contoh Implementasi Split (Scikitlearn):
+```
+DecisionTreeClassifier(criterion='gini')       # Untuk klasifikasi dengan Gini
+DecisionTreeClassifier(criterion='entropy')    # Untuk klasifikasi dengan Entropy
+```
 
 ## Kelebihan
 1) **Serbaguna.**  
