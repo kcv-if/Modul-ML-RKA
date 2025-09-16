@@ -14,10 +14,33 @@
 ## Pendahuluan
 
 ## Definisi
+Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dalam machine learning untuk membantu pengambilan keputusan. Model ini memetakan berbagai pilihan dan hasil yang mungkin berdasarkan fitur-fitur dalam data.
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/788afd65-ea70-4f8a-88d2-3e2e2b8ebdb0" />
+
+#### Struktur dasar Decission Tree
+- Root Node: Titik awal yang mewakili seluruh dataset.
+- Branches: Jalur yang menghubungkan antar node, menunjukkan alur keputusan.
+- Internal Nodes: Titik di mana keputusan dibuat berdasarkan fitur tertentu.
+- Leaf Nodes: Titik akhir yang menunjukkan hasil atau prediksi akhir.
+
+#### Tipe" Decission Tree
+- **Classification Tree:**  
+  Digunakan untuk memprediksi hasil kategorikal seperti spam atau bukan spam. Tipe ini membagi data berdasarkan fitur-fitur tertentu untuk mengklasifikasikan data ke dalam kategori yang telah ditentukan sebelumnya.
+- **Regression Tree:**  
+  Digunakan untuk memprediksi hasil kontinu seperti harga rumah. Tipe ini memberikan prediksi berupa nilai numerik berdasarkan fitur-fitur input.
 
 ## Cara Kerja
 
 ## Kelebihan
+1) **Serbaguna.**  
+  Dapat dipakai untuk **klasifikasi** dan **regresi**.
+2) **Tanpa Skala Fitur.**  
+  Tidak perlu normalisasi/standarisasi fitur numerik terlebih dahulu.
+3) **Menangani Hubungan Non-Linear.**  
+  Mampu menangkap hubungan kompleks dan non-linear antara fitur dan hasil secara efektif.
+4) **Interpretabilitas Tinggi.**  
+  Struktur pohon yang jelas memudahkan pengguna memahami alasan di balik setiap keputusan yang diambil.
 
 ## Kekurangan
 1) Overfitting , Decision Tree bisa tumbuh terlalu dalam dan rumit, menyesuaikan setiap detail termasuk noise (data yang tidak mewakili pola sebenarnya).misal jika ada 1 data outlier, pohon bisa membuat cabang khusus hanya untuk data itu = memicu overfitting
