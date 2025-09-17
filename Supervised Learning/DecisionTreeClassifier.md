@@ -30,7 +30,7 @@ Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dala
 
 ## Cara Kerja
 1) **Mulai dari Root Node**  
-  Proses dimulai dengan seluruh data berada di node akar (root). Sebelum pembentukan pohon dimulai, pengguna menentukan [Metode Pemisahan](#metode-pemisahan) seperti Gini Impurity atau Entropy saat menginisialisasi model.
+  Proses dimulai dengan seluruh data berada di node akar (root). Sebelum pembentukan pohon dimulai, kita harus menentukan [Metode Pemisahan](#metode-pemisahan) seperti Gini Impurity atau Entropy saat menginisialisasi model.
 2) **Evaluasi Fitur untuk Split.**  
   Setiap fitur diuji untuk melihat seberapa baik ia dapat memisahkan data. Ini dilakukan dengan menghitung nilai impurity (ketidakmurnian) sebelum dan sesudah pemisahan.
 3) **Pilih Split Terbaik.**  
