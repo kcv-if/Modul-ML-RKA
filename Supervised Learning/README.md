@@ -19,7 +19,7 @@ Beberapa algoritma klasifikasi meliputi:
 - [K-Nearest Neighbors](KNN.md)
 - [Naive Bayes](NaiveBayes.md)
 - [Logistic Regression](LogisticRegression.md)
-- [Decision Tree]()
+- [Decision Tree](DecisionTreeClassifier.md)
 - [Support Vector Machine]()
 - [Artificial Neural Network]()
 
