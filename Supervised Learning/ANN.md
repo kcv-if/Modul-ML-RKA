@@ -89,8 +89,39 @@ Neural network merupakan sebuah model yang terdiri dari berbagai layer. Masukan 
    Teruskan masukan dari layer paling awal hingga paling akhir untuk mendapatkan prediksi.
 
 ## Kelebihan
+- **Generalization**
+
+   ANN dapat melakukan generalisasi dari data latih ke data yang belum pernah dilihat, sehingga mampu menangani tugas baru tanpa retraining penuh.
+   
+- **Parallel Processing**
+
+   Mampu memproses beberapa input secara bersamaan, efisien untuk tugas yang memerlukan komputasi paralel.
+
+- **Fault Tolerance / Robustness**
+
+   Tetap bisa berfungsi meski terdapat beberapa komponen yang gagal, karena pemrosesan tersebar di banyak node.
+
+- **Non-linear Problem Solving**
+
+   ANN dapat memodelkan hubungan kompleks dan non-linear antara input dan output.
 
 ## Kekurangan
+- **Memerlukan Data yang Banyak**
+   
+   Untuk menghasilkan model yang akurat, ANN biasanya membutuhkan dataset yang besar dan berkualitas tinggi.
+
+- **Interpretability / Black Box**
+
+   Sulit memahami dasar keputusan yang dibuat ANN, sehingga tidak selalu dapat diandalkan, terutama di bidang seperti kesehatan dan keuangan.
+
+- **Memerlukan Waktu dan Sumber Daya Tinggi**
+
+   Pelatihan ANN bisa sangat lambat dan membutuhkan komputasi tinggi, terutama untuk jaringan besar dan data yang banyak.
+
+- **Overfitting**
+   
+   Model dapat menghafal data latih sehingga buruk dalam generalisasi. Hal ini mengurangi performa pada data nyata yang belum pernah dilihat.
+
 
 ## Implementasi
 
