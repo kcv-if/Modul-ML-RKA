@@ -18,7 +18,7 @@
 
 Secara matematis, ANN dapat dirumuskan menjadi seperti berikut:
 
-$$ f : \mathbb{R} ^ m \rarr \mathbb{R} ^ n $$
+$$ f : \mathbb{R}^m \to \mathbb{R}^n $$
 
 dimana $ m $ adalah ukuran input dan $ n $ adalah ukuran output.
 
