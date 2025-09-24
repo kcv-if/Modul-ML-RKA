@@ -20,8 +20,8 @@ Beberapa algoritma klasifikasi meliputi:
 - [Naive Bayes](NaiveBayes.md)
 - [Logistic Regression](LogisticRegression.md)
 - [Decision Tree](DecisionTreeClassifier.md)
-- [Support Vector Machine]()
-- [Artificial Neural Network]()
+- [Support Vector Machine](SVM.md)
+- [Artificial Neural Network](ANN.md)
 
 ## Regresi
 
