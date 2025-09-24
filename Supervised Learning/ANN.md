@@ -20,7 +20,7 @@ Secara matematis, ANN dapat dirumuskan menjadi seperti berikut:
 
 $$ f : \mathbb{R}^m \to \mathbb{R}^n $$
 
-dimana $ m $ adalah ukuran input dan $ n $ adalah ukuran output.
+dimana $m$ adalah ukuran input dan $n$ adalah ukuran output.
 
 Komponen dari ANN meliputi:
 
@@ -30,9 +30,9 @@ Neuron merupakan sebuah unit dasar dalam neural network. Setiap neuron menerima 
 
 $$ y = \sum w_i x_i + b $$
 
-dimana $ x_i $ merupakan input ke-$ i $, $ w_i $ adalah bobot dari input $ x_i $ dan $ b $ adalah konstanta atau bias.
+dimana $x_i$ merupakan input ke- $i$, $w_i$ adalah bobot dari input $x_i$ dan $b$ adalah konstanta atau bias.
 
-Dalam neuron, parameter $ w $ dan $ b $ merupakan hal yang akan dipelajari dan disempurnakan oleh model.
+Dalam neuron, parameter $w$ dan $b$ merupakan hal yang akan dipelajari dan disempurnakan oleh model.
 
 ### Layer 
 
@@ -40,7 +40,7 @@ Layer merupakan kumpulan neuron pada tahap yang sama. Sehingga nilai keluaran se
 
 $$ y_j = \sum w_{ ij } x_i + b_j $$
 
-dimana $ y_j $ adalah keluaran neuron ke-$ j $, $ w_{ ij } $ merupakan bobot dari input ke-$ i $ yang terhubung pada neuron ke- $ j $ dan $ b_j $ adalah konstanta atau bias pada neuron ke-$ j $.
+dimana $y_j$ adalah keluaran neuron ke- $j$, $w_{ ij }$ merupakan bobot dari input ke- $i$ yang terhubung pada neuron ke- $j$ dan $b_j$ adalah konstanta atau bias pada neuron ke- $j$.
 
 Terdapat berbagai jenis layer serta tujuannya, yakni:
 
@@ -56,7 +56,7 @@ Activation memperbolehkan model untuk mempelajari data yang bersifat nonlinear d
 
 $$ z = f(x) $$
 
-dimana $ f(x) $ merupakan fungsi aktivasi. Beberapa contoh dari fungsi aktivasi meliputi:
+dimana $f(x)$ merupakan fungsi aktivasi. Beberapa contoh dari fungsi aktivasi meliputi:
 
 <img src="https://tse4.mm.bing.net/th/id/OIP.xIsRsTdRQjtsbr0Jt2rNAwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" />
 
