@@ -74,7 +74,7 @@ Cara kerja SVM dapat dipecah menjadi beberapa konsep inti:
     
     Kernel **RBF (Radial Basis Function)** adalah salah satu *kernel* paling kuat dan umum digunakan dalam SVM, terutama untuk menangani masalah klasifikasi yang sangat kompleks dan tidak dapat dipisahkan secara linear. Keajaiban sesungguhnya dari RBF terletak pada kemampuannya untuk melakukan transformasi data ke **ruang fitur berdimensi tak terbatas**.
     
-    Bayangkan data Anda begitu rumit dan tumpang tindih sehingga menambahkan satu atau dua dimensi baru pun tidak cukup untuk memisahkannya. Kernel RBF mengatasi ini dengan memproyeksikan setiap titik data ke sebuah ruang dengan jumlah dimensi yang tak terhingga. Di dalam ruang yang luas ini, secara teoretis dijamin selalu ada sebuah *hyperplane* yang dapat memisahkan kelas-kelas data secara sempurna.
+    Bayangkan datamu begitu rumit dan tumpang tindih sehingga menambahkan satu atau dua dimensi baru pun tidak cukup untuk memisahkannya. Kernel RBF mengatasi ini dengan memproyeksikan setiap titik data ke sebuah ruang dengan jumlah dimensi yang tak terhingga. Di dalam ruang yang luas ini, secara teoretis dijamin selalu ada sebuah *hyperplane* yang dapat memisahkan kelas-kelas data secara sempurna.
 
     Tentu saja, komputer tidak benar-benar menciptakan dan menghitung koordinat dalam dimensi tak terbatas. RBF menggunakan rumus sederhana untuk menghitung **skor kesamaan (similarity score)** antara dua titik, yang hasilnya setara dengan *dot product* di antara kedua titik tersebut seandainya mereka berada di ruang dimensi tak terbatas.
 
