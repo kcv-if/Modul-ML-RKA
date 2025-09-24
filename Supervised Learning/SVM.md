@@ -1,4 +1,4 @@
-# Logistic Regression
+# Support Vector Machine (SVM)
 
 ## Daftar Isi
 
@@ -11,7 +11,14 @@
 - [Referensi](#referensi)
 
 ## Definisi
+Support Vector Machine (SVM) adalah salah satu algoritma supervised learning yang sangat kuat dan serbaguna. Bayangkan kamu memiliki data dari dua kelompok yang berbeda, misalnya titik biru dan titik merah. Tujuan SVM adalah menemukan sebuah garis (atau bidang, jika datanya 3D) yang menjadi pemisah terbaik di antara kedua kelompok tersebut.
+
+<img width="1600" height="1000" alt="image" src="https://github.com/user-attachments/assets/98487189-27ff-4959-8de6-6323c02ccc88" />
+
+Pemisah ini disebut hyperplane. SVM tidak hanya sekadar mencari garis pemisah, tetapi mencari garis yang memiliki margin (jarak) paling lebar dari titik terdekat di setiap kelompok. Titik-titik terdekat inilah yang disebut support vectors, karena merekalah yang menentukan posisi si garis pemisah.
+
 ## Cara Kerja
+
 ## Kelebihan
 
 ## Kekurangan
