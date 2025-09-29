@@ -91,6 +91,6 @@ print("R^2 :", r2_score(y_test, y_pred))
 ```
 
 ## Referensi
-https://scikit-learn.org/stable/modules/svm.html#regression
-https://youtu.be/kPw1IGUAoY8?si=JTKJsCn3LxprXQr2
-https://youtu.be/EESZtSOdhEQ?si=TwNnS3wgg00xBG9c
+- https://scikit-learn.org/stable/modules/svm.html#regression
+- https://youtu.be/kPw1IGUAoY8?si=JTKJsCn3LxprXQr2
+- https://youtu.be/EESZtSOdhEQ?si=TwNnS3wgg00xBG9c
