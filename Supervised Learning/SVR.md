@@ -85,3 +85,7 @@ y_pred = model.predict(X_test)
 # Evaluasi
 print("MSE :", mean_squared_error(y_test, y_pred))
 print("R^2 :", r2_score(y_test, y_pred))
+```
+
+## Source
+-https://scikit-learn.org/stable/modules/svm.html#regression
