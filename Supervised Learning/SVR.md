@@ -27,7 +27,7 @@ Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalk
    <img width="700" alt="epsilon-tube" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_regression_001.png" />  
 
    - Titik dalam tube (±ε) → tidak dihukum.  
-   - Titik di luar tube → dihukum (jadi support vectors).  
+   - Titik di luar tube → dihukum (jadi support vectors).
 
 2. **Fungsi Tujuan (Objective Function)**  
    Sama seperti SVM, SVR mencari **hyperplane** optimal berupa garis regresi:  
@@ -39,9 +39,11 @@ Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalk
    - Dengan constraint bahwa prediksi berada dalam margin `ε` atau diberi penalti jika melampaui.  
 
 3. **Support Vectors**  
-   Hanya titik data yang berada di luar ε-tube yang berpengaruh pada model.  
+   Hanya titik data yang berada di luar ε-tube yang berpengaruh pada model.
+   <img width="1426" height="803" alt="image" src="https://github.com/user-attachments/assets/a962a081-e3af-47a3-9946-7b7d8ed1dc47" />
+  
 
-4. **Kernel Trick**  
+5. **Kernel Trick**  
    Jika data tidak linear, SVR juga menggunakan kernel trick (misalnya **RBF kernel**) untuk memproyeksikan data ke ruang dimensi lebih tinggi agar pola non-linear bisa ditangkap.  
 
    $$K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)$$  
@@ -91,3 +93,4 @@ print("R^2 :", r2_score(y_test, y_pred))
 ## Referensi
 https://scikit-learn.org/stable/modules/svm.html#regression
 https://youtu.be/kPw1IGUAoY8?si=JTKJsCn3LxprXQr2
+https://youtu.be/EESZtSOdhEQ?si=TwNnS3wgg00xBG9c
