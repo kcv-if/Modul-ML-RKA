@@ -88,5 +88,6 @@ print("MSE :", mean_squared_error(y_test, y_pred))
 print("R^2 :", r2_score(y_test, y_pred))
 ```
 
-## Source
--https://scikit-learn.org/stable/modules/svm.html#regression
+## Referensi
+https://scikit-learn.org/stable/modules/svm.html#regression
+https://youtu.be/kPw1IGUAoY8?si=JTKJsCn3LxprXQr2
