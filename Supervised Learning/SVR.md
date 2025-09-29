@@ -42,6 +42,11 @@ Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalk
    Hanya titik data yang berada di luar ε-tube yang berpengaruh pada model.
    <img width="1426" height="803" alt="image" src="https://github.com/user-attachments/assets/a962a081-e3af-47a3-9946-7b7d8ed1dc47" />
 
+4. **Kernel Trick**  
+   Jika data tidak linear, SVR juga menggunakan kernel trick (misalnya **RBF kernel**) untuk memproyeksikan data ke ruang dimensi lebih tinggi agar pola non-linear bisa ditangkap.  
+
+   $$K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)$$ 
+
 ## Kelebihan
 * **Tahan terhadap overfitting** berkat prinsip margin.  
 * **Fleksibel** dengan pilihan kernel (linear, polynomial, RBF, dll).  
