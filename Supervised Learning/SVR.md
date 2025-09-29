@@ -17,15 +17,15 @@ Alih-alih mencari garis pemisah antar kelas, SVR berusaha menemukan sebuah fungs
 
 Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalkan error, tapi juga menjaga agar model tetap sederhana dengan margin tertentu (ε-insensitive).
 
-<img width="700" alt="svr" src="https://github.com/user-attachments/assets/ad1e0470-62a5-402a-8513-92edf4f76aee" />  
+   <img width="700" alt="epsilon-tube" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_regression_001.png" />
+
 
 
 ## Cara Kerja
 1. **Epsilon-Insensitive Tube**  
    SVR memperkenalkan konsep **ε-tube**. Selama prediksi masih berada dalam jarak ε dari nilai asli, itu dianggap tidak error. Hanya prediksi yang berada di luar margin ini yang dihitung error.
-
-   <img width="700" alt="epsilon-tube" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_regression_001.png" />  
-
+   <img width="1109" height="405" alt="image" src="https://github.com/user-attachments/assets/9db49474-7109-46d0-a16d-30232a0d402e" />
+  
    - Titik dalam tube (±ε) → tidak dihukum.  
    - Titik di luar tube → dihukum (jadi support vectors).
 
@@ -45,7 +45,9 @@ Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalk
 4. **Kernel Trick**  
    Jika data tidak linear, SVR juga menggunakan kernel trick (misalnya **RBF kernel**) untuk memproyeksikan data ke ruang dimensi lebih tinggi agar pola non-linear bisa ditangkap.  
 
-   $$K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)$$ 
+   $$K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)$$
+   
+   <img width="1192" height="742" alt="image" src="https://github.com/user-attachments/assets/6b25a48a-dae9-4a25-a402-71335d66848f" />
 
 ## Kelebihan
 * **Tahan terhadap overfitting** berkat prinsip margin.  
