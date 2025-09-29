@@ -17,9 +17,6 @@ Alih-alih mencari garis pemisah antar kelas, SVR berusaha menemukan sebuah fungs
 
 Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalkan error, tapi juga menjaga agar model tetap sederhana dengan margin tertentu (ε-insensitive).
 
-   <img width="700" alt="epsilon-tube" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_regression_001.png" />
-
-
 
 ## Cara Kerja
 1. **Epsilon-Insensitive Tube**  
