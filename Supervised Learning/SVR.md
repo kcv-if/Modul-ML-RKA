@@ -53,9 +53,9 @@ Perbedaannya dengan regresi linear biasa adalah SVR tidak hanya fokus meminimalk
 * **Kontrol error dengan ε**: bisa mengatur toleransi error sesuai kebutuhan.  
 
 ## Kekurangan
-* **Lebih lambat** dibanding regresi linear biasa, terutama untuk dataset besar.  
-* **Sulit tuning**: performa sangat bergantung pada parameter (`C`, `ε`, `gamma`).  
-* **Tidak seintuitif regresi linear** dalam interpretasi koefisien.  
+* **Training Time lama** untuk dataset besar
+* **Tidak terlalu bagus** untuk noisy data
+* **Sulit tuning**: performa sangat bergantung pada parameter (`C`, `ε`, `gamma`).
 
 ## Implementasi
 
