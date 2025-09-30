@@ -44,21 +44,21 @@ Di mana:
 
 ## Cara Kerja
 1. **Kumpulkan & siapkan data**
-    - Bentuk matriks fitur $X \in \mathbb{R}^{n \times p}$ dan target $y$.
-    - Lakukan standarisasi fitur (sangat penting karena penalti sensitif terhadap skala).
-    - Jika ada fitur kategorikal → lakukan encoding (One-Hot Encoding, dsb).
-
+    - Buat matriks fitur $X \in \mathbb{R}^{n \times p}$, di mana $n$ = jumlah sampel dan $p$ = jumlah fitur, serta vektor target $y$.
+    - **Standarisasi fitur**: Sangat penting karena penalti regularisasi sensitif terhadap skala.
+    - **Encoding fitur kategorikal**: Jika ada data kategori, ubah menjadi numerik menggunakan metode encoding, seperti One-Hot Encoding atau metode lainnya agar model bisa memprosesnya.
+    
 2. **Tentukan Fungsi Loss**
     - Ridge: menambahkan penalti kuadrat koefisien.
     - Lasso: menambahkan penalti nilai absolut koefisien.
 
 3. **Optimasi Parameter**
-    - Ridge memiliki solusi matematis langsung.
-    - Lasso menggunakan algoritma iteratif seperti Coordinate Descent.
+    - Ridge: Ada solusi matematis langsung (closed-form), bisa dihitung dengan rumus matriks.
+    - Lasso: Tidak ada solusi langsung, perlu algoritma iteratif seperti Coordinate Descent, yaitu mencoba memperbarui setiap koefisien secara bergantian hingga fungsi loss minimal.
 
 4. **Tentukan Hyperparameter $\lambda$ (alpha)**
-    - Gunakan cross-validation untuk mencari nilai terbaik.
-
+    - $\lambda$ mengontrol kekuatan penalti regularisasi.
+    - Gunakan cross-validation untuk menemukan nilai $\lambda$ yang memberikan keseimbangan terbaik antara akurasi dan generalisasi.
 5. **Prediksi**
     - Setelah model dilatih, prediksi dilakukan dengan $\hat{y} = X_{\text{baru}} \cdot \hat{\beta}$.
 
