@@ -27,7 +27,7 @@ Di mana:
 - $MSE$ = Mean Squared Error (error standar dari prediksi)
 - $\lambda$ = Parameter regularisasi yang mengontrol kekuatan penalty
 - $w_i$ = Koefisien atau weights dari model
-- $\sum(w_i^2)$ = Jumlah kuadrat dari semua koefisien
+- $\sum |w_i|$ = Jumlah nilai absolut dari semua koefisien
 
 ### Ridge Regression
 Ridge Regression, yang juga dikenal sebagai L2 Regularization, adalah teknik yang digunakan dalam regresi linear untuk mencegah overfitting dengan menambahkan penalty term ke fungsi loss. Penalty ini proporsional terhadap kuadrat dari besarnya koefisien (weights).
@@ -40,7 +40,7 @@ Di mana:
 - $MSE$ = Mean Squared Error (error standar dari prediksi)
 - $\lambda$ = Parameter regularisasi yang mengontrol kekuatan penalty
 - $w_i$ = Koefisien atau weights dari model
-- $\sum |w_i|$ = Jumlah nilai absolut dari semua koefisien
+- $\sum(w_i^2)$ = Jumlah kuadrat dari semua koefisien
 
 ## Cara Kerja
 1. **Kumpulkan & siapkan data**
