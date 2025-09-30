@@ -3,7 +3,6 @@
 ## Daftar Isi
 
 - [Daftar Isi](#daftar-isi)
-- [Pendahuluan](#pendahuluan)
 - [Definisi](#definisi)
 - [Cara Kerja](#cara-kerja)
 - [Kelebihan](#kelebihan)
