@@ -1,4 +1,4 @@
-# Decision Tree
+# Decision Tree Regressor
 
 ## Daftar Isi
 

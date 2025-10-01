@@ -1,9 +1,10 @@
-# Decision Tree
+# Decision Tree Classifier
 
 ## Daftar Isi
 
 - [Daftar Isi](#daftar-isi)
 - [Definisi](#definisi)
+- [Tabel perbandingan](#Tabel-Perbandingan)
 - [Cara Kerja](#cara-kerja)
 - [Metode Pemisahan](#metode-pemisahan)
 - [Kelebihan](#kelebihan)
@@ -27,6 +28,17 @@ Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dala
   Digunakan untuk memprediksi hasil kategorikal seperti spam atau bukan spam. Tipe ini membagi data berdasarkan fitur-fitur tertentu untuk mengklasifikasikan data ke dalam kategori yang telah ditentukan sebelumnya.
 - **Regression Tree:**  
   Digunakan untuk memprediksi hasil kontinu seperti harga rumah. Tipe ini memberikan prediksi berupa nilai numerik berdasarkan fitur-fitur input.
+
+## Tabel Perbandingan
+
+| Aspek                  | Decision Tree Classifier                     | Decision Tree Regressor                           |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------- |
+| **Output**             | Label kategori (diskrit)                     | Nilai numerik (kontinu)                           |
+| **Contoh Masalah**     | Spam/Not Spam, Sakit/Sehat, Sentimen Pos/Neg | Harga rumah, Suhu udara, Nilai saham              |
+| **Kriteria Split**     | Gini Impurity, Entropy                       | MSE, MAE, Poisson Deviance                        |
+| **Prediksi Leaf Node** | Kelas mayoritas dari sampel di node          | Rata-rata nilai target pada node                  |
+| **Tujuan Split**       | Membuat node homogen (satu kelas dominan)    | Membuat node dengan varian target sekecil mungkin |
+| **Evaluasi Kinerja**   | Akurasi, Precision, Recall, F1-Score         | MSE, RMSE, MAE, R² Score                          |
 
 ## Cara Kerja
 1) **Mulai dari Root Node**  
