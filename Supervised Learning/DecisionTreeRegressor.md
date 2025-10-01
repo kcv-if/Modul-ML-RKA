@@ -55,15 +55,16 @@ Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dala
 ## Metode Pemisahan
 Berbeda dengan klasifikasi (yang menggunakan Gini/Entropy), regresi menggunakan ukuran error:
 
-1. **Mean Squared Error (MSE)**
-   [
-   MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y})^2
-   ]
+1. Mean Squared Error (MSE)  
 
-   * (y_i) = nilai target sebenarnya
-   * (\hat{y}) = rata-rata target pada node
+$$
+MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y})^2
+$$
 
-   Semakin kecil MSE, semakin baik split.
+- $y_i$ = nilai target sebenarnya  
+- $\hat{y}$ = rata-rata target pada node  
+
+Semakin kecil MSE, semakin baik split.
 
 2. **Mean Absolute Error (MAE)**
    Menggunakan selisih absolut daripada kuadrat. Lebih robust terhadap outlier.
