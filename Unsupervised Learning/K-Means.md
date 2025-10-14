@@ -63,7 +63,10 @@ Salah satu tantangan utama dalam menggunakan K-Means adalah menentukan jumlah kl
 
 ## Kekurangan
 - **Harus menentukan jumlah klaster (k) di awal**: Algoritma ini memerlukan penentuan nilai k di awal, sedangkan jumlah klaster yang ideal sering kali belum diketahui, sehingga biasanya diperlukan metode pendukung seperti Elbow Method atau Silhouette Score untuk menentukannya.
-- **Sensitif terhadap penentuan titik awal centroid**: Algoritma bisa berhenti pada solusi yang tidak optimal dan menghasilkan klaster yang tidak sesuai dengan pola asli data apabila penempatan centroid awal kurang tepat. 
+- **Sensitif terhadap penentuan titik awal centroid**: Algoritma bisa berhenti pada solusi yang tidak optimal dan menghasilkan klaster yang tidak sesuai dengan pola asli data apabila penempatan centroid awal kurang tepat.
+
+  <img width="844" height="478" alt="image" src="https://github.com/user-attachments/assets/4edd5c8b-ee6b-413b-9d5a-5d430d4e9644" />
+
 - **Mudah terpengaruh oleh outlier**: Kemunculan data ekstrem dapat menggeser posisi centroid, sehingga hasil pengelompokan menjadi kurang akurat dan tidak mewakili distribusi data sebenarnya.
 
 ## Implementasi
