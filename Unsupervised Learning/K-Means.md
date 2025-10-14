@@ -5,6 +5,7 @@
 - [Daftar Isi](#daftar-isi)
 - [Definisi](#definisi)
 - [Cara Kerja](#cara-kerja)
+- [Menghitung Jarak](#menghitung-jarak)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
 - [Implementasi](#implementasi)
@@ -19,10 +20,15 @@
 ## Cara Kerja
 1. Tentukan Jumlah K
 2. Tentukan centroid awal sebanyak K
-3. Hitung jarak semua data ke centroid
+3. Hitung [Jarak](#menghitung-jarak) semua data ke centroid
 4. Kelompokkan data dengan centroid terdekat
 5. Temukan centroid baru dengan mencari Rata rata titik yang ada di dalam suatu cluster
 6. Ulangi step 3 - 5 hingga tidak ada perubahan lagi
+
+## Menghitung Jarak
+Nah karena kita akan mencari kemiripan antar data dengan jaraknya, kita harus mengetahui cara untuk menghitung jaraknya. Ada beberapa rumus jarak yang umum untuk dipakai:
+
+<img width="964" height="403" alt="image" src="https://github.com/user-attachments/assets/ea00eb41-80ba-485c-b31a-d8046418c9a6" />
 
 ## Kelebihan
 - **Sederhana dan mudah diimplementasikan**: Algoritma ini memiliki konsep dasar yang mudah dipahami dan langkah yang jelas sehingga penerapannya mudah dilakukan.
