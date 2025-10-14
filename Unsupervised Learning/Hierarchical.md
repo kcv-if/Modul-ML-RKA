@@ -68,8 +68,6 @@ Metode ini menganggap semua data berasal dari satu klaster yang sama lalu dipisa
 Berikut adalah cara mengimplementasikan Agglomerative Clustering dengan library `scikit-learn`.
 
 ```python
-# Hierarchical (Agglomerative) Clustering Implementation
-
 from sklearn.datasets import make_blobs
 from sklearn.cluster import AgglomerativeClustering
 import matplotlib.pyplot as plt
