@@ -68,7 +68,52 @@ Metode ini menganggap semua data berasal dari satu klaster yang sama lalu dipisa
 Berikut adalah cara mengimplementasikan Agglomerative Clustering dengan library `scikit-learn`.
 
 ```python
+# Hierarchical (Agglomerative) Clustering Implementation
 
+from sklearn.datasets import make_blobs
+from sklearn.cluster import AgglomerativeClustering
+import matplotlib.pyplot as plt
+import scipy.cluster.hierarchy as sch
+
+# 1️) Generate Sample Data
+X, y = make_blobs(
+    n_samples=200,        # total points
+    centers=4,            # number of real clusters
+    cluster_std=1.2,      # how spread out each cluster is
+    random_state=42
+)
+
+# 2️) Visualize the Data
+plt.figure(figsize=(6, 5))
+plt.scatter(X[:, 0], X[:, 1], s=40, c='gray')
+plt.title("Sample Data")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+# 3) Create Dendrogram
+plt.figure(figsize=(8, 5))
+dendrogram = sch.dendrogram(sch.linkage(X, method='ward'))
+plt.title("Dendrogram")
+plt.xlabel("Data Points")
+plt.ylabel("Euclidean Distance")
+plt.show()
+
+# 4) Agglomerative Clustering
+hc = AgglomerativeClustering(
+    n_clusters=4,
+    metric='euclidean',
+    linkage='ward'
+)
+y_pred = hc.fit_predict(X)
+
+# 5️) Visualize Clusters
+plt.figure(figsize=(6, 5))
+plt.scatter(X[:, 0], X[:, 1], c=y_pred, cmap='rainbow')
+plt.title("Hierarchical Clustering Results")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
 ```
 
 ## Referensi
