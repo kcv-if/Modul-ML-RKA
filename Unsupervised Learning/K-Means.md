@@ -6,6 +6,7 @@
 - [Definisi](#definisi)
 - [Cara Kerja](#cara-kerja)
 - [Menghitung Jarak](#menghitung-jarak)
+- [Menentukan jumlah K](#menentukan-jumlah-k)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
 - [Implementasi](#implementasi)
@@ -29,6 +30,31 @@
 Nah karena kita akan mencari kemiripan antar data dengan jaraknya, kita harus mengetahui cara untuk menghitung jaraknya. Ada beberapa rumus jarak yang umum untuk dipakai:
 
 <img width="964" height="403" alt="image" src="https://github.com/user-attachments/assets/ea00eb41-80ba-485c-b31a-d8046418c9a6" />
+
+## Menentukan Jumlah K
+Salah satu tantangan utama dalam menggunakan K-Means adalah menentukan jumlah klaster (K) yang paling sesuai untuk data kita. Memilih K yang terlalu kecil dapat menggabungkan kelompok data yang seharusnya terpisah, sedangkan memilih K yang terlalu besar akan memecah kelompok data yang seharusnya menyatu.
+
+1. Elbow Method
+
+   Metode ini adalah yang paling umum digunakan karena intuisinya yang sederhana. Idenya adalah menjalankan algoritma K-Means untuk beberapa nilai K yang berbeda (misalnya, dari 1 hingga 10) dan menghitung Within-Cluster Sum of Squares (WCSS) atau Inertia untuk setiap nilai K.
+
+   <img width="954" height="385" alt="image" src="https://github.com/user-attachments/assets/6cd7b8ee-8cc3-4192-b568-67fffb53e79f" />
+
+   **Rumus WCSS**:
+   
+   <img width="687" height="466" alt="image" src="https://github.com/user-attachments/assets/7e36246d-5b8b-4cb7-b4e4-3d17dfe2ec89" />
+
+   WCSS mengukur seberapa padat titik-titik dalam setiap cluster. Semakin kecil nilai WCSS, semakin baik kualitas clustering
+   
+2. Silhouette Score
+
+   Silhouette Score mengukur seberapa baik setiap titik dikelompokkan ke dalam clusternya
+
+   <img width="829" height="349" alt="image" src="https://github.com/user-attachments/assets/59483d90-08de-41d6-9266-13d394aac34e" />
+
+3. Elbow Method vs Silhoutte Score
+
+   <img width="809" height="484" alt="image" src="https://github.com/user-attachments/assets/7de107d1-e88c-4631-9b43-b46c09bfa50d" />
 
 ## Kelebihan
 - **Sederhana dan mudah diimplementasikan**: Algoritma ini memiliki konsep dasar yang mudah dipahami dan langkah yang jelas sehingga penerapannya mudah dilakukan.
