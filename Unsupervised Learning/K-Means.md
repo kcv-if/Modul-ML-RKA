@@ -12,10 +12,17 @@
 
 ## Definisi
 
-**K-Means** adalah 
+**K-Means Clustering** adalah algoritma Unsupervised Machine Learning yang mengelompokkan dataset tanpa label ke dalam beberapa klaster. Algoritma ini digunakan untuk mengorganisasi data ke dalam kelompok berdasarkan kemiripan antar data.
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/16c76535-763c-40b7-9c7c-b819b1cdf81b" />
 
 ## Cara Kerja
-
+1. Tentukan Jumlah K
+2. Tentukan centroid awal sebanyak K
+3. Hitung jarak semua data ke centroid
+4. Kelompokkan data dengan centroid terdekat
+5. Temukan centroid baru dengan mencari Rata rata titik yang ada di dalam suatu cluster
+6. Ulangi step 3 - 5 hingga tidak ada perubahan lagi
 
 ## Kelebihan
 - **Sederhana dan mudah diimplementasikan**: Algoritma ini memiliki konsep dasar yang mudah dipahami dan langkah yang jelas sehingga penerapannya mudah dilakukan.
