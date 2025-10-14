@@ -30,9 +30,9 @@ Regresi merupakan subset dari supervised learning, yang mana tugasnya adalah mem
 Beberapa algoritma regresi meliputi:
 - [Linear Regression](LinearRegression.md)
 - [Polynomial Regression](PolynomialRegression.md)
-- [Ridge & Lasso Regression]()
-- [Decision Tree]()
-- [Support Vector Machine]()
+- [Ridge & Lasso Regression](LassoRidgeRegression.md)
+- [Decision Tree](DecisionTreeRegressor.md)
+- [Support Vector Machine](SVR.md)
 
 ## Referensi
 
