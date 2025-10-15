@@ -42,7 +42,7 @@ Saat memperbarui jarak antara klaster, terdapat berbagai macam stategi yang dina
 -   Ward
 
     Menggunakan varians intra-klaster antara sebuah klaster dengan klaster lain.
-    <img width="508" height="256" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
+    <img width="508" height="300" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
 
 ### 2) Divisive Hierarchical Clustering
 
