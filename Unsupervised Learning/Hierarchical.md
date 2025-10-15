@@ -42,7 +42,7 @@ Saat memperbarui jarak antara klaster, terdapat berbagai macam stategi yang dina
 -   Ward
 
     Menggunakan varians intra-klaster antara sebuah klaster dengan klaster lain.
-    <img width="508" height="300" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
+    <img width="508" height="350" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
 
 ### 2) Divisive Hierarchical Clustering
 
@@ -79,7 +79,7 @@ import scipy.cluster.hierarchy as sch
 
 # 1️) Generate Sample Data
 X, y = make_blobs(
-    n_samples=200,        # total points
+    n_samples=50,        # total points
     centers=4,            # number of real clusters
     cluster_std=1.2,      # how spread out each cluster is
     random_state=42
@@ -95,7 +95,7 @@ plt.show()
 
 # 3) Create Dendrogram
 plt.figure(figsize=(8, 5))
-dendrogram = sch.dendrogram(sch.linkage(X, method='ward'))
+dendrogram = sch.dendrogram(sch.linkage(X, method='average'))
 plt.title("Dendrogram")
 plt.xlabel("Data Points")
 plt.ylabel("Euclidean Distance")
@@ -103,11 +103,14 @@ plt.show()
 
 # 4) Agglomerative Clustering
 hc = AgglomerativeClustering(
-    n_clusters=4,
+    n_clusters=None,
     metric='euclidean',
-    linkage='ward'
+    linkage='average',
+    distance_threshold=2.5
 )
 y_pred = hc.fit_predict(X)
+print(f"Number of clusters formed: {len(set(y_pred))}")
+
 
 # 5️) Visualize Clusters
 plt.figure(figsize=(6, 5))
