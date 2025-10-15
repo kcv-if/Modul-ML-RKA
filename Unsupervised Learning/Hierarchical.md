@@ -27,18 +27,22 @@ Saat memperbarui jarak antara klaster, terdapat berbagai macam stategi yang dina
 -   Single
 
     Menggunakan jarak minimum antara titik dalam klaster terhadap klaster lain.
+    <img width="512" height="258" alt="image" src="https://github.com/user-attachments/assets/966e04fa-ff7c-40bb-9d75-6d4d05cb297b" />
 
 -   Complete
 
     Menggunakan jarak maksimum antara titik dalam klaster terhadap klaster lain.
+    <img width="508" height="256" alt="image" src="https://github.com/user-attachments/assets/58188647-b356-45f9-8e9d-f1b93cec7513" />
 
 -   Average
 
     Menggunaan jarak rata-rata antara semua titik dalam klaster terhadap klaster lain.
+    <img width="933" height="469" alt="image" src="https://github.com/user-attachments/assets/706cb1af-4ad4-482f-8e00-51be0aa4e67f" />
 
 -   Ward
 
     Menggunakan varians intra-klaster antara sebuah klaster dengan klaster lain.
+    <img width="172" height="223" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
 
 ### 2) Divisive Hierarchical Clustering
 
@@ -118,3 +122,4 @@ plt.show()
 
 -   [Scikit-Learn - Hierarchical Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
 -   [Scikit-Learn - Agglomerative Clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
+-   https://youtu.be/7xHsRkOdVwo?si=B1mMvBu67IYkzQ8T
