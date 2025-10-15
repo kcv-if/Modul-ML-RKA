@@ -37,12 +37,12 @@ Saat memperbarui jarak antara klaster, terdapat berbagai macam stategi yang dina
 -   Average
 
     Menggunaan jarak rata-rata antara semua titik dalam klaster terhadap klaster lain.
-    <img width="933" height="469" alt="image" src="https://github.com/user-attachments/assets/706cb1af-4ad4-482f-8e00-51be0aa4e67f" />
+    <img width="508" height="256" alt="image" src="https://github.com/user-attachments/assets/706cb1af-4ad4-482f-8e00-51be0aa4e67f" />
 
 -   Ward
 
     Menggunakan varians intra-klaster antara sebuah klaster dengan klaster lain.
-    <img width="172" height="223" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
+    <img width="508" height="256" alt="image" src="https://github.com/user-attachments/assets/92bc097f-5176-4612-aed2-3a1202cea68e" />
 
 ### 2) Divisive Hierarchical Clustering
 
