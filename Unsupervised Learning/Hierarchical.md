@@ -121,6 +121,12 @@ plt.ylabel("Feature 2")
 plt.show()
 ```
 
+## Output
+<img width="543" height="468" alt="image" src="https://github.com/user-attachments/assets/b9eecbe4-7c69-4cac-972a-0dc8a1b417dd" />
+<img width="687" height="468" alt="image" src="https://github.com/user-attachments/assets/5494aa91-df35-425c-af8a-97664d62054d" />
+<img width="543" height="468" alt="image" src="https://github.com/user-attachments/assets/d8f77005-b854-446a-bb1a-e83f1e52e01e" />
+
+
 ## Referensi
 
 -   [Scikit-Learn - Hierarchical Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
