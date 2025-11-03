@@ -83,7 +83,7 @@ print("Silhouette Coefficient: %0.2f" % sc)
 <img width="556" height="468" alt="image" src="https://github.com/user-attachments/assets/563213f9-73ca-4691-8991-455ab46ae6b7" />
 
 <br>
-- Number of clusters formed: 2
-- Number of noise points: 0
-- Silhouette Coefficient: 0.32
+- Number of clusters formed: 2 <br>
+- Number of noise points: 0 <br>
+- Silhouette Coefficient: 0.32 <br>
 
