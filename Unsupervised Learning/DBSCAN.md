@@ -21,7 +21,7 @@
 ## Kelebihan
 
 - **Tidak perlu menentukan jumlah klaster di awal** seperti K-Means.
-- **Mendeteksi outlier secara alami** — titik yang tidak termasuk klaster dikenali sebagai *noise*.
+- **Mendeteksi outlier secara alami** — titik yang tidak termasuk cluster dikenali sebagai *noise*.
 - **Mampu mengenali bentuk klaster arbitrer (non-spherical)**.
 - **Stabil terhadap urutan data** karena hasil tidak tergantung pada inisialisasi acak.
 
