@@ -70,3 +70,11 @@ n_clusters = len(set(y_pred)) - (1 if -1 in y_pred else 0)
 n_noise = list(y_pred).count(-1)
 print(f"Number of clusters formed: {n_clusters}")
 print(f"Number of noise points: {n_noise}")
+```
+
+<img width="567" height="468" alt="image" src="https://github.com/user-attachments/assets/7cae7d26-868e-44c7-9a7b-5ea41b789ef9" />
+
+<img width="567" height="468" alt="image" src="https://github.com/user-attachments/assets/59e8d0b2-687f-4656-ba28-91148d02122d" />
+Number of clusters formed: 1
+Number of noise points: 4
+
