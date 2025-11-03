@@ -43,7 +43,7 @@ from sklearn.cluster import DBSCAN
 import matplotlib.pyplot as plt
 
 # 1) Generate Non-Spherical Sample Data
-X, y = make_moons(n_samples=300, noise=0.1, random_state=42)
+X, y = make_moons(n_samples=300, noise=0.12, random_state=42)
 
 # 2) Visualize the Data
 plt.figure(figsize=(6, 5))
