@@ -12,9 +12,44 @@
 
 ## Definisi
 
+![dbscan](https://ml-explained.com/articles/dbscan-explained/dbscan.gif)
+
+DBSCAN adalah algoritma clustering berbasis densitas yang digunakan untuk mengelompokkan titik atau data yang saling berdekatan dalam ruang fitur, serta mengidentifikasi titik atau data yang berada di area dengan kepadatan rendah sebagai noise (outlier). 
+
+Algoritma ini tidak membutuhkan penentuan jumlah cluster sejak awal dan mampu menemukan kelompok data dengan bentuk yang beragam (tidak hanya bulat) karena bergantung pada tingkat kerapatan titik dalam ruang data.
+
 ---
 
 ## Cara Kerja
+
+DBSCAN bekerja dengan prinsip bahwa cluster adalah kumpulan titik-titik yang memiliki kepadatan tinggi, sedangkan titik yang berada pada area kepadatan rendah dianggap sebagai noise (outlier).
+
+Berikut ini adalah langkah kerja dari DBSCAN:
+
+1. Menentukan parameter awal\
+Dua parameter utama harus ditetapkan adalah sebagai berikut.
+    - epsilon (ε): jarak maksimum untuk mencari tetangga di sekitar suatu titik.
+    - minPts: jumlah minimal titik dalam radius ε agar sebuah titik dianggap memiliki kepadatan yang cukup.
+
+2. Mengidentifikasi jenis titik\
+![dbscan-parameter](https://miro.medium.com/v2/resize:fit:1400/1*arv3b3Um_Opu_zOECGwt6w.png)
+Berdasarkan kombinasi ε dan minPts, setiap titik diklasifikasikan menjadi:
+    - Core point: titik yang memiliki jumlah tetangga ≥ minPts dalam jarak ε.
+    - Border point: titik yang berada di sekitar core point tetapi memiliki tetangga < minPts.
+    - Noise point: titik yang tidak termasuk ke dalam cluster manapun dan tidak memenuhi kriteria sebagai core maupun border.
+
+3. Membentuk Cluster
+    - Algoritma memilih salah satu core point secara acak untuk memulai cluster.
+    - Semua core point yang berada dalam jarak ε dari titik tersebut ditambahkan ke cluster.
+    - Setiap core point baru yang tergabung digunakan untuk mencari core point lain di sekitarnya. Proses ini berlanjut hingga tidak ada lagi core point baru yang dapat ditambahkan (density-reachability).
+
+4. Menambahkan Border Point
+    - Setelah seluruh core point dalam satu cluster ditemukan, border point yang berada dalam jarak ε dari core point akan dimasukkan ke cluster.
+    - Perlu diperhatikan bahwa border point hanya dapat bergabung ke cluster tetapi tidak dapat memperluas cluster lebih jauh.
+
+5. Mengulangi Proses
+    - Jika masih ada core point yang belum masuk cluster manapun, proses akan diulang untuk membentuk cluster baru.
+    - Titik yang tidak terhubung dengan core point manapun akan menjadi noise.
 
 ---
 
