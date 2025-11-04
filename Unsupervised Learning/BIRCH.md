@@ -12,6 +12,8 @@
 
 ## Definisi
 
+BIRCH (Balanced Iterative Reducing and Clustering using Hierarchies) adalah algoritma clustering yang dirancang untuk menangani dataset berukuran besar secara efisien. Algoritma ini membangun struktur pohon hierarkis yang disebut CF Tree (Clustering Feature Tree) untuk meringkas data dan mempercepat proses pembentukan klaster.
+
 ## Cara Kerja
 
 ## Kelebihan
