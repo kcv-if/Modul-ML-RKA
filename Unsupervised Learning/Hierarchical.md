@@ -131,4 +131,4 @@ plt.show()
 
 -   [Scikit-Learn - Hierarchical Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
 -   [Scikit-Learn - Agglomerative Clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
--   https://youtu.be/7xHsRkOdVwo?si=B1mMvBu67IYkzQ8T
+-   [Youtube](https://youtu.be/7xHsRkOdVwo?si=B1mMvBu67IYkzQ8T)
