@@ -46,5 +46,7 @@ y_pred = birch.predict(X)
 sns.scatterplot(x=X[:, 0], y=X[:, 1], hue=y_pred).set_title('Hasil Clustering')
 ```
 
+<img width="656" height="525" alt="Hasil Clustering Birch" src="https://github.com/user-attachments/assets/9f2bedd4-3800-43d8-99e9-e25971f510b2" />
+
 ## Reference
 - [Birch](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.Birch.html)
