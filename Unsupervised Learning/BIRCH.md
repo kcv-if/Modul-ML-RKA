@@ -16,6 +16,37 @@ BIRCH (Balanced Iterative Reducing and Clustering using Hierarchies) adalah algo
 
 ## Cara Kerja
 
+<img width="532" height="450" alt="image" src="https://github.com/user-attachments/assets/b4e5c137-f9b8-4211-8027-e1ea98e17f07" />
+
+Secara garis besar, proses kerja BIRCH terdiri dari empat tahap utama:
+
+1. Membangun CF Tree
+
+   * Data dimasukkan satu per satu untuk membentuk Clustering Feature (CF) yang berisi ringkasan setiap sub-kluster:
+     <p align="center">
+      <h3><i>𝐶𝐹 = (𝑁, 𝐿𝑆, 𝑆𝑆)</i></h3>
+     </p>
+    
+     di mana:
+     - 𝑁 = jumlah titik data  
+     - 𝐿𝑆 = penjumlahan linear semua titik (∑x)  
+     - 𝑆𝑆 = penjumlahan kuadrat semua titik (∑x²)
+
+   * Struktur pohon terbentuk dengan *branching factor* tertentu (jumlah maksimum anak per node).
+
+2. Kompresi CF Tree (Optional)
+
+   * Pohon dapat dipangkas untuk mengurangi ukuran memori jika terlalu besar, dengan cara menggabungkan node yang dekat satu sama lain.
+
+3. Clustering Global
+
+   * Setelah CF Tree terbentuk, centroid dari setiap leaf dapat dijadikan representasi data.
+   * Kemudian, algoritma clustering lain seperti **k-means** atau **agglomerative clustering** dapat diterapkan pada centroid tersebut.
+
+4. Refinement (Optional)
+
+   * Hasil klaster dapat diperbaiki dengan melakukan *reclustering* terhadap data asli jika diperlukan.
+
 ## Kelebihan
 
 - **Skalabilitas**: Dapat mengatasi dataset berukuran besar.
