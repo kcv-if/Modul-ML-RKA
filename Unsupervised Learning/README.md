@@ -15,10 +15,11 @@ Unsupervised learning adalah paradigma dalam pembelajaran mesin yang menggunakan
 
 Clustering merupakan subset dari unsupervised learning, yang mana tugasnya adalah mengelompokkan data berdasarkan kemiripannya.
 
-Beberapa algoritma klasifikasi meliputi:
+Beberapa algoritma clustering meliputi:
 - [K-Means](KMeans.md)
 - [Hierachical](Hierarchical.md)
 - [DBSCAN](DBSCAN.md)
+- [BIRCH](BIRCH.md)
 
 ## Referensi
 
