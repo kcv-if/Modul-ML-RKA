@@ -47,11 +47,13 @@ Batch normalization melakukan normalisasi pada dimensi batch, dimana setiap gamb
 
 Hal ini bertujuan untuk mengatasi _internal covariate shift_, dimana distribusi activation berubah karena distribusi data berubah.
 
+![](https://media.licdn.com/dms/image/C4E22AQEO9d4Z63KSxA/feedshare-shrink_2048_1536/0/1666066184947?e=2147483647&v=beta&t=dsh74oFtL_tARC3CuZWRZFjat9N0l6qKj2YRChMUWZI)
+
 ### Dropout
 
 Dropout secara sengaja mengubah output dari beberapa neuron dalam suatu lapisan menjadi 0.
 
-![](https://wenkangwei.github.io/images/DL/dropout.jpg)
+![](https://nagadakos.github.io/images/dropout.gif)
 
 Hal ini bertujuan untuk menghindari overfitting dengan cara "memberhentikan" neuron-neuron tersebut untuk belajar.
 
