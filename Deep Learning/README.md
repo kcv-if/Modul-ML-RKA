@@ -19,4 +19,4 @@ Deep Learning mengandung berbagai jenis arsitektur jaringan. Beberapa arsitektur
 
 ## Referensi
 
-- [Scikit-learn: Unsupervised Learning](https://scikit-learn.org/stable/unsupervised_learning.html)
+- [IBM: What is deep learning?](https://www.ibm.com/think/topics/deep-learning)
