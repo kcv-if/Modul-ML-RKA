@@ -45,7 +45,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
 4. Pada directory `src`, tambahkan model kalian.
 
-<img width="189" height="224" alt="image" src="https://github.com/user-attachments/assets/476d4b8c-11f0-4843-9062-0897eba4569a" />
+<img width="200" height="227" alt="image" src="https://github.com/user-attachments/assets/d9163b3e-c560-4848-b0bd-fc51cba8414f" />
 
 5. (Opsional) Setup virtual environment agar dependency yang akan digunakan tidak mempengaruhi local environment
 
