@@ -208,7 +208,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
                     pred_class = np.argmax(prediction)
                     confidence = float(prediction.max()) * 100
 
-                st.success(f'Prediction: {pred_class.upper()}')
+                st.success(f'Prediction: {pred_class}')
                 st.info(f'Confidence: {confidence:.2f}%')
 
                 st.write("Class Probabilities:")
