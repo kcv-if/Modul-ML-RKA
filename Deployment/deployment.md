@@ -100,7 +100,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
     ```python
     @st.cache_resource  # Cache the model to avoid reloading every time
     def load_model():
-        return tf.keras.models.load_model('model.h5')  # Load your saved model
+        return tf.keras.models.load_model('./src/model.h5')  # Load your saved model
     ```
 
     Lakukan preprocessing gambar terlebih dahulu. Pastikan sesuai dengan implementasi model.
@@ -179,7 +179,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
     @st.cache_resource
     def load_model():
-        return tf.keras.models.load_model('model.h5')
+        return tf.keras.models.load_model('./src/model.h5')
 
     def preprocess_image(img: Image.Image):
         img = img.convert('L')
@@ -246,7 +246,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
 <img width="1504" height="818" alt="image" src="https://github.com/user-attachments/assets/a6489fe6-be91-49c0-a4b9-a1109b3afd54" />
 
-10. Setelah build selesai, HuggingFace Space yang telah dibuat dapat diakses di `https://huggingface.co/spaces/{username}/{nama}`.
+10. Setelah build selesai, HuggingFace Space yang telah dibuat dapat diakses di `https://huggingface.co/spaces/{username}/{nama}` atau `https://{username}-{name}.hf.space`.
 
     > Jika gagal untuk mengakses lewat URL tersebut, pastikan repository kalian bersifat public
 
