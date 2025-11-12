@@ -1,4 +1,4 @@
-# Deployment Model Machine Learning / Deep Learning
+# Deployment
 
 ## Daftar Isi
 - [Daftar Isi](#daftar-isi)
