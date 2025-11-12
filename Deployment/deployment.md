@@ -181,12 +181,11 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
     def load_model():
         return tf.keras.models.load_model('model.h5')
 
-    def preprocess_image(img):
-        img = img.resize((32, 32))
+    def preprocess_image(img: Image.Image):
+        img = img.convert('L')
+        img = img.resize((28, 28))
         img = img_to_array(img)
         img = np.expand_dims(img, axis=0)
-        img = img / 255.0
-        img = (img - 0.5) / 0.5
         return img
 
     def main():
