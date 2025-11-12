@@ -43,7 +43,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
     > Jika diminta melakukan autentikasi, gunakan token HuggingFace.
 
-4. Pada root directory, tambahkan model kalian.
+4. Pada directory `src`, tambahkan model kalian.
 
 <img width="189" height="224" alt="image" src="https://github.com/user-attachments/assets/476d4b8c-11f0-4843-9062-0897eba4569a" />
 
