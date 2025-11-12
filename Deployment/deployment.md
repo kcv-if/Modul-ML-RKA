@@ -53,7 +53,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
     ```bash
     python -m venv .venv
-    venv\Scripts\activate
+    ./.venv\Scripts\activate
     ```
 
     > Jika gagal, jalankan Powershell dengan Run As Administrator lalu perbolehkan eksekusi script dengan menjalankan command berikut
@@ -64,6 +64,7 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
 -   Linux / macOS
     ```bash
+    python -m venv .venv
     source .venv/bin/activate
     ```
 
