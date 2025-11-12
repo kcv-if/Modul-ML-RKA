@@ -29,7 +29,11 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
 1. Buat Space baru.
 
+<img width="816" height="416" alt="Screenshot 2025-11-12 122125" src="https://github.com/user-attachments/assets/96d9ece9-6c09-45d1-af4b-baefa97ef1ca" />
+
 2. Tentukan nama Space, lisensi, dan pilih SDK Docker > Streamlit.
+
+<img width="821" height="886" alt="image" src="https://github.com/user-attachments/assets/10e2dab0-77aa-4b03-83d2-1cd9c63bd891" />
 
 3. Clone repository Space ke local.
 
@@ -37,9 +41,11 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
     git clone https://huggingface.co/spaces/{username}/{name}
     ```
 
-    > Jika diminta melakukan autentikasi, gunakan token di HuggingFace.
+    > Jika diminta melakukan autentikasi, gunakan token HuggingFace.
 
 4. Pada root directory, tambahkan model kalian.
+
+<img width="189" height="224" alt="image" src="https://github.com/user-attachments/assets/476d4b8c-11f0-4843-9062-0897eba4569a" />
 
 5. (Opsional) Setup virtual environment agar dependency yang akan digunakan tidak mempengaruhi local environment
 
@@ -220,6 +226,8 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
     streamlit run src/streamlit_app.py
     ```
 
+<img width="1851" height="925" alt="image" src="https://github.com/user-attachments/assets/52e09eb8-9ab9-469a-8097-46e9a3060167" />
+
 9. Jika sudah puas dengan tampilannya, push perubahannya (selain .venv jika ada) ke repository HuggingFace Space.
 
 -   CLI
@@ -234,7 +242,11 @@ Berikut adalah cara men-deploy model klasifikasi TensorFlow kita di Streamlit Hu
 
 -   Manual
 
-10. Setelah build selesia, HuggingFace Space yang telah dibuat dapat diakses di `https://huggingface.co/spaces/{username}/{nama}`.
+<img width="451" height="217" alt="Screenshot 2025-11-12 123446" src="https://github.com/user-attachments/assets/b9d112eb-bc61-4ad2-ac8e-bed6146db53a" />
+
+<img width="1504" height="818" alt="image" src="https://github.com/user-attachments/assets/a6489fe6-be91-49c0-a4b9-a1109b3afd54" />
+
+10. Setelah build selesai, HuggingFace Space yang telah dibuat dapat diakses di `https://huggingface.co/spaces/{username}/{nama}`.
 
     > Jika gagal untuk mengakses lewat URL tersebut, pastikan repository kalian bersifat public
 
