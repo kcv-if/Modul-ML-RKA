@@ -14,7 +14,7 @@ Terdapat perbedaan antara machine learning dan deep learning dari segi:
 
 - Feature Engineering
 
-![](https://pythongeeks.org/wp-content/uploads/2022/03/difference-between-ml-and-dl.webp)
+<img width="1611" height="930" alt="image" src="https://github.com/user-attachments/assets/212b367e-57b8-4ab6-8c76-94c2edd44da7" />
 
 - Jumlah data
 
