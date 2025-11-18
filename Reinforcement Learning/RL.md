@@ -24,7 +24,33 @@ Reinforcement Learning berpusat pada gagasan bahwa seorang agent berinteraksi de
 - Reward: Umpan balik atau hasil dari environment berdasarkan tindakan yang dilakukan oleh agent.
 
 ## Cara Kerja
+Reinforcement Learning bekerja melalui proses interaktif antara agen dan lingkungan dalam sebuah siklus umpan balik. Tujuannya adalah agar agen dapat belajar dari pengalaman untuk membuat keputusan yang semakin optimal seiring waktu. Proses ini berlangsung secara berulang dan melibatkan beberapa langkah utama:
 
+1. Observasi Terhadap State
+
+   Agen mulai dengan mengamati kondisi atau situasi terkini dari lingkungan tempat ia berada. Misalnya, dalam kasus robot navigasi, ini bisa berupa posisi robot di dalam labirin.
+   
+2. Pemilihan dan Pelaksanaan Aksi Bedasarkan Policy
+
+   Berdasarkan kebijakan (policy) yang dimilikinya, agen memilih tindakan tertentu. Policy ini bisa berupa aturan sederhana atau hasil dari proses pembelajaran sebelumnya. Contohnya, jika robot melihat dinding di depannya, ia mungkin memilih untuk berbelok.
+   
+3. Lingkungan Memberikan Respon
+
+   Setelah tindakan dilakukan, lingkungan merespons dengan mengubah keadaan (state) dan memberikan umpan balik berupa reward atau penalty. Reward ini menjadi sinyal apakah tindakan yang dilakukan bermanfaat atau merugikan.
+   
+4. Agen Memperbarui Pengetahuan
+
+   Berdasarkan reward yang diterima dan keadaan baru yang diamati, agen memperbarui pengetahuannya. Ini bisa berupa pembaruan pada policy, value function, atau tabel Q jika menggunakan metode Q-learning. Tujuannya adalah agar keputusan di masa depan menjadi lebih baik.
+   
+5. Siklus Berulang
+
+   Proses ini terus berulang. Agen harus menyeimbangkan antara:
+   - Eksplorasi: mencoba tindakan baru yang belum pernah dilakukan untuk mencari kemungkinan hasil yang lebih baik.
+   - Eksploitasi: menggunakan pengetahuan yang sudah dimiliki untuk mengambil tindakan yang sudah terbukti efektif.
+
+6. Tujuan Akhir: Memaksimalkan Cumulative Reward
+
+   Dengan terus belajar dari interaksi dan umpan balik, agen berusaha memaksimalkan total reward yang diperoleh sepanjang waktu. Ini berarti agen tidak hanya fokus pada hasil jangka pendek, tetapi juga mempertimbangkan manfaat jangka panjang dari setiap keputusan.
 
 ## Kelebihan
 
