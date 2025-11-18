@@ -13,6 +13,16 @@
 ## Definisi
 Reinforcement Learning (RL) adalah cabang dari machine learning yang berfokus pada bagaimana agen dapat belajar membuat keputusan melalui proses trial and error untuk memaksimalkan cumulative rewards. RL memungkinkan mesin untuk belajar dengan berinteraksi dengan suatu lingkungan dan menerima umpan balik berdasarkan tindakan yang dilakukan. Umpan balik ini berupa reward (imbalan) atau penalty (hukuman).
 
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/69dafdb9-31b4-4a83-be23-a7521f24f910" />
+
+Reinforcement Learning berpusat pada gagasan bahwa seorang agent berinteraksi dengan suatu environment untuk mencapai sebuah tujuan. Agent melakukan tindakan dan menerima umpan balik untuk mengoptimalkan pengambilan keputusan dari waktu ke waktu.
+
+- Agent: Pengambil keputusan yang melakukan tindakan.
+- Environment: Dunia atau sistem tempat agent beroperasi.
+- State: Situasi atau kondisi yang sedang dialami oleh agent.
+- Action: Langkah atau keputusan yang dapat dilakukan oleh agent.
+- Reward: Umpan balik atau hasil dari environment berdasarkan tindakan yang dilakukan oleh agent.
+
 ## Cara Kerja
 
 
