@@ -11,7 +11,7 @@
 - [Referensi](#referensi)
 
 ## Definisi
-
+Reinforcement Learning (RL) adalah cabang dari machine learning yang berfokus pada bagaimana agen dapat belajar membuat keputusan melalui proses trial and error untuk memaksimalkan cumulative rewards. RL memungkinkan mesin untuk belajar dengan berinteraksi dengan suatu lingkungan dan menerima umpan balik berdasarkan tindakan yang dilakukan. Umpan balik ini berupa reward (imbalan) atau penalty (hukuman).
 
 ## Cara Kerja
 
