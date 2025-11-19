@@ -194,6 +194,7 @@ def plot_rewards(rewards):
 plot_rewards(rewards_all_episodes)
 
 ```
+<img width="654" height="682" alt="image" src="https://github.com/user-attachments/assets/6d46a294-2079-488c-8957-fa19350a8a22" />
 
 
 ## Reference
