@@ -14,7 +14,7 @@
 
 KNN (K-Nearest Neighbors) merupakan sebuah algoritma supervised learning yang memberikan prediksi dengan melihat kelas mayoritas (terbanyak) yang mengelilingi data yang ingin kita prediksi.
 
-<img src="https://machinelearningknowledge.ai/wp-content/uploads/2018/08/Value-of-K.gif">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260120133056734500/k_nearest_neighbors.webp">
 
 KNN mengambil sebanyak $k$ (hyperparameter) tetangga terdekat, kemudian menentukan label kelas untuk data baru dengan melakukan voting mayoritas. Untuk menhitung jarak antara dua titik, misal $x$ dengan $x'$, terdapat berbagai metrik seperti berikut.
 
