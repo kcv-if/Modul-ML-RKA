@@ -36,6 +36,33 @@ $$
 
 di mana $x$ adalah masukan dengan panjang $n$ dan $\beta$ merupakan parameter yang dipelajari.
 
+## Perbedaan Logistic Regression dan Linear Regression
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251216101013909567/logistic_regression_vs_linear_regression.webp">
+
+Meskipun namanya mirip, keduanya memiliki tujuan yang berbeda.
+
+| | Linear Regression | Logistic Regression |
+|---|---|---|
+| **Output** | Nilai kontinu | Probabilitas (0–1) |
+| **Fungsi** | Garis lurus | Kurva sigmoid (S-curve) |
+| **Tujuan** | Regresi | Klasifikasi |
+| **Contoh** | Prediksi harga rumah | Prediksi spam atau bukan |
+
+Linear Regression memprediksi nilai numerik yang tidak terbatas, sedangkan Logistic Regression memetakan output ke rentang 0–1 menggunakan fungsi sigmoid, sehingga cocok untuk memprediksi probabilitas suatu kelas.
+
+## Jenis Jenis Logistic Regression
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251216101013765543/types_of_logistic_regression.webp">
+
+| Jenis | Kelas | Contoh |
+|---|---|---|
+| **Binomial** | 2 kelas (0 atau 1) | Spam / Bukan Spam |
+| **Multinomial** | >2 kelas tidak berurutan | Kucing, Anjing, Domba |
+| **Ordinal** | >2 kelas berurutan | Rendah, Sedang, Tinggi |
+
+- **Binomial** adalah bentuk paling umum, di mana output hanya dua kemungkinan.
+- **Multinomial** digunakan ketika kelas lebih dari dua dan tidak memiliki urutan tertentu.
+- **Ordinal** mirip dengan Multinomial, namun kelas-kelasnya memiliki urutan yang bermakna.
+
 ## Cara Kerja
 
 1. **Siapkan data**
