@@ -49,7 +49,7 @@ Setelah kita mengetahui kelas $Y$, masing-masing fitur dianggap independen satu 
 | Jenis | Cocok untuk |
 |---|---|
 | **Gaussian NB** | Fitur kontinu |
-| **Multinomial NB** | Fitur diskrit |
+| **Multinomial NB** | Fitur data count/frekuensi |
 | **Bernoulli NB** | Fitur binary |
 | **Categorical NB** | Fitur kategorikal |
 
