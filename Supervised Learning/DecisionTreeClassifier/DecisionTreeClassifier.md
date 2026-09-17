@@ -26,7 +26,7 @@
 ## Definisi
 Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dalam machine learning untuk membantu pengambilan keputusan. Model ini memetakan berbagai pilihan dan hasil yang mungkin berdasarkan fitur-fitur dalam data.
 
-<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/788afd65-ea70-4f8a-88d2-3e2e2b8ebdb0" />
+<img width="800" height="400" alt="image" src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*Orvu9nacLYUcC_pG.png" />
 
 #### Struktur dasar Decision Tree
 - Root Node: Titik awal yang mewakili seluruh dataset.
@@ -82,6 +82,9 @@ Suatu model disebut linear jika hipotesisnya hanya bisa berbentuk $h(x) = \theta
 4) **Buat cabang dan Ulangi.**  
   Proses ini diulang secara rekursif untuk setiap cabang hingga mencapai kondisi berhenti (lihat [Regularisasi](#regularisasi) untuk daftar lengkap kondisi berhenti).
 5) **Prediksi di Leaf Node.**  
+
+![alt text](assets/decision-tree-viz.png)
+
 
 ## Metode Pemisahan
 Berikut adalah metode split yang umum digunakan dalam Decision Tree, khususnya untuk **Klasifikasi**:
