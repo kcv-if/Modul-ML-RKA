@@ -27,14 +27,16 @@ Cakupan materi mengikuti taksonomi umum machine learning: supervised learning, u
 
 ## Daftar Isi
 
-- [Struktur Repositori](#struktur-repositori)
-- [Materi](#materi)
-  - [Supervised Learning](#supervised-learning)
-  - [Unsupervised Learning](#unsupervised-learning)
-  - [Deep Learning](#deep-learning)
-  - [Reinforcement Learning](#reinforcement-learning)
-  - [Deployment](#deployment)
-- [Referensi Utama](#referensi-utama)
+- [Modul Machine Learning (Rekayasa Kecerdasan Artifisial)](#modul-machine-learning-rekayasa-kecerdasan-artifisial)
+  - [Daftar Isi](#daftar-isi)
+  - [Struktur Repositori](#struktur-repositori)
+  - [Materi](#materi)
+    - [Supervised Learning](#supervised-learning)
+    - [Unsupervised Learning](#unsupervised-learning)
+    - [Deep Learning](#deep-learning)
+    - [Reinforcement Learning](#reinforcement-learning)
+    - [Deployment](#deployment)
+  - [Referensi Utama](#referensi-utama)
 
 ---
 
@@ -91,7 +93,7 @@ Materi dibagi menjadi dua kategori tugas:
 | [K-Nearest Neighbors](Supervised%20Learning/KNN.md) | Klasifikasi berdasarkan kedekatan jarak dengan tetangga terdekat |
 | [Naive Bayes](Supervised%20Learning/NaiveBayes/NaiveBayes.md) | Klasifikasi probabilistik berbasis teorema Bayes |
 | [Logistic Regression](Supervised%20Learning/LogisticRegression.md) | Model linear untuk prediksi probabilitas kelas |
-| [Decision Tree](Supervised%20Learning/DecisionTreeClassifier.md) | Klasifikasi dengan struktur pohon keputusan |
+| [Decision Tree](Supervised%20Learning/DecisionTreeClassifier/DecisionTreeClassifier.md) | Klasifikasi dengan struktur pohon keputusan |
 | [Support Vector Machine](Supervised%20Learning/SVM.md) | Pemisahan kelas dengan hyperplane optimal |
 | [Artificial Neural Network](Supervised%20Learning/ANN.md) | Klasifikasi dengan jaringan saraf tiruan berlapis |
 
