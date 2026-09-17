@@ -31,8 +31,8 @@ Decision Tree adalah model prediktif berbentuk seperti pohon yang digunakan dala
 #### Struktur dasar Decision Tree
 - Root Node: Titik awal yang mewakili seluruh dataset.
 - Branches: Jalur yang menghubungkan antar node, menunjukkan alur keputusan.
-- Internal Nodes: Titik di mana keputusan dibuat berdasarkan fitur tertentu.
-- Leaf Nodes: Titik akhir yang menunjukkan hasil atau prediksi akhir.
+- Internal Nodes / Decision Node: Titik di mana keputusan dibuat berdasarkan fitur tertentu.
+- Leaf Nodes / Terminal Node: Titik akhir yang menunjukkan hasil atau prediksi akhir.
 
 #### Tipe-Tipe Decision Tree
 - **Classification Tree:**  
@@ -50,6 +50,9 @@ Prediksi untuk sembarang titik $x$ kemudian dapat dituliskan secara kompak sebag
 $$f(x) = \sum_{j=1}^{k} w_j \cdot \mathbb{1}[x \in R_j]$$
 
 di mana $\mathbb{1}[\cdot]$ adalah fungsi indikator yang bernilai 1 jika $x$ berada di region $R_j$, dan 0 jika tidak.
+
+![alt text](assets/decision-tree-viz.png)
+
 
 **Kenapa disebut non-linear?**  
 Suatu model disebut linear jika hipotesisnya hanya bisa berbentuk $h(x) = \theta^T x$. Decision Tree tidak terikat pada bentuk ini: dengan mempartisi input space menjadi region-region axis-aligned (karena tiap split hanya bergantung pada satu fitur), Decision Tree bisa menghasilkan decision boundary berbentuk kotak-kotak yang mustahil direpresentasikan oleh satu hyperplane linear. Ini membuat Decision Tree tergolong salah satu algoritma non-linear paling awal dalam machine learning, tanpa perlu feature mapping seperti pada kernel SVM.
@@ -82,8 +85,6 @@ Suatu model disebut linear jika hipotesisnya hanya bisa berbentuk $h(x) = \theta
 4) **Buat cabang dan Ulangi.**  
   Proses ini diulang secara rekursif untuk setiap cabang hingga mencapai kondisi berhenti (lihat [Regularisasi](#regularisasi) untuk daftar lengkap kondisi berhenti).
 5) **Prediksi di Leaf Node.**  
-
-![alt text](assets/decision-tree-viz.png)
 
 
 ## Metode Pemisahan
