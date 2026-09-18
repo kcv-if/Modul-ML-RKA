@@ -83,7 +83,7 @@ Suatu model disebut linear jika hipotesisnya hanya bisa berbentuk $h(x) = \theta
 3) **Pilih Split Terbaik.**  
   Fitur dan nilai threshold yang menghasilkan penurunan impurity terbesar akan dipilih sebagai split.
 4) **Buat cabang dan Ulangi.**  
-  Proses ini diulang secara rekursif untuk setiap cabang hingga mencapai kondisi berhenti (lihat [Regularisasi](#regularisasi) untuk daftar lengkap kondisi berhenti).
+  Proses ini diulang secara rekursif untuk setiap cabang hingga mencapai kondisi berhenti ([Regularisasi](#regularisasi)).
 5) **Prediksi di Leaf Node.**  
 
 
