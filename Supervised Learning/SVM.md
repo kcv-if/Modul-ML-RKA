@@ -54,9 +54,7 @@ flowchart TD
 
 Sebuah hyperplane dituliskan sebagai:
 
-```
-w · x − b = 0
-```
+$$\mathbf{w} \cdot \mathbf{x} - b = 0$$
 
 - **w** (weight vector): menentukan arah kemiringan garis.
 - **x**: data yang mau diklasifikasi.
@@ -64,36 +62,29 @@ w · x − b = 0
 
 Di kanan-kirinya ada dua batas margin yang sejajar:
 
-```
-w · x − b = 1   (batas kelas positif)
-w · x − b = −1  (batas kelas negatif)
-```
+$$\mathbf{w} \cdot \mathbf{x} - b = 1 \quad \text{(batas kelas positif)}$$
+
+$$\mathbf{w} \cdot \mathbf{x} - b = -1 \quad \text{(batas kelas negatif)}$$
 
 Jarak antar dua batas ini adalah margin:
 
-```
-Margin = 2 / ‖w‖
-```
+$$\text{Margin} = \frac{2}{\|\mathbf{w}\|}$$
 
-Karena margin berbanding terbalik dengan ‖w‖, semakin kecil ‖w‖ semakin lebar marginnya. Itulah kenapa tujuan SVM sering ditulis sebagai "meminimalkan ‖w‖", padahal maksudnya sama saja dengan "memaksimalkan margin", cuma dibalik arah pandangnya.
+Karena margin berbanding terbalik dengan $\|\mathbf{w}\|$, semakin kecil $\|\mathbf{w}\|$ semakin lebar marginnya. Itulah kenapa tujuan SVM sering ditulis sebagai "meminimalkan $\|\mathbf{w}\|$", padahal maksudnya sama saja dengan "memaksimalkan margin", cuma dibalik arah pandangnya.
 
 Dalam praktiknya, bentuk yang dipakai adalah:
 
-```
-Minimalkan  ½ ‖w‖²
-```
+$$\min \frac{1}{2} \|\mathbf{w}\|^2$$
 
-Kuadrat dipakai karena ‖w‖ mengandung akar yang menyulitkan proses turunan, sedangkan ‖w‖² lebih mudah dihitung tanpa mengubah hasil solusi. Faktor ½ ditambahkan supaya saat diturunkan, angka 2 yang muncul dari aturan pangkat saling meniadakan, sehingga hasil akhirnya lebih rapi.
+Kuadrat dipakai karena $\|\mathbf{w}\|$ mengandung akar yang menyulitkan proses turunan, sedangkan $\|\mathbf{w}\|^2$ lebih mudah dihitung tanpa mengubah hasil solusi. Faktor $\frac{1}{2}$ ditambahkan supaya saat diturunkan, angka 2 yang muncul dari aturan pangkat saling meniadakan, sehingga hasil akhirnya lebih rapi.
 
 Syarat (constraint) yang harus dipenuhi setiap data:
 
-```
-yᵢ (w · xᵢ − b) ≥ 1
-```
+$$y_i (\mathbf{w} \cdot \mathbf{x}_i - b) \geq 1$$
 
-dengan yᵢ ∈ {−1, +1} (label kelas).
+dengan $y_i \in \{-1, +1\}$ (label kelas).
 
-Cara bacanya: `w · xᵢ − b` adalah skor posisi suatu titik. Mengalikannya dengan label yᵢ membuat hasilnya selalu positif kalau klasifikasi benar, dan negatif kalau salah, untuk kedua kelas sekaligus tanpa perlu dua rumus terpisah.
+Cara bacanya: $\mathbf{w} \cdot \mathbf{x}_i - b$ adalah skor posisi suatu titik. Mengalikannya dengan label $y_i$ membuat hasilnya selalu positif kalau klasifikasi benar, dan negatif kalau salah, untuk kedua kelas sekaligus tanpa perlu dua rumus terpisah.
 
 Kenapa syaratnya ≥ 1, bukan ≥ 0? Karena SVM tidak cuma menuntut benar, tapi juga menuntut jarak aman dari garis. Titik dengan hasil tepat 1 berarti menempel di tepi margin (support vector), titik dengan hasil > 1 berarti lebih jauh dan lebih aman.
 
@@ -101,9 +92,7 @@ Kenapa syaratnya ≥ 1, bukan ≥ 0? Karena SVM tidak cuma menuntut benar, tapi 
 
 Support vectors adalah titik-titik yang membuat syarat di atas menjadi sama persis dengan 1:
 
-```
-yᵢ (w · xᵢ − b) = 1
-```
+$$y_i (\mathbf{w} \cdot \mathbf{x}_i - b) = 1$$
 
 Titik-titik inilah yang "menopang" posisi hyperplane dan margin. Karena hanya support vectors yang dipakai untuk membangun model akhir, SVM jadi hemat memori.
 
@@ -115,13 +104,11 @@ Jika data tidak bisa dipisah dengan satu garis lurus, SVM memakai **kernel trick
 
 Bayangkan dua kelompok semut (merah dan hijau) di kertas datar 2D, satu kelompok mengelilingi kelompok lain. Mustahil dipisah dengan satu potongan lurus. Kernel trick ibarat melipat kertas itu, dari sudut pandang baru, satu kelompok jadi berada di "ketinggian" berbeda dari kelompok lain, sehingga sekarang bisa disisipkan bidang pemisah lurus.
 
-Secara matematis, training SVM sebenarnya cuma butuh satu operasi: dot product antar titik data. Cara "jujur" untuk pindah ke dimensi tinggi adalah mentransformasi tiap titik dulu pakai fungsi φ(x), baru dihitung dot product-nya, tapi ini mustahil dihitung kalau dimensi tujuannya tak terbatas.
+Secara matematis, training SVM sebenarnya cuma butuh satu operasi: dot product antar titik data. Cara "jujur" untuk pindah ke dimensi tinggi adalah mentransformasi tiap titik dulu pakai fungsi $\varphi(\mathbf{x})$, baru dihitung dot product-nya, tapi ini mustahil dihitung kalau dimensi tujuannya tak terbatas.
 
 Kernel trick adalah jalan pintas, untuk kernel tertentu, hasil dot product di dimensi tinggi bisa langsung dihitung dari data asli tanpa perlu benar-benar mentransformasikannya:
 
-```
-K(xᵢ, xⱼ) = φ(xᵢ) · φ(xⱼ)
-```
+$$K(\mathbf{x}_i, \mathbf{x}_j) = \varphi(\mathbf{x}_i) \cdot \varphi(\mathbf{x}_j)$$
 
 ### 4. Kernel RBF
 
@@ -129,35 +116,30 @@ Radial Basis Function (RBF) adalah salah satu kernel paling umum dipakai. Ia men
 
 Rumusnya:
 
-```
-K(xᵢ, xⱼ) = exp(−γ ‖xᵢ − xⱼ‖²)
-```
+$$K(\mathbf{x}_i, \mathbf{x}_j) = \exp\left(-\gamma \|\mathbf{x}_i - \mathbf{x}_j\|^2\right)$$
 
 Cara bacanya:
-- `‖xᵢ − xⱼ‖²` adalah jarak kuadrat antara dua titik.
-- Fungsi `exp(−...)` membuat skor kemiripan semakin mendekati 0 saat jarak makin jauh, dan mendekati 1 saat jaraknya 0 (titik sama persis).
-- **γ (gamma)** mengatur seberapa cepat pengaruh sebuah titik memudar seiring jarak.
+- $\|\mathbf{x}_i - \mathbf{x}_j\|^2$ adalah jarak kuadrat antara dua titik.
+- Fungsi $\exp(-\dots)$ membuat skor kemiripan semakin mendekati 0 saat jarak makin jauh, dan mendekati 1 saat jaraknya 0 (titik sama persis).
+- **$\gamma$ (gamma)** mengatur seberapa cepat pengaruh sebuah titik memudar seiring jarak.
 
-Contoh dengan γ = 1: jarak² = 0 → skor 1, jarak² = 1 → skor ≈ 0.37, jarak² = 4 → skor ≈ 0.02.
+Contoh dengan $\gamma = 1$: jarak$^2$ = 0 → skor 1, jarak$^2$ = 1 → skor ≈ 0.37, jarak$^2$ = 4 → skor ≈ 0.02.
 
 Gamma besar berarti pengaruhnya sangat lokal (rawan overfitting), gamma kecil berarti pengaruhnya lebih menyebar luas (rawan underfitting kalau terlalu kecil).
 
 ### 5. Fungsi Keputusan
 
-Untuk data baru **x**, SVM menghitung:
+Untuk data baru $\mathbf{x}$, SVM menghitung:
 
-```
-f(x) = Σ (αᵢ · yᵢ · K(xᵢ, x)) − b
-```
+$$f(\mathbf{x}) = \sum_{i} \alpha_i \, y_i \, K(\mathbf{x}_i, \mathbf{x}) - b$$
 
-untuk semua support vector *i*, dengan αᵢ adalah bobot kepentingan tiap support vector hasil training.
+untuk semua support vector $i$, dengan $\alpha_i$ adalah bobot kepentingan tiap support vector hasil training.
 
-Cara bacanya: titik baru x dibandingkan kemiripannya (lewat K) dengan tiap support vector. Kemiripan tinggi dengan support vector kelas positif "menarik" keputusan ke arah positif, begitu sebaliknya. Semua tarikan ini dijumlahkan, lalu:
+Cara bacanya: titik baru $\mathbf{x}$ dibandingkan kemiripannya (lewat $K$) dengan tiap support vector. Kemiripan tinggi dengan support vector kelas positif "menarik" keputusan ke arah positif, begitu sebaliknya. Semua tarikan ini dijumlahkan, lalu:
 
-```
-f(x) > 0 → kelas +1
-f(x) < 0 → kelas −1
-```
+$$f(\mathbf{x}) > 0 \rightarrow \text{kelas } +1$$
+
+$$f(\mathbf{x}) < 0 \rightarrow \text{kelas } -1$$
 
 ---
 
