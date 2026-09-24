@@ -4,6 +4,7 @@
 
 - [Daftar Isi](#daftar-isi)
 - [Definisi](#definisi)
+- [Alur Kerja ANN](#alur-kerja-ann)
 - [Cara Kerja](#cara-kerja)
 - [Kelebihan](#kelebihan)
 - [Kekurangan](#kekurangan)
@@ -18,7 +19,7 @@
 
 Secara matematis, ANN dapat dirumuskan menjadi seperti berikut:
 
-$$ f : \mathbb{R}^m \to \mathbb{R}^n $$
+$$f: \mathbb{R}^m \to \mathbb{R}^n$$
 
 dimana $m$ adalah ukuran input dan $n$ adalah ukuran output.
 
@@ -28,7 +29,7 @@ Komponen dari ANN meliputi:
 
 Neuron merupakan sebuah unit dasar dalam neural network. Setiap neuron menerima satu atau lebih sinyal masukan $x_i$ dan melakukan penjumlahan berbobot dengan masukan tersebut. Cara kerjanya mirip dengan Linear Regression, yakni:
 
-$$ y = \sum w_i x_i + b $$
+$$y = \sum_{i} w_i x_i + b$$
 
 dimana $x_i$ merupakan input ke-$i$, $w_i$ adalah bobot dari input $x_i$, dan $b$ adalah konstanta atau bias.
 
@@ -36,7 +37,7 @@ dimana $x_i$ merupakan input ke-$i$, $w_i$ adalah bobot dari input $x_i$, dan $b
 
 Misalkan sebuah neuron menerima dua input, $x_1 = 2$ dan $x_2 = 3$, dengan bobot $w_1 = 0.5$ dan $w_2 = -1$, serta bias $b = 1$. Maka keluaran neuron tersebut (sebelum melewati activation) adalah:
 
-$$ y = (0.5 \times 2) + (-1 \times 3) + 1 = 1 - 3 + 1 = -1 $$
+$$y = (0.5 \times 2) + (-1 \times 3) + 1 = 1 - 3 + 1 = -1$$
 
 Dalam neuron, parameter $w$ dan $b$ merupakan hal yang akan dipelajari dan disempurnakan oleh model selama proses training, agar keluaran neuron sesuai dengan pola yang ingin dipelajari dari data.
 
@@ -44,7 +45,7 @@ Dalam neuron, parameter $w$ dan $b$ merupakan hal yang akan dipelajari dan disem
 
 Layer merupakan kumpulan neuron pada tahap yang sama. Sehingga nilai keluaran setiap neuron dapat dirumuskan seperti berikut.
 
-$$ y_j = \sum w_{ij} x_i + b_j $$
+$$y_j = \sum_{i} w_{ij} x_i + b_j$$
 
 dimana $y_j$ adalah keluaran neuron ke-$j$, $w_{ij}$ merupakan bobot dari input ke-$i$ yang terhubung pada neuron ke-$j$, dan $b_j$ adalah konstanta atau bias pada neuron ke-$j$.
 
@@ -60,7 +61,7 @@ Terdapat berbagai jenis layer serta tujuannya, yakni:
 
 Activation memperbolehkan model untuk mempelajari data yang bersifat nonlinear dengan "mengaktivasikan" keluaran dari neuron. Activation dapat dirumuskan seperti berikut.
 
-$$ z = f(x) $$
+$$z = f(x)$$
 
 dimana $f(x)$ merupakan fungsi aktivasi. Beberapa contoh dari fungsi aktivasi meliputi:
 
@@ -68,13 +69,31 @@ dimana $f(x)$ merupakan fungsi aktivasi. Beberapa contoh dari fungsi aktivasi me
 
 **Mengapa Activation Diperlukan?**
 
-Tanpa fungsi aktivasi, keluaran tiap neuron hanyalah kombinasi linear dari inputnya (`w⋅x + b`). Jika neuron-neuron ini ditumpuk menjadi banyak layer tanpa activation, hasil akhirnya tetap saja berupa kombinasi linear, sebab penjumlahan berbobot dari kombinasi linear tetaplah kombinasi linear. Artinya, sebanyak apa pun layer yang ditambahkan, model hanya akan sekuat regresi linear biasa dan tidak mampu mempelajari pola yang non-linear (misalnya memisahkan data yang berbentuk lingkaran di dalam lingkaran).
+Tanpa fungsi aktivasi, keluaran tiap neuron hanyalah kombinasi linear dari inputnya ($w \cdot x + b$). Jika neuron-neuron ini ditumpuk menjadi banyak layer tanpa activation, hasil akhirnya tetap saja berupa kombinasi linear, sebab penjumlahan berbobot dari kombinasi linear tetaplah kombinasi linear. Artinya, sebanyak apa pun layer yang ditambahkan, model hanya akan sekuat regresi linear biasa dan tidak mampu mempelajari pola yang non-linear (misalnya memisahkan data yang berbentuk lingkaran di dalam lingkaran).
 
 Fungsi aktivasi (seperti ReLU atau sigmoid) menyisipkan non-linearitas di antara layer-layer tersebut, sehingga ANN benar-benar mampu memodelkan hubungan yang kompleks dan non-linear, bukan sekadar garis lurus.
 
 ### Neural Network
 
 Neural network merupakan sebuah model yang terdiri dari berbagai layer. Masukan akan dikirimkan ke layer pertama dan diteruskan hingga ke layer paling akhir. Hasil dari layer paling akhir merupakan prediksi dari model ANN.
+
+## Alur Kerja ANN
+
+```mermaid
+flowchart TD
+    A[Kumpulkan & Siapkan Data] --> B[Bentuk Matriks Desain X]
+    B --> C[Inisialisasi Bobot w dan Bias b]
+    C --> D[Forward Pass]
+    D --> E[Hitung Loss]
+    E --> F[Backpropagation: Hitung Gradien]
+    F --> G[Optimisasi Parameter]
+    G --> H{Loss Sudah Konvergen?}
+    H -->|Belum| D
+    H -->|Sudah| I[Model Terlatih]
+    I --> J[Data Baru Masuk]
+    J --> K[Forward Pass]
+    K --> L[Hasil Prediksi]
+```
 
 ## Cara Kerja
 
