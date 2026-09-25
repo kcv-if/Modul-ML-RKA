@@ -123,8 +123,6 @@ Cara bacanya:
 - Fungsi $\exp(-\dots)$ membuat skor kemiripan semakin mendekati 0 saat jarak makin jauh, dan mendekati 1 saat jaraknya 0 (titik sama persis).
 - **$\gamma$ (gamma)** mengatur seberapa cepat pengaruh sebuah titik memudar seiring jarak.
 
-Contoh dengan $\gamma = 1$: jarak$^2$ = 0 → skor 1, jarak$^2$ = 1 → skor ≈ 0.37, jarak$^2$ = 4 → skor ≈ 0.02.
-
 Gamma besar berarti pengaruhnya sangat lokal (rawan overfitting), gamma kecil berarti pengaruhnya lebih menyebar luas (rawan underfitting kalau terlalu kecil).
 
 ### 5. Fungsi Keputusan
