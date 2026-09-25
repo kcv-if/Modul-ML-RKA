@@ -18,7 +18,7 @@
 
 ## Definisi
 
-Support Vector Machine (SVM) adalah algoritma *supervised learning* yang digunakan untuk klasifikasi. Intinya sederhana, bayangkan ada dua kelompok data, misalnya titik biru dan titik merah. SVM mencari sebuah garis pemisah (disebut **hyperplane**) yang membedakan kedua kelompok tersebut.
+Support Vector Machine (SVM) adalah algoritma supervised learning yang digunakan untuk masalah klasifikasi, regresi, dan pendeteksian outlier. Intinya sederhana, bayangkan ada dua kelompok data, misalnya titik biru dan titik merah. SVM mencari sebuah garis pemisah (disebut **hyperplane**) yang membedakan kedua kelompok tersebut.
 
 <img width="1443" height="811" alt="image" src="https://github.com/user-attachments/assets/68223b00-7301-4a81-9a67-d656b7737ddb" />
 
