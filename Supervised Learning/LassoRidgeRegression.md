@@ -6,6 +6,7 @@
 - [Definisi](#definisi)
 - [Cara Kerja](#cara-kerja)
 - [Kelebihan dan Kekurangan](#kelebihan-dan-kekurangan)
+- [Perbandingan Ridge vs Lasso](#perbandingan-ridge-vs-lasso)
 - [Implementasi](#implementasi)
 - [Referensi](#referensi)
 
@@ -89,11 +90,35 @@ Di mana:
 - **Model bisa tidak konsisten**: Perubahan kecil pada data dapat menghasilkan fitur terpilih yang berbeda-beda.
 - **Butuh tuning α (lambda)**: Harus dicari nilai terbaik melalui cross-validation agar hasilnya optimal.
 
+## Perbandingan Ridge vs Lasso
+
+| Aspek | Ridge Regression | Lasso Regression |
+|---|---|---|
+| Nama lain | L2 Regularization | L1 Regularization |
+| Fungsi loss | $\text{MSE} + \lambda \sum w_i^2$ | $\text{MSE} + \lambda \sum \lvert w_i \rvert$ |
+| Jenis penalti | Kuadrat koefisien | Nilai absolut koefisien |
+| Efek pada koefisien | Mengecil mendekati nol, tetapi tidak benar-benar nol | Sebagian koefisien menjadi tepat nol |
+| Feature selection | Tidak, semua fitur tetap dipakai | Ya, otomatis |
+| Metode penyelesaian | Closed-form (rumus matriks) | Iteratif (Coordinate Descent) |
+| Multicollinearity | Menangani dengan baik, koefisien fitur berkorelasi saling berbagi bobot | Cenderung memilih salah satu fitur dan mengabaikan yang lain |
+| Interpretabilitas | Model memuat semua fitur | Model lebih ringkas karena fitur tidak penting dibuang |
+| Sensitivitas terhadap outlier | Terpengaruh | Terpengaruh, dan dapat mengubah fitur yang terpilih |
+| Perlu standarisasi | Ya | Ya |
+| Perlu tuning $\lambda$ | Ya | Ya |
+| Cocok digunakan saat | Sebagian besar fitur relevan dan saling berkorelasi | Fitur sangat banyak dan hanya sebagian yang berpengaruh |
+
 ## Implementasi
 Berikut adalah cara mengimplementasikan Lasso & Ridge Regression dengan library `scikit-learn`.
 
+Beberapa hal yang diperhatikan pada implementasi ini:
+- **Standarisasi** dengan `StandardScaler`, karena penalti regularisasi sensitif terhadap skala fitur (luas dan jumlah kamar memiliki skala yang sangat berbeda).
+- **`Pipeline`** agar standarisasi otomatis diterapkan juga pada data uji.
+- **`RidgeCV` dan `LassoCV`** untuk memilih nilai `alpha` terbaik secara otomatis melalui cross-validation.
+
 ```python
-from sklearn.linear_model import Ridge, Lasso
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import RidgeCV, LassoCV
 
 # Data train
 X_train = [
@@ -112,18 +137,32 @@ X_test = [
    [160, 4]
 ]
 
-# Ridge Regression 
-ridge_model = Ridge(alpha=1.0) # parameter regularisasi
+# Ridge Regression
+# alphas: daftar kandidat parameter regularisasi yang diuji
+ridge_model = make_pipeline(
+    StandardScaler(),
+    RidgeCV(alphas=[0.01, 0.1, 1.0, 10.0], cv=3)
+)
 ridge_model.fit(X_train, y_train)
 ridge_pred = ridge_model.predict(X_test)
-print(ridge_pred)
+print("Prediksi Ridge:", ridge_pred)
+print("Alpha Ridge terpilih:", ridge_model[-1].alpha_)
+print("Koefisien Ridge:", ridge_model[-1].coef_)
 
 # Lasso Regression
-lasso_model = Lasso(alpha=1.0) # parameter regularisasi
+# alpha dicari otomatis oleh LassoCV melalui cross-validation
+lasso_model = make_pipeline(
+    StandardScaler(),
+    LassoCV(cv=3)
+)
 lasso_model.fit(X_train, y_train)
 lasso_pred = lasso_model.predict(X_test)
-print(lasso_pred)
+print("Prediksi Lasso:", lasso_pred)
+print("Alpha Lasso terpilih:", lasso_model[-1].alpha_)
+print("Koefisien Lasso:", lasso_model[-1].coef_)
 ```
+
+> **Catatan:** Data contoh hanya terdiri dari 6 baris sehingga hasil cross-validation kurang stabil. Pada data yang lebih besar, pencarian `alpha` otomatis akan jauh lebih bermakna. Jika ingin menentukan `alpha` secara manual, gunakan `Ridge(alpha=...)` dan `Lasso(alpha=...)` di dalam pipeline yang sama.
 
 ## Referensi
 - [Geeks for Geeks - Ridge Regression vs Lasso Regression](https://www.geeksforgeeks.org/machine-learning/ridge-regression-vs-lasso-regression/)
