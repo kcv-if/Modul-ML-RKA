@@ -16,28 +16,28 @@
 
 Di modul [Linear Regression](LinearRegression.md), kita menarik **satu garis lurus** untuk memprediksi target dari fitur. Tapi bagaimana kalau datanya **melengkung**?
 
-Contohnya hubungan antara **tenaga mesin (horsepower)** dan **konsumsi bahan bakar (mpg)** pada dataset *Auto MPG*: makin besar horsepower, mpg makin turun, tapi penurunannya tidak lurus, melainkan melandai. Garis lurus akan "meleset" di sebagian besar titik. Solusinya, kita ganti garis dengan **kurva polinomial**, misalnya parabola, yang bisa mengikuti lengkungan data.
+Contohnya hubungan antara **tenaga mesin (horsepower)** dan **konsumsi bahan bakar (mpg)** pada dataset *Auto MPG*: makin besar horsepower, mpg makin turun, tapi penurunannya tidak lurus, melainkan melandai. Garis lurus akan "meleset" di banyak titik. Solusinya, kita ganti garis dengan **kurva polinomial**, misalnya parabola, yang bisa mengikuti lengkungan data.
 
 **Kapan cocok?**
 
 - Saat pola hubungan X dan Y **melengkung** (non-linear).
-- Saat kamu ingin memperbaiki Linear Regression **tanpa mengganti algoritmanya**, cukup menambah fitur baru.
+- Saat kita ingin memperbaiki Linear Regression **tanpa mengganti algoritmanya**, cukup dengan menambah fitur baru.
 
 **Kapan kurang cocok?**
 
-- Saat pola hubungannya sangat rumit atau tidak mulus (melonjak, berpola periodik), derajat polinomial yang dibutuhkan bisa terlalu tinggi dan model menjadi **overfitting**.
-- Saat kamu perlu memprediksi **jauh di luar rentang data latih** (ekstrapolasi), karena kurva polinomial bisa melonjak tidak realistis.
+- Saat pola hubungannya sangat rumit atau tidak mulus (melonjak, berpola periodik), derajat polinomial yang dibutuhkan bisa terlalu tinggi dan modelnya jadi **overfitting**.
+- Saat kita perlu memprediksi **jauh di luar rentang training data** (ekstrapolasi), karena kurva polinomial bisa melonjak tidak realistis.
 
 ## Definisi
 
-**Polynomial Regression** adalah algoritma regresi **Supervised Learning** untuk memprediksi nilai output kontinu ketika hubungan antara variabel input dan output tidak linear, melainkan mengikuti suatu fungsi polinomial.
+**Polynomial Regression** adalah algoritma regresi **Supervised Learning** untuk memprediksi nilai output kontinu ketika hubungan antara input dan output tidak linear, tapi mengikuti suatu fungsi polinomial.
 
 ![](https://imgs.search.brave.com/66eIvMgihDhas0DESXoFAbU_3SylnvokAfUmK0a-0yA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dHV0b3JpYWxzcG9p/bnQuY29tL21hY2hp/bmVfbGVhcm5pbmcv/aW1hZ2VzL2xpbmVh/cl92c19wb2x5bm9t/aWFsX3JlZ3Jlc3Np/b24uanBn)
 
 
 ### 1) Univariate Polynomial Regression
 
-Jika hanya terdapat **satu fitur input** $x$, maka model polinomial berderajat $M$ dirumuskan sebagai berikut.
+Kalau hanya ada **satu fitur input** $x$, model polinomial berderajat $M$ ditulis seperti ini.
 
 $$
 \hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_M x^M
@@ -48,14 +48,14 @@ $$
 - $\hat{y}$ = **nilai prediksi** (variabel terikat / dependent)
 - $x$ = **input** (variabel bebas / independent)
 - $M$ = **derajat (degree)** polinomial
-- $\beta_0$ = **intersep (intercept)**
+- $\beta_0$ = **intercept**
 - $\beta_j$ = **koefisien** untuk suku $x^j$
 
-Kasus khusus: $M = 1$ adalah **linear** (garis lurus), $M = 2$ **kuadratik** (parabola), dan $M = 3$ **kubik**.
+Kasus khusus: $M = 1$ adalah **linear** (garis lurus), $M = 2$ **quadratic** (parabola), dan $M = 3$ **cubic**.
 
 ### 2) Multivariate Polynomial Regression
 
-Jika terdapat **lebih dari satu fitur**, maka kombinasi polinomial antar variabel (**cross term** / interaction term) dapat ditambahkan ke dalam fungsi polinomial. Berikut contoh dari multivariate polynomial regression dengan 2 fitur, yakni $a$ dan $b$, berderajat 2:
+Kalau fiturnya **lebih dari satu**, kombinasi antar variabel (**cross term** / interaction term) bisa ditambahkan ke fungsi polinomial. Berikut contoh multivariate polynomial regression dengan 2 fitur, yaitu $a$ dan $b$, berderajat 2:
 
 $$
 \hat{y} = \beta_0 + \beta_1 a + \beta_2 b + \beta_3 a^2 + \beta_4 a b + \beta_5 b^2
@@ -67,23 +67,23 @@ dengan $\beta$ adalah koefisien yang dipelajari dari data.
 
 ### 3) Kenapa tetap disebut "linear"?
 
-Nama "Linear" pada Linear Regression merujuk pada hubungan **terhadap parameter $\beta$**, bukan terhadap $x$. Pada polynomial regression, kita cukup mendefinisikan **fitur baru**:
+Kata "Linear" di Linear Regression merujuk ke hubungan **terhadap parameter $\beta$**, bukan terhadap $x$. Di polynomial regression, kita cukup mendefinisikan **fitur baru**:
 
 $$
 z_1 = x, \quad z_2 = x^2, \quad \ldots, \quad z_M = x^M
 $$
 
-sehingga modelnya menjadi $\hat{y} = \beta_0 + \beta_1 z_1 + \beta_2 z_2 + \cdots + \beta_M z_M$. Ini adalah **Linear Regression biasa** pada fitur $z$. Secara umum bisa ditulis dengan **feature map** $\varphi(x) = (1, x, x^2, \ldots, x^M)^\top$:
+sehingga modelnya jadi $\hat{y} = \beta_0 + \beta_1 z_1 + \beta_2 z_2 + \cdots + \beta_M z_M$. Ini adalah **Linear Regression biasa** di fitur $z$. Secara umum bisa ditulis dengan **feature map** $\varphi(x) = (1, x, x^2, \ldots, x^M)^\top$:
 
 $$
 \hat{y} = \beta^\top \varphi(x)
 $$
 
-Akibatnya, loss function-nya tetap kuadratik terhadap $\beta$, dan semua cara mencari parameter di modul [Linear Regression](LinearRegression.md) (closed form maupun gradient descent) berlaku sama persis.
+Akibatnya, loss function-nya tetap quadratic terhadap $\beta$, jadi semua cara mencari parameter di modul [Linear Regression](LinearRegression.md) (closed form maupun gradient descent) berlaku sama persis.
 
-**Kontras:** model seperti $\hat{y} = \beta_1 \cos(\beta_2 x)$ **bukan** linear terhadap parameter, karena $\beta_2$ berada di dalam fungsi non-linear. Model seperti ini tidak bisa diselesaikan dengan cara di atas.
+**Kontras:** model seperti $\hat{y} = \beta_1 \cos(\beta_2 x)$ **bukan** linear terhadap parameter, karena $\beta_2$ ada di dalam fungsi non-linear. Model seperti ini tidak bisa diselesaikan dengan cara di atas.
 
-> **Hasil penurunan:** aturan update dan solusi least squares dengan feature map $\varphi(x)$ memiliki bentuk yang sama dengan Linear Regression, hanya saja $x$ diganti $\varphi(x)$. Detailnya ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
+> **Hasil penurunan:** aturan update dan solusi least squares dengan feature map $\varphi(x)$ bentuknya sama dengan Linear Regression, cuma $x$ diganti $\varphi(x)$. Detailnya ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
 
 ## Cara Kerja
 
@@ -99,16 +99,16 @@ Ringkasan alurnya:
 
 ### 1) Siapkan data
 
-- Tangani nilai hilang (missing values), dan **encode** fitur kategorikal.
-- Pisahkan data menjadi **training set**, **validation set**, dan **test set** (peran masing-masing dijelaskan di bagian [Memilih Derajat Polinomial](#memilih-derajat-polinomial)). Lakukan pemisahan **sebelum** transformasi dan standardization agar tidak ada informasi dari data validation/test yang bocor ke proses training.
+- Tangani missing values dan **encode** fitur kategorikal.
+- Pisahkan data jadi **training set**, **validation set**, dan **test set** (peran masing-masing dijelaskan di bagian [Memilih Derajat Polinomial](#memilih-derajat-polinomial)). Lakukan pemisahan **sebelum** transformasi dan standardization supaya tidak ada informasi dari validation/test set yang bocor ke proses training.
 
 ### 2) Transformasi fitur
 
-Ciptakan fitur polinomial beserta interaksi antar fitur hingga derajat $M$ (mis. $x, x^2, \ldots, x^M$ untuk satu fitur).
+Buat fitur polinomial beserta interaksi antar fitur sampai derajat $M$ (misalnya $x, x^2, \ldots, x^M$ untuk satu fitur).
 
 ### 3) Standardization
 
-Fitur hasil pemangkatan punya skala yang sangat berbeda (misalnya $x$ bernilai 100, tapi $x^3$ bernilai 1.000.000). Karena itu lakukan **standardization**:
+Fitur yang sudah dipangkatkan punya skala yang sangat berbeda (misalnya $x$ bernilai 100, tapi $x^3$ bernilai 1.000.000). Karena itu lakukan **standardization**:
 
 $$
 z = \frac{x - \mu}{\sigma}
@@ -116,14 +116,14 @@ $$
 
 dengan aturan penting berikut:
 
-- Standardization dilakukan pada **fitur** (kolom $X$), **bukan** pada target $y$.
+- Standardization dilakukan di **fitur** (kolom $X$), **bukan** di target $y$.
 - Tiap kolom ($x$, $x^2$, $x^3$, dst.) distandardisasi **terpisah**, **setelah** dipangkatkan.
 - $\mu$ dan $\sigma$ dihitung **hanya dari training set**, lalu angka yang sama dipakai untuk validation dan test set.
 - Kolom konstanta 1 untuk intercept ditambahkan **setelah** standardization (tidak ikut distandardisasi).
 
 ### 4) Bentuk design matrix
 
-Untuk $n$ sampel dengan satu fitur, **design matrix** berisi satu kolom untuk tiap pangkat:
+Untuk $n$ sampel dengan satu fitur, **design matrix** isinya satu kolom untuk tiap pangkat:
 
 $$
 \mathbf{y} = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}, \qquad
@@ -135,7 +135,7 @@ X = \begin{pmatrix}
 \beta = \begin{pmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_M \end{pmatrix}
 $$
 
-sehingga $X \in \mathbb{R}^{n \times (M+1)}$ (dengan kolom pertama berisi angka 1 untuk intercept). Setelah standardization, kolom-kolom $x, x^2, \ldots$ diganti dengan versi terstandardisasinya.
+sehingga $X \in \mathbb{R}^{n \times (M+1)}$ (kolom pertama isinya angka 1 untuk intercept). Setelah standardization, kolom $x, x^2, \ldots$ diganti dengan versi yang sudah distandardisasi.
 
 ### 5) Rumuskan loss function (OLS)
 
@@ -147,7 +147,7 @@ $$
 
 ### 6) Estimasi parameter
 
-Karena modelnya linear terhadap $\beta$, **cara mencari parameter sama persis dengan Linear Regression** (lihat modul [Linear Regression](LinearRegression.md), bagian *Estimasi parameter*):
+Karena modelnya linear terhadap $\beta$, **cara mencari parameternya sama persis dengan Linear Regression** (lihat modul [Linear Regression](LinearRegression.md), bagian *Estimasi parameter*):
 
 - **Closed form solution**: normal equation $\hat{\beta} = (X^\top X)^{-1} X^\top \mathbf{y}$, atau solver berbasis SVD (yang dipakai scikit-learn).
 - **Gradient descent** (batch, stochastic, mini-batch), untuk data yang sangat besar.
@@ -155,9 +155,9 @@ Karena modelnya linear terhadap $\beta$, **cara mencari parameter sama persis de
 
 Ada beberapa hal **khusus polynomial regression** yang perlu diperhatikan:
 
-1. **Fitur saling berkorelasi.** Kolom $x, x^2, x^3, \ldots$ pada dasarnya saling berkaitan, dan korelasinya tetap tinggi meskipun sudah distandardisasi. Akibatnya **condition number** $\kappa(X)$ membesar seiring derajat $M$. Normal equation dengan invers eksplisit **mengkuadratkan** condition number ($\kappa(X^\top X) = \kappa(X)^2$) sehingga lebih rentan pada derajat tinggi, sedangkan solver berbasis SVD jauh lebih tahan. Itulah salah satu alasan scikit-learn tidak menghitung invers secara langsung.
-2. **Gradient descent butuh standardization.** Tanpa standardization, kolom berpangkat tinggi memiliki skala sangat besar sehingga learning rate yang aman menjadi sangat kecil. Jika memakai learning rate biasa, nilai loss bisa meledak sampai tak hingga (`inf`/`nan`). Bahkan setelah standardization, konvergensi bisa **lambat** karena kolom yang berkorelasi menciptakan arah dengan kelengkungan (curvature) loss yang sangat kecil.
-3. **Koefisien sulit ditafsirkan sendiri-sendiri.** Karena kolom-kolomnya berkorelasi kuat, koefisien individual bisa besar dan saling menutupi (misalnya satu positif besar, satu negatif besar). Yang bermakna adalah **kurva hasilnya**, bukan koefisien satu per satu.
+1. **Fitur saling berkorelasi.** Kolom $x, x^2, x^3, \ldots$ pada dasarnya saling berkaitan, dan korelasinya tetap tinggi walaupun sudah distandardisasi. Akibatnya **condition number** $\kappa(X)$ membesar seiring derajat $M$. Normal equation dengan invers eksplisit **mengkuadratkan** condition number ($\kappa(X^\top X) = \kappa(X)^2$), jadi lebih rentan di derajat tinggi, sedangkan solver berbasis SVD jauh lebih tahan. Itu salah satu alasan scikit-learn tidak menghitung invers secara langsung.
+2. **Gradient descent butuh standardization.** Tanpa standardization, kolom berpangkat tinggi skalanya sangat besar sehingga learning rate yang aman harus sangat kecil. Kalau memakai learning rate biasa, nilai loss bisa meledak sampai tak hingga (`inf`/`nan`). Bahkan setelah standardization, konvergensinya bisa **lambat** karena kolom yang berkorelasi menciptakan arah dengan curvature loss yang sangat kecil.
+3. **Koefisien sulit diartikan satu per satu.** Karena kolom-kolomnya berkorelasi kuat, koefisien individual bisa besar dan saling menutupi (misalnya satu positif besar, satu negatif besar). Yang bermakna adalah **kurva hasilnya**, bukan koefisien satu per satu.
 
 ### 7) Prediksi
 
@@ -175,21 +175,21 @@ X_poly ← add_intercept(X_poly)                 # kolom 1 untuk β0
 
 ## Memilih Derajat Polinomial
 
-Derajat $M$ adalah **hyperparameter**: nilainya tidak dipelajari otomatis oleh OLS, melainkan harus kita pilih. Pemilihannya krusial karena menentukan kompleksitas model.
+Derajat $M$ adalah **hyperparameter**: nilainya tidak dipelajari otomatis oleh OLS, jadi kita yang harus memilihnya. Pemilihannya penting karena menentukan kompleksitas model.
 
 ### Underfitting dan Overfitting
 
-| Kondisi | Derajat $M$ | Error pada training set | Error pada validation set | Bentuk kurva |
+| Kondisi | Derajat $M$ | Error di training set | Error di validation set | Bentuk kurva |
 |---|---|---|---|---|
 | **Underfitting** | terlalu kecil | tinggi | tinggi | terlalu kaku, tidak menangkap pola |
 | **Good Fit** | sedang | rendah | **terendah** | mengikuti pola data |
 | **Overfitting** | terlalu besar | sangat rendah | tinggi | meliuk-liuk mengikuti noise |
 
-**Overfitting** adalah fenomena ketika model terlalu kompleks sehingga ikut "menghafal" noise pada data latih alih-alih pola sebenarnya, sehingga performanya turun pada data baru. Tandanya: **error training kecil tapi error pada data baru besar**.
+**Overfitting** terjadi ketika model terlalu kompleks sehingga ikut "menghafal" noise di training data, bukan pola sebenarnya, sehingga performanya turun di data baru. Tandanya: **error di training kecil, tapi error di data baru besar**.
 
-Perhatikan bahwa error pada training set akan **terus turun** (secara teori tidak pernah naik) seiring bertambahnya derajat, sehingga **tidak boleh dipakai untuk memilih $M$**. Error pada validation set biasanya berbentuk huruf **U**: turun dulu, lalu naik saat model mulai overfitting.
+Perhatikan bahwa error di training set akan **terus turun** (secara teori tidak pernah naik) seiring derajat bertambah, jadi **tidak boleh dipakai untuk memilih $M$**. Error di validation set biasanya berbentuk huruf **U**: turun dulu, lalu naik saat model mulai overfitting.
 
-> ini dikenal sebagai **bias-variance tradeoff**. Derajat rendah punya bias tinggi tapi variance rendah (underfitting); derajat tinggi punya bias rendah tapi variance tinggi (overfitting). Detailnya ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
+> Ini dikenal sebagai **bias-variance tradeoff**. Derajat rendah punya bias tinggi tapi variance rendah (underfitting); derajat tinggi punya bias rendah tapi variance tinggi (overfitting). Detailnya ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
 
 ### Training, Validation, dan Test Set
 
@@ -199,52 +199,52 @@ Perhatikan bahwa error pada training set akan **terus turun** (secara teori tida
 | **Validation set** | Membandingkan kandidat derajat dan **memilih $M$ terbaik** |
 | **Test set** | Mengukur performa akhir model terpilih. **Dipakai sekali saja, di akhir** |
 
-Test set tidak boleh dipakai untuk memilih $M$, karena jika begitu estimasi performanya menjadi terlalu optimis (informasi test set ikut mempengaruhi model).
+Test set tidak boleh dipakai untuk memilih $M$, karena kalau begitu estimasi performanya jadi terlalu optimis (informasi test set ikut memengaruhi model).
 
 **Prosedur memilih derajat:**
 
-1. Pisahkan data menjadi training, validation, dan test set.
-2. Untuk tiap kandidat $M = 1, 2, 3, \ldots$: latih model pada training set, lalu hitung error pada training dan validation set.
+1. Pisahkan data jadi training, validation, dan test set.
+2. Untuk tiap kandidat $M = 1, 2, 3, \ldots$: latih model di training set, lalu hitung error di training dan validation set.
 3. Pilih $M$ dengan **error validation terendah**.
-4. Evaluasi model terpilih **sekali** pada test set.
+4. Evaluasi model terpilih **sekali** di test set.
 
 ### Cross Validation
 
-Satu validation set saja bisa menyesatkan, karena hasilnya bergantung pada pembagian data (dan model bisa ikut overfitting ke validation set tersebut). Solusinya adalah **K-fold cross validation**:
+Satu validation set saja bisa menyesatkan, karena hasilnya bergantung pada pembagian data (dan model bisa ikut overfitting ke validation set itu). Solusinya adalah **K-fold cross validation**:
 
-1. Bagi data latih menjadi $K$ bagian (fold) berukuran sama.
+1. Bagi training data jadi $K$ bagian (fold) berukuran sama.
 2. Secara bergantian, pakai 1 fold sebagai validation set dan $K-1$ fold sisanya sebagai training set (sebanyak $K$ kali).
-3. Rata-ratakan error dari $K$ percobaan tersebut:
+3. Rata-ratakan error dari $K$ percobaan itu:
 
 $$
 \text{CV}(M) = \frac{1}{K} \sum_{k=1}^{K} \text{Error}_k
 $$
 
-Pilih $M$ dengan nilai $\text{CV}$ terendah. Cara ini lebih andal, terutama saat data sedikit.
+Pilih $M$ dengan nilai $\text{CV}$ terendah. Cara ini lebih bisa diandalkan, terutama kalau datanya sedikit.
 
-> **Catatan:** derajat terbaik bisa berbeda tergantung pembagian data. Karena itu, laporkan hasil dengan hati-hati dan hindari menyimpulkan "derajat X selalu terbaik". Detail cross validation ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
+> **Catatan:** derajat terbaik bisa beda tergantung pembagian data. Karena itu, laporkan hasil dengan hati-hati dan jangan menyimpulkan "derajat X selalu terbaik". Detail cross validation ada di [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf).
 
 Selain memilih derajat, overfitting juga bisa dikurangi dengan **regularization** (lihat modul [Lasso & Ridge Regression](LassoRidgeRegression.md)).
 
 ## Kelebihan
 
-- **Menangkap pola non-linear**: mampu merepresentasikan hubungan yang lebih kompleks.
-- **Sederhana**: hanya perlu menambahkan transformasi fitur.
-- **Kompatibel dengan Linear Regression**: setelah transformasi, tetap dapat diproses dengan algoritma regresi linear (closed form maupun gradient descent).
+- **Menangkap pola non-linear**: bisa merepresentasikan hubungan yang lebih kompleks.
+- **Sederhana**: cuma perlu menambah transformasi fitur.
+- **Kompatibel dengan Linear Regression**: setelah transformasi, tetap bisa diproses dengan algoritma regresi linear (closed form maupun gradient descent).
 
 ## Kekurangan
 
-- **Overfitting**: derajat polinomial yang terlalu tinggi membuat model overfit terhadap data latih.
+- **Overfitting**: derajat polinomial yang terlalu tinggi bikin model overfit ke training data.
 - **Harus memilih derajat**: derajat $M$ adalah hyperparameter yang perlu dipilih lewat validation set atau cross validation.
-- **Ekstrapolasi buruk**: prediksi di luar rentang data dapat bersifat tidak realistis (kurva bisa melonjak atau anjlok tajam di tepi).
-- **Sensitif terhadap skala**: nilai polinomial bisa besar, sehingga perlu dilakukan standardization fitur.
-- **Fitur membengkak**: pada multivariate, jumlah fitur bertambah sangat cepat seiring derajat dan jumlah fitur.
-- **Multikolinearitas**: kolom $x, x^2, \ldots$ saling berkorelasi, sehingga condition number membesar dan koefisien tidak stabil.
-- **Kurang interpretatif**: semakin tinggi orde, semakin sulit menjelaskan arti setiap parameter.
+- **Ekstrapolasi buruk**: prediksi di luar rentang data bisa tidak realistis (kurva bisa melonjak atau anjlok tajam di tepi).
+- **Sensitif terhadap skala**: nilai polinomial bisa sangat besar, jadi fitur perlu distandardisasi.
+- **Fitur membengkak**: di multivariate, jumlah fitur bertambah sangat cepat seiring derajat dan jumlah fitur.
+- **Multicollinearity**: kolom $x, x^2, \ldots$ saling berkorelasi, sehingga condition number membesar dan koefisien jadi tidak stabil.
+- **Kurang interpretatif**: makin tinggi derajat, makin sulit menjelaskan arti tiap parameter.
 
 ## Implementasi
 
-Berikut adalah cara mengimplementasikan Polynomial Regression dengan library `scikit-learn`. `PolynomialFeatures` membuat fitur polinomial, `StandardScaler` melakukan standardization, dan `LinearRegression` mencari parameternya. Ketiganya digabung dalam satu `Pipeline` agar transformasi dan scaler yang sama otomatis dipakai saat prediksi.
+Berikut cara mengimplementasikan Polynomial Regression dengan library `scikit-learn`. `PolynomialFeatures` membuat fitur polinomial, `StandardScaler` melakukan standardization, dan `LinearRegression` mencari parameternya. Ketiganya digabung dalam satu `Pipeline` supaya transformasi dan scaler yang sama otomatis dipakai saat prediksi.
 
 ```python
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
@@ -291,7 +291,7 @@ print(y_pred)
 print(model.named_steps["polynomialfeatures"].get_feature_names_out(["luas", "kamar"]))
 ```
 
-> **Catatan:** data contoh di atas sangat kecil (6 sampel dengan 6 parameter, sehingga model bisa mencocokkan data latih secara sempurna) dan hanya untuk mengilustrasikan penggunaan API. Pada praktiknya, pilih derajat polinomial lewat validation set atau cross validation (misalnya dengan `cross_val_score` atau `GridSearchCV` pada parameter `polynomialfeatures__degree`), seperti dijelaskan di bagian [Memilih Derajat Polinomial](#memilih-derajat-polinomial).
+> **Catatan:** data contoh di atas sangat kecil (6 sampel dengan 6 parameter, jadi modelnya bisa mencocokkan training data dengan sempurna) dan cuma untuk mengilustrasikan penggunaan API. Di praktiknya, pilih derajat polinomial lewat validation set atau cross validation (misalnya dengan `cross_val_score` atau `GridSearchCV` pada parameter `polynomialfeatures__degree`), seperti dijelaskan di bagian [Memilih Derajat Polinomial](#memilih-derajat-polinomial).
 
 ## Referensi
 
