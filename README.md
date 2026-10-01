@@ -101,8 +101,8 @@ Materi dibagi menjadi dua kategori tugas:
 
 | Algoritma | Deskripsi Singkat |
 |---|---|
-| [Linear Regression](Supervised%20Learning/LinearRegression.md) | Prediksi nilai kontinu dengan fungsi linear |
-| [Polynomial Regression](Supervised%20Learning/PolynomialRegression.md) | Perluasan regresi linear untuk hubungan non-linear |
+| [Linear Regression](Supervised%20Learning/Linear%20Regression/LinearRegression.md) | Prediksi nilai kontinu dengan fungsi linear |
+| [Polynomial Regression](Supervised%20Learning/Polynomial%20Regression/PolynomialRegression.md) | Perluasan regresi linear untuk hubungan non-linear |
 | [Ridge dan Lasso Regression](Supervised%20Learning/LassoRidgeRegression.md) | Regresi dengan regularisasi untuk mengurangi overfitting |
 | [Decision Tree Regressor](Supervised%20Learning/DecisionTreeRegressor.md) | Prediksi nilai kontinu dengan pohon keputusan |
 | [Support Vector Regression](Supervised%20Learning/SVR.md) | Adaptasi SVM untuk tugas regresi |
