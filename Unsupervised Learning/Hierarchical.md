@@ -40,7 +40,7 @@ Jumlah klaster tidak harus ditentukan sebelum hierarki lengkap dibentuk. Namun, 
 
 ![Perbedaan agglomerative dan divisive hierarchical clustering](assets/unsupervised-learning/pdf-p42-agglomerative-divisive.png)
 
-*Ilustrasi pendekatan agglomerative dan divisive. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 42.*
+*Ilustrasi pendekatan agglomerative dan divisive. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 ### 1. Agglomerative Hierarchical Clustering
 
@@ -148,7 +148,7 @@ Metode ini menghindari penggabungan yang menghasilkan anggota dengan jarak sanga
 
 ![Ilustrasi single linkage dan complete linkage](assets/unsupervised-learning/pdf-p46-single-complete-illustration.png)
 
-*Single linkage memakai pasangan terdekat, sedangkan complete linkage memakai pasangan terjauh. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 46.*
+*Single linkage memakai pasangan terdekat, sedangkan complete linkage memakai pasangan terjauh. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 ### 3. Average Linkage
 
@@ -190,7 +190,7 @@ Rata-rata dua centroid hanya boleh dihitung dengan bobot yang sama jika kedua ke
 
 ![Ilustrasi average linkage dan centroid linkage](assets/unsupervised-learning/pdf-p48-average-centroid-illustration.png)
 
-*Average linkage mempertimbangkan seluruh pasangan anggota, sedangkan centroid linkage membandingkan rata-rata kelompok. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 48.*
+*Average linkage mempertimbangkan seluruh pasangan anggota, sedangkan centroid linkage membandingkan rata-rata kelompok. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 Centroid linkage dapat menghasilkan **dendrogram inversion**, yaitu penggabungan berikutnya berada pada tinggi yang lebih rendah daripada penggabungan sebelumnya. Contohnya adalah tiga titik (-1, 0), (1, 0), dan (0, 1.8). Dua titik pertama digabungkan pada jarak 2. Centroid-nya menjadi (0, 0), lalu jaraknya ke titik ketiga hanya 1.8.
 
@@ -235,7 +235,7 @@ Perbedaan hasil ini menunjukkan bahwa linkage menentukan arti kedekatan antar ke
 
 ![Contoh pemotongan dendrogram](assets/unsupervised-learning/pdf-p44-dendrogram-cut.png)
 
-*Garis horizontal menentukan tingkat pemotongan dendrogram. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 44.*
+*Garis horizontal menentukan tingkat pemotongan dendrogram. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 Pada dendrogram, tinggi pertemuan dua cabang menunjukkan nilai linkage ketika kedua kelompok digabungkan. Dua data dianggap berada dalam kelompok yang sama setelah cabang keduanya bertemu.
 
@@ -258,7 +258,6 @@ Gunakan enam titik berikut dengan **Euclidean distance** dan **single linkage**:
 | E | 9 | 8 |
 | F | 8 | 9 |
 
-Koordinat ini mengikuti contoh pada materi Unsupervised Learning, LBE KCV 2026. Semua perhitungan menggunakan nilai penuh, sedangkan angka pada tabel dibulatkan sampai empat angka desimal.
 
 ### 1. Membentuk Matriks Jarak Awal
 
@@ -355,7 +354,7 @@ Urutan penggabungan dapat dirangkum sebagai berikut.
 
 ![Skema dendrogram enam titik](assets/unsupervised-learning/pdf-p33-hierarchical-dendrogram-sketch.png)
 
-*Skema hubungan pengelompokan enam titik. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 33. Tinggi cabang pada gambar ini bersifat ilustratif dan tidak memakai skala numerik.*
+*Skema hubungan pengelompokan enam titik. Sumber: materi Unsupervised Learning, LBE KCV 2026. Tinggi cabang pada gambar ini bersifat ilustratif dan tidak memakai skala numerik.*
 
 Empat penggabungan awal sebenarnya terjadi pada tinggi yang sama, yaitu 1. Dendrogram dengan skala numerik memperlihatkannya sebagai berikut.
 

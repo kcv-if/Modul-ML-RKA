@@ -43,19 +43,19 @@ Dua dimensi memudahkan visualisasi, tetapi belum tentu cukup untuk klasifikasi, 
 
 ![Pengertian dimensionality reduction](assets/unsupervised-learning/pdf-p55-dimensionality-definition.png)
 
-*Ilustrasi pengurangan jumlah dimensi. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 55.*
+*Ilustrasi pengurangan jumlah dimensi. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 Dimensionality reduction juga berbeda dengan clustering. PCA dan t-SNE menghasilkan koordinat baru, sedangkan algoritma clustering menentukan keanggotaan kelompok. Keduanya dapat digunakan secara berurutan, tetapi tidak memiliki fungsi yang sama.
 
 ![Dimensionality reduction sebelum clustering](assets/unsupervised-learning/pdf-p56-dimensionality-clustering-flow.png)
 
-*Representasi berdimensi rendah dapat digunakan sebagai input clustering. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 56.*
+*Representasi berdimensi rendah dapat digunakan sebagai input clustering. Sumber: materi Unsupervised Learning, LBE KCV 2026*
 
 ## Tujuan
 
 ![Penerapan dimensionality reduction](assets/unsupervised-learning/pdf-p57-dimensionality-applications.png)
 
-*Beberapa penggunaan dimensionality reduction. Sumber: materi Unsupervised Learning, LBE KCV 2026, halaman 57.*
+*Beberapa penggunaan dimensionality reduction. Sumber: materi Unsupervised Learning, LBE KCV 2026.*
 
 ### 1. Memudahkan Visualisasi
 
