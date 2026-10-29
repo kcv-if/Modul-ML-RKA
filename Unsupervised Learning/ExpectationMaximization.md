@@ -17,7 +17,6 @@
 - [Kelebihan dan Kekurangan](#kelebihan-dan-kekurangan)
 - [Implementasi EM pada Data 1D](#implementasi-em-pada-data-1d)
 - [Implementasi EM pada Data 2D](#implementasi-em-pada-data-2d)
-- [Latihan](#latihan)
 - [Referensi](#referensi)
 
 ## Definisi
@@ -28,13 +27,6 @@ Dalam modul ini, EM digunakan untuk melatih **Gaussian Mixture Model (GMM)**. GM
 
 GMM dan EM memiliki peran berbeda. **GMM adalah model yang menggambarkan data**, sedangkan **EM adalah algoritma untuk mencari parameter model tersebut**. EM juga dapat digunakan pada model lain, tetapi pembahasan di sini berfokus pada GMM.
 
-Alur pembahasan mengikuti lecture Victor Lavrenko pada `transcript.md` dan slide dalam `EM_vid_1`. Plot dirender dengan Matplotlib menggunakan hasil perhitungan NumPy dan SciPy. Sumber tersedia pada bagian [Referensi](#referensi).
-
-Skrip [generate_assets.py](assets/expectation-maximization/generate_assets.py) menjalankan contoh EM dalam modul lalu memakai hasilnya untuk membuat plot. Untuk membuat ulang aset, jalankan perintah berikut dari folder `Unsupervised Learning` dengan NumPy, SciPy, dan Matplotlib terpasang.
-
-```bash
-python3 assets/expectation-maximization/generate_assets.py
-```
 
 ## Hard Clustering dan Soft Clustering
 
@@ -44,7 +36,7 @@ Pada **soft clustering**, kita menyimpan tingkat keterkaitan data dengan setiap 
 
 ![Perbedaan hard assignment dan soft assignment pada dua komponen](assets/expectation-maximization/01-hard-soft.png)
 
-*Ilustrasi dibuat ulang berdasarkan slide “Mixture models” [1]. Warna campuran menunjukkan ketidakpastian terhadap asal titik.*
+*Warna campuran menunjukkan ketidakpastian terhadap asal titik.*
 
 Dalam GMM, setiap titik diasumsikan berasal dari satu komponen, tetapi identitas komponen itu tidak terlihat. Jadi, probabilitas 60% dan 40% menunjukkan **ketidakpastian kita tentang asal titik**, bukan berarti satu pengamatan benar-benar dihasilkan oleh dua komponen sekaligus.
 
@@ -88,7 +80,7 @@ Artinya, model menggabungkan kepadatan dari A dan B sesuai proporsinya. Jumlah G
 
 ![Pengaruh mean dan varians terhadap bentuk Gaussian serta campuran dua Gaussian](assets/expectation-maximization/02-gaussian-mixture.png)
 
-*Ilustrasi baru berdasarkan gagasan slide “Mixture models in 1-d” [1]. Garis putus-putus pada panel kanan merupakan jumlah dua kurva berbobot.*
+*Garis putus-putus pada panel kanan merupakan jumlah dua kurva berbobot.*
 
 ### 3. Kepadatan Berbeda dengan Probabilitas Keanggotaan
 
@@ -108,7 +100,7 @@ Bayangkan kita memiliki titik-titik pada sebuah garis dan mengetahui bahwa titik
 
 Masalahnya, pada data tanpa label, **asal titik dan parameter Gaussian sama-sama belum diketahui**. Untuk mencari parameter, kita membutuhkan perkiraan asal titik. Untuk memperkirakan asal titik, kita membutuhkan parameter.
 
-Lecture menyebutnya sebagai *chicken-and-egg problem*. EM mengatasinya dengan memulai dari tebakan parameter, lalu memperbaiki kedua perkiraan tersebut secara bergantian.
+EM mengatasi masalah saling bergantung ini dengan memulai dari tebakan parameter, lalu memperbaiki perkiraan asal titik dan parameter secara bergantian.
 
 ## Cara Kerja EM
 
@@ -121,7 +113,7 @@ EM pada GMM dijalankan melalui langkah berikut.
 
 ![Siklus inisialisasi, E-step, M-step, dan pemeriksaan perubahan pada EM](assets/expectation-maximization/03-em-cycle.png)
 
-*Alur dibuat ulang berdasarkan slide “Expectation Maximization (EM)” [1].*
+*Parameter awal diperbaiki melalui E-step dan M-step secara berulang sampai memenuhi kriteria penghentian.*
 
 Satu putaran E-step dan M-step disebut **satu iterasi**. E-step memperkirakan asal data dengan parameter tetap. M-step memperbarui parameter menggunakan bobot dari E-step tersebut.
 
@@ -129,7 +121,7 @@ Nama *expectation* berkaitan dengan penggunaan perkiraan keanggotaan sebagai bob
 
 ## E-step Menghitung Responsibility
 
-Probabilitas keanggotaan pada E-step disebut **responsibility**. Dalam transcript, responsibility untuk komponen biru ditulis sebagai b_i dan untuk komponen kuning sebagai a_i.
+Probabilitas keanggotaan pada E-step disebut **responsibility**. Responsibility untuk komponen biru ditulis sebagai b_i dan untuk komponen kuning sebagai a_i.
 
 Untuk setiap titik x_i, lakukan tiga hal.
 
@@ -161,7 +153,7 @@ Responsibility untuk A adalah 0,2. Jadi, titik tersebut memberi kontribusi lebih
 
 ### Titik Jauh Tetap Bisa Mendapat Responsibility Tinggi
 
-Pada contoh lecture, sebuah titik berada jauh dari kedua Gaussian awal. Kepadatannya kecil pada Gaussian biru, tetapi jauh lebih kecil lagi pada Gaussian kuning. Setelah dinormalisasi, responsibility biru dapat mendekati 1.
+Misalkan sebuah titik berada jauh dari kedua Gaussian awal. Kepadatannya kecil pada Gaussian biru, tetapi jauh lebih kecil lagi pada Gaussian kuning. Setelah dinormalisasi, responsibility biru dapat mendekati 1.
 
 Artinya, **B lebih masuk akal dibanding A menurut model saat ini**. Hal itu tidak otomatis berarti titik tersebut cocok dengan model secara keseluruhan. Responsibility merupakan perbandingan antar komponen yang tersedia.
 
@@ -195,8 +187,6 @@ Kita menghitung jarak kuadrat setiap titik terhadap **mean baru**, lalu mengambi
 
 Perhitungan untuk A sama, tetapi menggunakan a_i. Penyebutnya adalah jumlah bobot A. Kita memakai pembagi jumlah bobot, bukan jumlah bobot dikurangi satu, karena yang dicari adalah parameter Gaussian pada M-step.
 
-Pada video kedua sekitar 7:07, pembicara mengoreksi salah tulis pada slide. Varians biru harus menggunakan mean biru. Rumus di atas sudah mengikuti koreksi tersebut dan memakai mean yang baru dihitung.
-
 ### 3. Prior sebagai Proporsi Berbobot
 
 Prior biru dapat diperbarui menggunakan:
@@ -207,7 +197,7 @@ $$
 
 Jika jumlah responsibility biru adalah 6 dari 10 data, prior biru yang baru adalah 0,6. Jumlah responsibility dapat berupa pecahan sehingga tidak harus sama dengan jumlah titik yang diberi label biru.
 
-Lecture awalnya mempertahankan prior sama besar agar contoh mudah diikuti, kemudian menjelaskan cara memperbaruinya. **Kedua pilihan tersebut perlu dibedakan**. Prior tetap berarti proporsinya dibatasi sejak awal. Prior yang diperbarui berarti model ikut mempelajari proporsi setiap komponen.
+Prior dapat dipertahankan sama besar atau diperbarui pada setiap iterasi. Prior tetap berarti proporsinya dibatasi sejak awal. Prior yang diperbarui berarti model ikut mempelajari proporsi setiap komponen.
 
 Pada kedua implementasi di akhir modul, prior ikut diperbarui. Jika satu komponen memperoleh hampir seluruh bobot sejak awal, komponen lain dapat kehilangan pengaruh. Karena itu, pemilihan parameter awal tetap perlu diperhatikan.
 
@@ -219,7 +209,7 @@ $$
 x=[1,2,3,5,7,8,9].
 $$
 
-Angka ini dibuat untuk modul, bukan salinan nilai titik pada slide. Misalkan K = 2 dengan parameter awal berikut.
+Misalkan K = 2 dengan parameter awal berikut.
 
 | Parameter | A, kuning | B, biru |
 |---|---:|---:|
@@ -269,7 +259,7 @@ Angka di atas belum merupakan hasil akhir. E-step berikutnya menggunakan mean da
 
 ![Perubahan distribusi dan responsibility dalam beberapa iterasi EM 1D](assets/expectation-maximization/04-iterations-1d.png)
 
-*Ilustrasi dihitung ulang mengikuti urutan slide “EM: 1-d example” [1]. Gambar sengaja dimulai dengan dua mean di sebelah kiri, berbeda dari tabel, agar perpindahan Gaussian terlihat jelas. Prior pada gambar dipertahankan 0,5 seperti demonstrasi awal lecture.*
+*Kedua mean awal berada di sebelah kiri agar perpindahan Gaussian terlihat jelas. Inisialisasi ini berbeda dari tabel perhitungan. Prior kedua komponen pada gambar dipertahankan 0,5 sepanjang iterasi.*
 
 Pada kolom kiri, Gaussian bergerak dan berubah lebar. Pada kolom kanan, garis menunjukkan responsibility biru. Titik yang semakin mendukung B akan memiliki nilai semakin dekat ke 1. Kedua kolom pada setiap baris menggunakan parameter yang sama.
 
@@ -292,7 +282,7 @@ Jika kedua fitur cenderung naik bersama, elips dapat miring ke arah kanan atas. 
 
 ![Data 2D tanpa label, setelah satu M-step, dan setelah EM berhenti](assets/expectation-maximization/05-em-2d.png)
 
-*Ilustrasi baru berdasarkan slide “Gaussian mixture models: d>1” [1]. Data sintetis dan hasil akhir sesuai contoh implementasi 2D. Garis kontur menunjukkan daerah dengan kepadatan sama, bukan batas klaster yang mutlak.*
+*Data sintetis dan hasil akhir sesuai contoh implementasi 2D. Garis kontur menunjukkan daerah dengan kepadatan sama, bukan batas klaster yang mutlak.*
 
 Mean diperbarui dengan rata-rata berbobot untuk masing-masing fitur. Covariance diperbarui dengan melihat penyimpangan pasangan fitur terhadap mean baru, lalu mengambil rata-rata berbobotnya.
 
@@ -318,7 +308,7 @@ Dalam perhitungan EM yang tepat, E-step dan M-step tidak menurunkan likelihood. 
 
 Pada contoh ini, K = 2 diberikan sejak awal. EM standar untuk GMM **tidak otomatis menentukan K**.
 
-Slide “How to pick K?” menjelaskan bahwa kita tidak cukup memilih K berdasarkan likelihood data pelatihan terbesar. Menambah komponen dapat membuat model semakin mengikuti data pelatihan, tetapi hasilnya belum tentu baik untuk data baru.
+Kita tidak cukup memilih K berdasarkan likelihood data pelatihan terbesar. Menambah komponen dapat membuat model semakin mengikuti data pelatihan, tetapi hasilnya belum tentu baik untuk data baru.
 
 Beberapa cara mempertimbangkan K adalah:
 
@@ -326,9 +316,7 @@ Beberapa cara mempertimbangkan K adalah:
 - Menggunakan **AIC** atau **BIC**, yang mempertimbangkan kecocokan model sekaligus jumlah parameternya. Pada definisi AIC dan BIC yang umum digunakan dalam library, nilai lebih kecil lebih baik.
 - Memeriksa apakah kelompok yang terbentuk masuk akal untuk data dan tujuan analisis.
 
-Untuk memahami mekanisme EM, kita cukup menetapkan K = 2 terlebih dahulu. Pemilihan K merupakan langkah evaluasi model tersendiri. Dokumentasi GMM pada referensi [3] memberi pembahasan tambahan tentang pemilihan jumlah komponen.
-
-Slide menampilkan bentuk skor BIC yang dimaksimalkan, sedangkan library umumnya memakai bentuk BIC yang diminimalkan. Arah pembacaan mengikuti definisi skornya. Gagasan utamanya tetap sama, yaitu mempertimbangkan kecocokan model dan kerumitannya.
+Untuk memahami mekanisme EM, kita cukup menetapkan K = 2 terlebih dahulu. Pemilihan K merupakan langkah evaluasi model tersendiri.
 
 ## Perbandingan dengan K-Means
 
@@ -344,7 +332,7 @@ Slide menampilkan bentuk skor BIC yang dimaksimalkan, sedangkan library umumnya 
 
 Keduanya sama-sama bergantian memperkirakan kelompok dan memperbarui representasi kelompok. Perbedaan pentingnya, GMM memperhitungkan **pusat, penyebaran, dan proporsi komponen**, sedangkan K-Means menggunakan jarak terhadap centroid.
 
-Bagian akhir transcript menyatakan bahwa varians tetap dan prior seragam membuat GMM identik dengan K-Means. Pernyataan ini perlu diperjelas. Jika seluruh komponen memiliki penyebaran seragam yang sama pada semua arah serta prior sama, komponen dengan responsibility terbesar adalah yang pusatnya terdekat. Namun, EM tetap memperbarui mean dengan bobot pecahan. Agar langkah pembaruan pusat menjadi seperti K-Means, penugasannya juga harus dibuat tegas menjadi 0 atau 1.
+Jika seluruh komponen memiliki penyebaran seragam yang sama pada semua arah serta prior sama, komponen dengan responsibility terbesar adalah yang pusatnya terdekat. Namun, EM tetap memperbarui mean dengan bobot pecahan. Agar langkah pembaruan pusat menjadi seperti K-Means, penugasannya juga harus dibuat tegas menjadi 0 atau 1.
 
 ## Kelebihan dan Kekurangan
 
@@ -374,7 +362,7 @@ Library yang digunakan adalah **NumPy**, **SciPy**, dan **Matplotlib**. Jika bel
 python3 -m pip install numpy scipy matplotlib
 ```
 
-SciPy hanya menghitung kepadatan Gaussian. Proses EM tetap kita tulis sendiri. `norm.pdf` menerima standar deviasi pada parameter `scale`, sehingga varians harus diakarkan terlebih dahulu [4].
+SciPy hanya menghitung kepadatan Gaussian. Proses EM tetap kita tulis sendiri. `norm.pdf` menerima standar deviasi pada parameter `scale`, sehingga varians harus diakarkan terlebih dahulu.
 
 ```python
 from __future__ import annotations
@@ -484,7 +472,7 @@ Blok ini dapat dijalankan sendiri tanpa menjalankan contoh 1D. Kita membuat dua 
 
 `X` berukuran 160 × 2. Ada 160 titik dengan dua fitur per titik. Seed generator NumPy ditetapkan menjadi 7 agar data contoh dapat diulang.
 
-SciPy menerima pusat Gaussian melalui `mean` dan matriks covariance melalui `cov` [5]. Fungsi ini menghitung kepadatan Gaussian 2D sehingga kita tidak perlu menulis invers matriks secara manual.
+SciPy menerima pusat Gaussian melalui `mean` dan matriks covariance melalui `cov`. Fungsi ini menghitung kepadatan Gaussian 2D sehingga kita tidak perlu menulis invers matriks secara manual.
 
 ```python
 from __future__ import annotations
@@ -613,9 +601,9 @@ Kedua contoh memakai perhitungan kepadatan langsung agar alurnya mudah dibaca. U
 
 ## Referensi
 
-1. **Victor Lavrenko. Lecture tentang mixture models, EM, dan GMM.** Sumber utama berupa [video lectures youtube](https://www.youtube.com/watch?v=BWXd5dOkuTo). 
+1. **Victor Lavrenko.** [Expectation Maximization dan Gaussian Mixture Model](https://www.youtube.com/watch?v=BWXd5dOkuTo). Video pembelajaran.
 
-2. **Plot dan contoh modul.** Semua gambar pada `assets/expectation-maximization/` dirender oleh [generate_assets.py](assets/expectation-maximization/generate_assets.py) menggunakan Matplotlib. Kepadatan Gaussian dihitung dengan SciPy. Responsibility, pembaruan parameter, dan log-likelihood dihitung dari langkah EM menggunakan NumPy dan SciPy. Diagram siklus EM menggunakan bentuk dan panah Matplotlib. Gagasan visual mengikuti slide [1], dengan data contoh modul dan penanda komponen kuning serta biru.
+2. **Plot dan contoh modul.** [generate_assets.py](../../generate_assets.py). Plot dirender dengan Matplotlib menggunakan perhitungan NumPy dan SciPy. Diagram siklus EM menggunakan bentuk dan panah Matplotlib.
 3. **Scikit-learn.** [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html). Referensi tambahan untuk penggunaan GMM, pemilihan jumlah komponen, inisialisasi, dan persoalan covariance.
 4. **SciPy.** [scipy.stats.norm](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html). Acuan fungsi kepadatan Gaussian 1D dan arti parameter `loc` serta `scale`.
 5. **SciPy.** [scipy.stats.multivariate_normal](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.multivariate_normal.html). Acuan fungsi kepadatan Gaussian multidimensi dan parameter `mean` serta `cov`.
