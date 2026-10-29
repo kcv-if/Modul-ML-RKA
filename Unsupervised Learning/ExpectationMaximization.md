@@ -460,6 +460,31 @@ plt.tight_layout()
 plt.show()
 ```
 
+### Hasil Eksekusi 1D
+
+Output terminal setelah seluruh blok kode dijalankan:
+
+```text
+Iterasi: 5 Konvergen: True
+Mean: [2.4314 7.5686]
+Varians: [1.6878 1.6878]
+Prior: [0.5 0.5]
+Kolom: x, responsibility A, responsibility B
+[[1.000e+00 1.000e+00 0.000e+00]
+ [2.000e+00 9.999e-01 1.000e-04]
+ [3.000e+00 9.977e-01 2.300e-03]
+ [5.000e+00 5.000e-01 5.000e-01]
+ [7.000e+00 2.300e-03 9.977e-01]
+ [8.000e+00 1.000e-04 9.999e-01]
+ [9.000e+00 0.000e+00 1.000e+00]]
+```
+
+![Grafik hasil eksekusi EM 1D](assets/expectation-maximization/07-hasil-program-1d.png)
+
+Mean kedua komponen berada di sekitar 2,43 dan 7,57. Titik x = 5 tetap memiliki responsibility 0,5 untuk setiap komponen.
+
+Angka 0 dan 1 pada tabel responsibility merupakan hasil pembulatan tampilan. Selama iterasi, EM tetap menggunakan probabilitas sebelum pembulatan.
+
 `responsibility` memiliki tujuh baris dan dua kolom. Kolom pertama adalah A dan kolom kedua adalah B. Pada setiap baris, kedua nilainya berjumlah 1.
 
 Perhatikan x = 5. Karena data dan inisialisasi simetris, responsibility titik ini tetap sekitar 0,5 untuk kedua komponen. EM mempertahankan ketidakpastian tersebut selama perhitungan parameter.
@@ -590,6 +615,34 @@ ax.set_aspect("equal", adjustable="box")
 plt.tight_layout()
 plt.show()
 ```
+
+### Hasil Eksekusi 2D
+
+Output terminal setelah seluruh blok kode dijalankan:
+
+```text
+Iterasi: 8 Konvergen: True
+Mean:
+ [[1.71  2.089]
+ [6.084 4.906]]
+Prior: [0.5 0.5]
+Covariance:
+ [[[ 0.66   0.401]
+  [ 0.401  0.601]]
+
+ [[ 0.949 -0.381]
+  [-0.381  0.667]]]
+Responsibility lima titik pertama:
+ [[1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]
+ [1. 0.]]
+```
+
+![Grafik hasil eksekusi EM 2D](assets/expectation-maximization/08-hasil-program-2d.png)
+
+Setiap baris pada hasil mean menunjukkan pusat satu komponen. Baris pada responsibility menunjukkan probabilitas asal satu titik untuk komponen A dan B.
 
 `responsibility` berukuran 160 × 2. Maknanya sama seperti contoh 1D. Perubahan utamanya terletak pada bentuk mean dan penyebaran. `means` berukuran 2 × 2, sedangkan `covariances` berukuran 2 × 2 × 2 karena ada dua komponen dengan matriks covariance masing-masing berukuran 2 × 2.
 
