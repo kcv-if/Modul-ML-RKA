@@ -20,6 +20,7 @@ Beberapa algoritma clustering meliputi:
 - [Hierachical](Hierarchical.md)
 - [DBSCAN](DBSCAN.md)
 - [BIRCH](BIRCH.md)
+- [Expectation Maximization dan GMM](ExpectationMaximization.md)
 
 ## Referensi
 
