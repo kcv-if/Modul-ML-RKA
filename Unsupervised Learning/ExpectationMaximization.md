@@ -28,7 +28,13 @@ Dalam modul ini, EM digunakan untuk melatih **Gaussian Mixture Model (GMM)**. GM
 
 GMM dan EM memiliki peran berbeda. **GMM adalah model yang menggambarkan data**, sedangkan **EM adalah algoritma untuk mencari parameter model tersebut**. EM juga dapat digunakan pada model lain, tetapi pembahasan di sini berfokus pada GMM.
 
-Alur pembahasan mengikuti lecture Victor Lavrenko pada `transcript.md` dan slide dalam `EM_vid_1`. Ilustrasi serta angka contoh dibuat ulang untuk modul ini. Pemetaan sumber tersedia pada bagian [Referensi](#referensi).
+Alur pembahasan mengikuti lecture Victor Lavrenko pada `transcript.md` dan slide dalam `EM_vid_1`. Plot dirender dengan Matplotlib menggunakan hasil perhitungan NumPy dan SciPy. Sumber tersedia pada bagian [Referensi](#referensi).
+
+Skrip [generate_assets.py](assets/expectation-maximization/generate_assets.py) menjalankan contoh EM dalam modul lalu memakai hasilnya untuk membuat plot. Untuk membuat ulang aset, jalankan perintah berikut dari folder `Unsupervised Learning` dengan NumPy, SciPy, dan Matplotlib terpasang.
+
+```bash
+python3 assets/expectation-maximization/generate_assets.py
+```
 
 ## Hard Clustering dan Soft Clustering
 
@@ -609,7 +615,7 @@ Kedua contoh memakai perhitungan kepadatan langsung agar alurnya mudah dibaca. U
 
 1. **Victor Lavrenko. Lecture tentang mixture models, EM, dan GMM.** Sumber utama berupa [video lectures youtube](https://www.youtube.com/watch?v=BWXd5dOkuTo). 
 
-2. **Ilustrasi dan contoh modul.** Semua gambar pada `assets/expectation-maximization/` dibuat baru berdasarkan gagasan slide [1]. Angka perhitungan, data sintetis, grafik iterasi, dan kode merupakan contoh yang disusun untuk modul ini. Warna kuning dan biru mengikuti penanda komponen pada lecture.
+2. **Plot dan contoh modul.** Semua gambar pada `assets/expectation-maximization/` dirender oleh [generate_assets.py](assets/expectation-maximization/generate_assets.py) menggunakan Matplotlib. Kepadatan Gaussian dihitung dengan SciPy. Responsibility, pembaruan parameter, dan log-likelihood dihitung dari langkah EM menggunakan NumPy dan SciPy. Diagram siklus EM menggunakan bentuk dan panah Matplotlib. Gagasan visual mengikuti slide [1], dengan data contoh modul dan penanda komponen kuning serta biru.
 3. **Scikit-learn.** [Gaussian mixture models](https://scikit-learn.org/stable/modules/mixture.html). Referensi tambahan untuk penggunaan GMM, pemilihan jumlah komponen, inisialisasi, dan persoalan covariance.
 4. **SciPy.** [scipy.stats.norm](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html). Acuan fungsi kepadatan Gaussian 1D dan arti parameter `loc` serta `scale`.
 5. **SciPy.** [scipy.stats.multivariate_normal](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.multivariate_normal.html). Acuan fungsi kepadatan Gaussian multidimensi dan parameter `mean` serta `cov`.
