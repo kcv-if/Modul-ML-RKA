@@ -71,7 +71,8 @@ Modul-ML-RKA/
 ├── Reinforcement Learning/
 │   └── RL.md
 └── Deployment/
-    └── deployment.md
+    └── 2026/
+        └── deployment.md
 ```
 
 ---
@@ -161,7 +162,7 @@ Dokumentasi tersedia di [Reinforcement Learning/RL.md](Reinforcement%20Learning/
 Tahap deployment mencakup proses mengemas, menyajikan, dan mengintegrasikan model machine learning yang telah dilatih ke dalam lingkungan produksi agar dapat digunakan oleh pengguna akhir atau sistem lain.
 </p>
 
-Dokumentasi tersedia di [Deployment/deployment.md](Deployment/deployment.md).
+Dokumentasi tersedia di [Deployment/2026/deployment.md](Deployment/2026/deployment.md).
 
 ---
 
